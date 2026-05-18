@@ -1,0 +1,6 @@
+data/
+outputs/
+*.pt
+*.bin
+*.h5
+nohup.out

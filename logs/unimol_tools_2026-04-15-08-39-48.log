@@ -1,0 +1,16 @@
+2026-04-15 08:39:49 | unimol_tools/models/unimol.py | 136 | INFO | Uni-Mol Tools | Loading pretrained weights from /data1/ztx/unimol_weights/mol_pre_all_h_220816.pt
+2026-04-15 08:39:50 | unimol_tools/data/conformer.py | 167 | INFO | Uni-Mol Tools | Start generating conformers...
+2026-04-15 08:39:50 | unimol_tools/data/conformer.py | 182 | INFO | Uni-Mol Tools | Succeeded in generating conformers for 100.00% of molecules.
+2026-04-15 08:39:50 | unimol_tools/data/conformer.py | 199 | INFO | Uni-Mol Tools | Succeeded in generating 3d conformers for 100.00% of molecules.
+2026-04-15 08:39:50 | unimol_tools/tasks/trainer.py | 78 | INFO | Uni-Mol Tools | Number of GPUs available: 4
+2026-04-15 08:39:50 | unimol_tools/tasks/trainer.py | 98 | INFO | Uni-Mol Tools | Using single GPU.
+2026-04-15 08:39:50 | unimol_tools/data/conformer.py | 167 | INFO | Uni-Mol Tools | Start generating conformers...
+2026-04-15 08:39:51 | unimol_tools/data/conformer.py | 182 | INFO | Uni-Mol Tools | Succeeded in generating conformers for 100.00% of molecules.
+2026-04-15 08:39:51 | unimol_tools/data/conformer.py | 199 | INFO | Uni-Mol Tools | Succeeded in generating 3d conformers for 100.00% of molecules.
+2026-04-15 08:39:51 | unimol_tools/tasks/trainer.py | 78 | INFO | Uni-Mol Tools | Number of GPUs available: 4
+2026-04-15 08:39:51 | unimol_tools/tasks/trainer.py | 98 | INFO | Uni-Mol Tools | Using single GPU.
+2026-04-15 08:39:51 | unimol_tools/data/conformer.py | 167 | INFO | Uni-Mol Tools | Start generating conformers...
+2026-04-15 08:39:51 | unimol_tools/data/conformer.py | 182 | INFO | Uni-Mol Tools | Succeeded in generating conformers for 100.00% of molecules.
+2026-04-15 08:39:51 | unimol_tools/data/conformer.py | 199 | INFO | Uni-Mol Tools | Succeeded in generating 3d conformers for 100.00% of molecules.
+2026-04-15 08:39:51 | unimol_tools/tasks/trainer.py | 78 | INFO | Uni-Mol Tools | Number of GPUs available: 4
+2026-04-15 08:39:51 | unimol_tools/tasks/trainer.py | 98 | INFO | Uni-Mol Tools | Using single GPU.

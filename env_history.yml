@@ -1,0 +1,11 @@
+name: mdta
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - scikit-learn
+  - pandas
+  - biopython
+  - rdkit
+prefix: /data1/ztx/.conda/envs/mdta
