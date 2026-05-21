@@ -32,6 +32,8 @@ class DavisDatasetP13D(Dataset):
         protein_3d_dir,
         drug_2d_dir=None,
         use_drug_2d=False,
+        drug_3d_dir=None,
+        use_drug_3d=False,
     ):
         super().__init__()
 
@@ -42,6 +44,9 @@ class DavisDatasetP13D(Dataset):
 
         self.drug_2d_dir = Path(drug_2d_dir) if drug_2d_dir is not None else None
         self.use_drug_2d = use_drug_2d
+
+        self.drug_3d_dir = Path(drug_3d_dir) if drug_3d_dir is not None else None
+        self.use_drug_3d = use_drug_3d
 
         df = pd.read_csv(self.pairs_csv)
 
@@ -72,6 +77,7 @@ class DavisDatasetP13D(Dataset):
         missing_counts = {
             "drug_1d": 0,
             "drug_2d": 0,
+            "drug_3d": 0,
             "protein_1d": 0,
             "protein_3d": 0,
         }
@@ -98,6 +104,12 @@ class DavisDatasetP13D(Dataset):
                 drug_2d_path = self.drug_2d_dir / f"{drug_id}.pt"
                 if not drug_2d_path.exists():
                     missing_counts["drug_2d"] += 1
+                    continue
+
+            if self.use_drug_3d:
+                drug_3d_path = self.drug_3d_dir / f"{drug_id}.pt"
+                if not drug_3d_path.exists():
+                    missing_counts["drug_3d"] += 1
                     continue
 
             kept_rows.append({
@@ -134,6 +146,11 @@ class DavisDatasetP13D(Dataset):
         else:
             drug_2d = None
 
+        if self.use_drug_3d:
+            drug_3d_obj = torch.load(self.drug_3d_dir / f"{drug_id}.pt", weights_only=False)
+        else:
+            drug_3d_obj = None
+
         required_keys = ["node_s", "node_v", "edge_index", "edge_s", "edge_v"]
         missing_keys = [k for k in required_keys if k not in protein_3d_obj]
         if missing_keys:
@@ -146,6 +163,7 @@ class DavisDatasetP13D(Dataset):
             "protein_id": protein_id,
             "drug_1d": drug_1d,       # [512] 或 [768]
             "drug_2d": drug_2d,       # PyG Data or None
+            "drug_3d": drug_3d_obj,   # dict or None
             "protein_1d": protein_1d, # [1280]
             "protein_3d": {
                 "node_s": protein_3d_obj["node_s"].float(),

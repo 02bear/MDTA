@@ -19,6 +19,31 @@ def mdta_collate_fn_p13d(batch_list):
 
     out["protein_1d"] = torch.stack([b["protein_1d"] for b in batch_list], dim=0)
 
+    drug_3d_list = [b["drug_3d"] for b in batch_list]
+    if all(x is None for x in drug_3d_list):
+        out["drug_3d"] = None
+    else:
+        d_x_list = []
+        d_pos_list = []
+        d_edge_index_list = []
+        d_batch_list = []
+        d_node_offset = 0
+
+        for i, g in enumerate(drug_3d_list):
+            n = g["x"].size(0)
+            d_x_list.append(g["x"].float())
+            d_pos_list.append(g["pos"].float())
+            d_edge_index_list.append(g["edge_index"].long() + d_node_offset)
+            d_batch_list.append(torch.full((n,), i, dtype=torch.long))
+            d_node_offset += n
+
+        out["drug_3d"] = {
+            "x": torch.cat(d_x_list, dim=0),
+            "pos": torch.cat(d_pos_list, dim=0),
+            "edge_index": torch.cat(d_edge_index_list, dim=1),
+            "batch": torch.cat(d_batch_list, dim=0),
+        }
+
     node_s_list = []
     node_v_list = []
     edge_index_list = []
