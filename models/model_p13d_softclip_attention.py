@@ -11,9 +11,65 @@ from models.protein_3d_egnn_encoder import Protein3DEGNNEncoder
 from models.decoder import Decoder
 
 
-class MyModelMDTAP13DSOFTCLIPPCL(nn.Module):
+class ModalityInteractionFusion(nn.Module):
+    def __init__(self, hidden_dim: int, num_heads: int = 4, dropout: float = 0.1):
+        super().__init__()
+        if hidden_dim % num_heads != 0:
+            raise ValueError(f"hidden_dim={hidden_dim} must be divisible by num_heads={num_heads}")
+        self.modality_embed = nn.Parameter(torch.empty(1, 2, hidden_dim))
+        nn.init.normal_(self.modality_embed, mean=0.0, std=0.02)
+        self.attn = nn.MultiheadAttention(
+            embed_dim=hidden_dim,
+            num_heads=num_heads,
+            dropout=dropout,
+            batch_first=True,
+        )
+        self.norm1 = nn.LayerNorm(hidden_dim)
+        self.norm2 = nn.LayerNorm(hidden_dim)
+        self.out_norm = nn.LayerNorm(hidden_dim)
+        self.dropout = nn.Dropout(dropout)
+        self.ffn = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim * 4),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(hidden_dim * 4, hidden_dim),
+        )
+        self.gate_mlp = nn.Sequential(
+            nn.Linear(hidden_dim * 4, hidden_dim),
+            nn.ReLU(),
+            nn.Dropout(dropout),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.Sigmoid(),
+        )
+
+    def forward(self, feat_1d: torch.Tensor, feat_3d: torch.Tensor, return_attn: bool = True):
+        tokens = torch.stack([feat_1d, feat_3d], dim=1)
+        tokens = tokens + self.modality_embed
+        attn_out, attn_weights = self.attn(
+            tokens,
+            tokens,
+            tokens,
+            need_weights=return_attn,
+            average_attn_weights=False,
+        )
+        tokens = self.norm1(tokens + self.dropout(attn_out))
+        ffn_out = self.ffn(tokens)
+        tokens = self.norm2(tokens + self.dropout(ffn_out))
+        h1_inter = tokens[:, 0, :]
+        h3_inter = tokens[:, 1, :]
+        gate_input = torch.cat(
+            [h1_inter, h3_inter, torch.abs(h1_inter - h3_inter), h1_inter * h3_inter],
+            dim=-1,
+        )
+        gate = self.gate_mlp(gate_input)
+        fused = gate * h1_inter + (1.0 - gate) * h3_inter
+        fused = self.out_norm(fused)
+        return fused, gate, attn_weights if return_attn else None, h1_inter, h3_inter
+
+
+class MyModelMDTAP13DSOFTCLIPATTENTION(nn.Module):
     """
-    Strategy B: label-similarity refinement on affinity soft target.
+    保留 softclip 策略，只将 PCL 替换为 modality interaction self-attention。
     模态：drug(1D+3D) + protein(1D+3D)
     """
 
@@ -30,10 +86,9 @@ class MyModelMDTAP13DSOFTCLIPPCL(nn.Module):
         task="regression",
         temperature_init=0.07,
         affinity_temperature=1.0,
-        pcl_temperature_init=None,
-        drug_pcl_temperature_init=None,
         labelsim_tau=1.0,
         labelsim_mix=0.3,
+        attn_heads=4,
     ):
         super().__init__()
 
@@ -45,7 +100,6 @@ class MyModelMDTAP13DSOFTCLIPPCL(nn.Module):
             n_layers=3,
             dropout=dropout,
         )
-
         self.protein_1d_encoder = Protein1DEncoder(input_dim=protein_1d_in_dim, hidden_dim=hidden_dim)
         self.protein_3d_encoder = Protein3DEGNNEncoder(
             node_s_dim=protein_3d_node_s_dim,
@@ -55,48 +109,19 @@ class MyModelMDTAP13DSOFTCLIPPCL(nn.Module):
             n_layers=3,
         )
 
-        self.proj_1d = nn.Sequential(nn.Linear(hidden_dim, hidden_dim), nn.ReLU(), nn.Dropout(dropout), nn.Linear(hidden_dim, contrastive_dim))
-        self.proj_3d = nn.Sequential(nn.Linear(hidden_dim, hidden_dim), nn.ReLU(), nn.Dropout(dropout), nn.Linear(hidden_dim, contrastive_dim))
-        self.drug_proj_1d = nn.Sequential(nn.Linear(hidden_dim, hidden_dim), nn.ReLU(), nn.Dropout(dropout), nn.Linear(hidden_dim, contrastive_dim))
-        self.drug_proj_3d = nn.Sequential(nn.Linear(hidden_dim, hidden_dim), nn.ReLU(), nn.Dropout(dropout), nn.Linear(hidden_dim, contrastive_dim))
-        self.gate_mlp = nn.Sequential(nn.Linear(hidden_dim * 2, hidden_dim), nn.ReLU(), nn.Dropout(dropout), nn.Linear(hidden_dim, hidden_dim), nn.Sigmoid())
-        self.drug_gate_mlp = nn.Sequential(nn.Linear(hidden_dim * 2, hidden_dim), nn.ReLU(), nn.Dropout(dropout), nn.Linear(hidden_dim, hidden_dim), nn.Sigmoid())
-
+        # softclip 保留
         self.drug_proj = nn.Sequential(nn.Linear(hidden_dim, hidden_dim), nn.ReLU(), nn.Dropout(dropout), nn.Linear(hidden_dim, contrastive_dim))
         self.protein_proj = nn.Sequential(nn.Linear(hidden_dim, hidden_dim), nn.ReLU(), nn.Dropout(dropout), nn.Linear(hidden_dim, contrastive_dim))
-
-        self.decoder = Decoder(input_dim=hidden_dim * 2, hidden_dim=hidden_dim, dropout=dropout, task=task)
         self.logit_scale_softclip = nn.Parameter(torch.tensor(math.log(1.0 / temperature_init), dtype=torch.float32))
-        if pcl_temperature_init is None:
-            pcl_temperature_init = temperature_init
-        self.logit_scale_pcl = nn.Parameter(torch.tensor(math.log(1.0 / pcl_temperature_init), dtype=torch.float32))
-        if drug_pcl_temperature_init is None:
-            drug_pcl_temperature_init = temperature_init
-        self.logit_scale_drug_pcl = nn.Parameter(torch.tensor(math.log(1.0 / drug_pcl_temperature_init), dtype=torch.float32))
         self.affinity_temperature = affinity_temperature
         self.labelsim_tau = labelsim_tau
         self.labelsim_mix = labelsim_mix
 
-    def fuse_protein(self, h1, h3):
-        gate = self.gate_mlp(torch.cat([h1, h3], dim=-1))
-        hp = gate * h1 + (1.0 - gate) * h3
-        return hp, gate
+        # PCL 替换为 attention 融合
+        self.drug_fusion = ModalityInteractionFusion(hidden_dim=hidden_dim, num_heads=attn_heads, dropout=dropout)
+        self.protein_fusion = ModalityInteractionFusion(hidden_dim=hidden_dim, num_heads=attn_heads, dropout=dropout)
 
-    def fuse_drug(self, h1, h3):
-        gate = self.drug_gate_mlp(torch.cat([h1, h3], dim=-1))
-        hd = gate * h1 + (1.0 - gate) * h3
-        return hd, gate
-
-    def compute_pcl_loss(self, h1, h3, logit_scale_param, proj_1d, proj_3d):
-        z1 = F.normalize(proj_1d(h1), p=2, dim=-1)
-        z3 = F.normalize(proj_3d(h3), p=2, dim=-1)
-        logit_scale = logit_scale_param.exp().clamp(max=100.0)
-        logits = logit_scale * torch.matmul(z1, z3.t())
-        labels = torch.arange(logits.size(0), device=logits.device)
-        loss_1to3 = F.cross_entropy(logits, labels)
-        loss_3to1 = F.cross_entropy(logits.t(), labels)
-        pcl_loss = 0.5 * (loss_1to3 + loss_3to1)
-        return pcl_loss, logits
+        self.decoder = Decoder(input_dim=hidden_dim * 2, hidden_dim=hidden_dim, dropout=dropout, task=task)
 
     @staticmethod
     def masked_softmax(x, mask, dim=-1):
@@ -154,48 +179,66 @@ class MyModelMDTAP13DSOFTCLIPPCL(nn.Module):
     def forward(self, batch, affinity_matrix=None, affinity_mask=None, return_aux=True):
         drug_1d_feat = self.drug_1d_encoder(batch["drug_1d"])
         drug_3d_feat = self.drug_3d_encoder(batch["drug_3d"])
-        drug_feat, drug_gate = self.fuse_drug(drug_1d_feat, drug_3d_feat)
+        drug_feat, drug_gate, drug_attn_weights, drug_1d_inter, drug_3d_inter = self.drug_fusion(
+            drug_1d_feat,
+            drug_3d_feat,
+            return_attn=return_aux,
+        )
 
         protein_1d_feat = self.protein_1d_encoder(batch["protein_1d"])
         protein_3d_feat = self.protein_3d_encoder(batch["protein_3d"])
-        protein_pcl_loss, protein_pcl_logits = self.compute_pcl_loss(
-            protein_1d_feat, protein_3d_feat, self.logit_scale_pcl, self.proj_1d, self.proj_3d
+        protein_feat, protein_gate, protein_attn_weights, protein_1d_inter, protein_3d_inter = self.protein_fusion(
+            protein_1d_feat,
+            protein_3d_feat,
+            return_attn=return_aux,
         )
-        drug_pcl_loss, drug_pcl_logits = self.compute_pcl_loss(
-            drug_1d_feat, drug_3d_feat, self.logit_scale_drug_pcl, self.drug_proj_1d, self.drug_proj_3d
-        )
-        pcl_loss = protein_pcl_loss + drug_pcl_loss
-        protein_feat, gate = self.fuse_protein(protein_1d_feat, protein_3d_feat)
 
         if affinity_matrix is not None and affinity_mask is not None:
             clip_loss, clip_logits, mean_valid_per_row, mean_valid_offdiag, mean_diag_prior_mass = self.compute_softclip_loss(drug_feat, protein_feat, affinity_matrix, affinity_mask)
         else:
-            clip_loss = torch.tensor(0.0, device=protein_feat.device)
+            clip_loss = torch.tensor(0.0, device=drug_feat.device)
             clip_logits = None
-            mean_valid_per_row = torch.tensor(0.0, device=protein_feat.device)
-            mean_valid_offdiag = torch.tensor(0.0, device=protein_feat.device)
-            mean_diag_prior_mass = torch.tensor(0.0, device=protein_feat.device)
+            mean_valid_per_row = torch.tensor(0.0, device=drug_feat.device)
+            mean_valid_offdiag = torch.tensor(0.0, device=drug_feat.device)
+            mean_diag_prior_mass = torch.tensor(0.0, device=drug_feat.device)
 
         pair_feat = torch.cat([drug_feat, protein_feat], dim=-1)
         pred = self.decoder(pair_feat)
         if return_aux:
+            if drug_attn_weights is not None:
+                drug_attn_mean = drug_attn_weights.detach().mean(dim=(0, 1))
+            else:
+                drug_attn_mean = torch.zeros(2, 2, device=drug_feat.device)
+            if protein_attn_weights is not None:
+                protein_attn_mean = protein_attn_weights.detach().mean(dim=(0, 1))
+            else:
+                protein_attn_mean = torch.zeros(2, 2, device=drug_feat.device)
             aux = {
                 "clip_loss": clip_loss,
                 "clip_logits": clip_logits,
-                "pcl_loss": pcl_loss,
-                "protein_pcl_loss": protein_pcl_loss.detach(),
-                "drug_pcl_loss": drug_pcl_loss.detach(),
-                "protein_pcl_logits": protein_pcl_logits,
-                "drug_pcl_logits": drug_pcl_logits,
-                "mean_gate": gate.mean().detach(),
+                "mean_gate": ((drug_gate.mean() + protein_gate.mean()) / 2).detach(),
                 "mean_drug_gate": drug_gate.mean().detach(),
+                "mean_protein_gate": protein_gate.mean().detach(),
                 "mean_valid_per_row": mean_valid_per_row.detach(),
                 "mean_valid_offdiag": mean_valid_offdiag.detach(),
                 "mean_diag_prior_mass": mean_diag_prior_mass.detach(),
-                "labelsim_tau": torch.tensor(self.labelsim_tau, device=protein_feat.device),
-                "labelsim_mix": torch.tensor(self.labelsim_mix, device=protein_feat.device),
+                "labelsim_tau": torch.tensor(self.labelsim_tau, device=drug_feat.device),
+                "labelsim_mix": torch.tensor(self.labelsim_mix, device=drug_feat.device),
                 "logit_scale_softclip": self.logit_scale_softclip.exp().detach(),
-                "logit_scale_pcl": self.logit_scale_pcl.exp().detach(),
+                "drug_attn_1d_to_1d": drug_attn_mean[0, 0].detach(),
+                "drug_attn_1d_to_3d": drug_attn_mean[0, 1].detach(),
+                "drug_attn_3d_to_1d": drug_attn_mean[1, 0].detach(),
+                "drug_attn_3d_to_3d": drug_attn_mean[1, 1].detach(),
+                "protein_attn_1d_to_1d": protein_attn_mean[0, 0].detach(),
+                "protein_attn_1d_to_3d": protein_attn_mean[0, 1].detach(),
+                "protein_attn_3d_to_1d": protein_attn_mean[1, 0].detach(),
+                "protein_attn_3d_to_3d": protein_attn_mean[1, 1].detach(),
+                "drug_feat_norm": drug_feat.norm(dim=-1).mean().detach(),
+                "protein_feat_norm": protein_feat.norm(dim=-1).mean().detach(),
+                "drug_1d_inter_norm": drug_1d_inter.norm(dim=-1).mean().detach(),
+                "drug_3d_inter_norm": drug_3d_inter.norm(dim=-1).mean().detach(),
+                "protein_1d_inter_norm": protein_1d_inter.norm(dim=-1).mean().detach(),
+                "protein_3d_inter_norm": protein_3d_inter.norm(dim=-1).mean().detach(),
             }
             return pred, aux
         return pred
