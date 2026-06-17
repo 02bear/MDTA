@@ -1,0 +1,11 @@
+Using device: cuda
+[DavisDatasetP13D] input pairs: 30056
+[DavisDatasetP13D] kept pairs : 28696
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'protein_1d': 0, 'protein_3d': 1360}
+TOTAL SIZE: 28696
+TRAIN SIZE: 22956
+VAL SIZE: 5740
+SPLIT JSON: data/splits/davis_fixed_split_size2.json
+MODEL: drug_1d + protein_1d + protein_3d + protein(1d-3d) contrastive learning
+
+EPOCH 1/30

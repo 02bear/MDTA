@@ -1,0 +1,31 @@
+Using device: cuda
+[DavisDatasetP13D] input pairs: 118254
+[DavisDatasetP13D] kept pairs : 118254
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'protein_1d': 0, 'protein_3d': 0}
+TOTAL SIZE: 118254
+TRAIN SIZE: 94603
+VAL SIZE: 23651
+SPLIT JSON: data/splits/kiba_fixed_split_size2.json
+MODEL: drug_1d + protein_1d + protein_3d + softclip(label-sim) + pcl(protein1d-protein3d)
+
+EPOCH 1/200
+Traceback (most recent call last):
+  File "/data1/ztx/MyModel-MDTA/train_p13d_softclip_pcl_labelsim.py", line 373, in <module>
+    main()
+  File "/data1/ztx/MyModel-MDTA/train_p13d_softclip_pcl_labelsim.py", line 348, in main
+    train_metrics = train_one_epoch(model, train_loader, train_lookup, criterion, optimizer, device, args, log_interval=100)
+  File "/data1/ztx/MyModel-MDTA/train_p13d_softclip_pcl_labelsim.py", line 206, in train_one_epoch
+    for step, batch in enumerate(loader):
+  File "/data1/ztx/.conda/envs/mdta/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 733, in __next__
+    data = self._next_data()
+  File "/data1/ztx/.conda/envs/mdta/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 789, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/data1/ztx/.conda/envs/mdta/lib/python3.10/site-packages/torch/utils/data/_utils/fetch.py", line 50, in fetch
+    data = self.dataset.__getitems__(possibly_batched_index)
+  File "/data1/ztx/.conda/envs/mdta/lib/python3.10/site-packages/torch/utils/data/dataset.py", line 416, in __getitems__
+    return [self.dataset[self.indices[idx]] for idx in indices]
+  File "/data1/ztx/.conda/envs/mdta/lib/python3.10/site-packages/torch/utils/data/dataset.py", line 416, in <listcomp>
+    return [self.dataset[self.indices[idx]] for idx in indices]
+  File "/data1/ztx/MyModel-MDTA/datasets/davis_dataset_p13d.py", line 140, in __getitem__
+    raise KeyError(
+KeyError: "protein_3d file missing required keys: ['edge_index', 'edge_s', 'edge_v']; file=data/processed/kiba/protein_3d_min/P53350.pt"

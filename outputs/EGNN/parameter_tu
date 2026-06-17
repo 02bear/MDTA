@@ -1,0 +1,41 @@
+nohup: ignoring input
+Using device: cuda
+[DavisDatasetP13D] input pairs: 30056
+[DavisDatasetP13D] kept pairs : 30056
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'drug_3d': 0, 'protein_1d': 0, 'protein_3d': 0}
+TOTAL SIZE: 30056
+TRAIN SIZE: 22956
+VAL SIZE: 5740
+SPLIT JSON: /data1/ztx/MyModel-MDTA/data/splits/davis_fixed_split_size2.json
+MODEL: drug_1d + drug_3d + protein_1d + protein_3d + softclip(label-sim) + pcl(protein1d-protein3d)
+RESUMED FROM: /data1/ztx/MyModel-MDTA/outputs/EGNN/parameter_tuning/davis_lamb_lr1e4_re_earlystop/best_model.pt | start_epoch=446 | best_val_rmse=0.455500 | no_improve=4
+
+EPOCH 446/500
+Traceback (most recent call last):
+  File "/data1/ztx/MyModel-MDTA/train_p13d_softclip_pcl_labelsim.py", line 447, in <module>
+    main()
+  File "/data1/ztx/MyModel-MDTA/train_p13d_softclip_pcl_labelsim.py", line 398, in main
+    train_metrics = train_one_epoch(model, train_loader, train_lookup, criterion, optimizer, device, args, log_interval=100)
+  File "/data1/ztx/MyModel-MDTA/train_p13d_softclip_pcl_labelsim.py", line 215, in train_one_epoch
+    pred, aux = model(batch, affinity_matrix=affinity_matrix, affinity_mask=affinity_mask, return_aux=True)
+  File "/data1/ztx/.conda/envs/mdta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data1/ztx/.conda/envs/mdta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data1/ztx/MyModel-MDTA/models/model_p13d_softclip_pcl_labelsim.py", line 160, in forward
+    protein_3d_feat = self.protein_3d_encoder(batch["protein_3d"])
+  File "/data1/ztx/.conda/envs/mdta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data1/ztx/.conda/envs/mdta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data1/ztx/MyModel-MDTA/models/protein_3d_egnn_encoder.py", line 167, in forward
+    h, x = layer(h, x, edge_index, edge_s, edge_v)
+  File "/data1/ztx/.conda/envs/mdta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data1/ztx/.conda/envs/mdta/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data1/ztx/MyModel-MDTA/models/protein_3d_egnn_encoder.py", line 61, in forward
+    dist2 = (x_diff ** 2).sum(dim=-1, keepdim=True)  # [E, 1]
+  File "/data1/ztx/.conda/envs/mdta/lib/python3.10/site-packages/torch/_tensor.py", line 37, in wrapped
+    if has_torch_function(args):
+KeyboardInterrupt

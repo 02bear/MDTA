@@ -1,0 +1,15 @@
+nohup: ignoring input
+Using device: cuda
+[DavisDatasetP13D] input pairs: 30056
+[DavisDatasetP13D] kept pairs : 28696
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'drug_3d': 0, 'protein_1d': 0, 'protein_3d': 1360}
+Traceback (most recent call last):
+  File "/data1/ztx/MyModel-MDTA/train_p13d_softclip_pcl_labelsim_811.py", line 432, in <module>
+    main()
+  File "/data1/ztx/MyModel-MDTA/train_p13d_softclip_pcl_labelsim_811.py", line 355, in main
+    dataset, train_set, val_set, test_set, train_loader, val_loader, test_loader, train_lookup, val_lookup, test_lookup = build_dataloaders(args)
+  File "/data1/ztx/MyModel-MDTA/train_p13d_softclip_pcl_labelsim_811.py", line 189, in build_dataloaders
+    train_set, val_set, test_set = build_fixed_subsets(dataset, args.split_json)
+  File "/data1/ztx/MyModel-MDTA/train_p13d_softclip_pcl_labelsim_811.py", line 40, in build_fixed_subsets
+    raise ValueError(
+ValueError: split_json indices out of range for dataset size=28696. bad_train[:5]=[29097, 29347, 29532, 29218, 29099], bad_val[:5]=[28970, 29743, 28914, 28859, 28860], bad_test[:5]=[29470, 29192, 28902, 29399, 29570]
