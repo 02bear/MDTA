@@ -10,7 +10,7 @@ from models.protein_1d_encoder import Protein1DEncoder
 from models.protein_3d_egnn_encoder import Protein3DEGNNEncoder
 from models.decoder import Decoder
 
-
+#更改点：将模态间的PCL更新为attention机制
 class ModalityInteractionFusion(nn.Module):
     def __init__(self, hidden_dim: int, num_heads: int = 4, dropout: float = 0.1):
         super().__init__()
@@ -43,8 +43,10 @@ class ModalityInteractionFusion(nn.Module):
         )
 
     def forward(self, feat_1d: torch.Tensor, feat_3d: torch.Tensor, return_attn: bool = True):
+        #把 1D 和 3D 当成“两个token”
         tokens = torch.stack([feat_1d, feat_3d], dim=1)
         tokens = tokens + self.modality_embed
+        #让这两个token相互注意
         attn_out, attn_weights = self.attn(
             tokens,
             tokens,
