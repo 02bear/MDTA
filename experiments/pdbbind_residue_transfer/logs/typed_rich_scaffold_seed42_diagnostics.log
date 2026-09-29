@@ -1,0 +1,22 @@
+/data1/ztx/.conda/envs/dtbind/lib/python3.9/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+{
+  "evaluated_count": 328,
+  "pair_micro": {
+    "base_correct": 0.10485511029498518,
+    "base_atom_feature_shuffle": 0.022639938863934717,
+    "base_atom_features_zero": 0.02467031274576264,
+    "base_residue_feature_shuffle": 0.0020017305821339367,
+    "typed_masked_correct": 0.08710610666864205,
+    "typed_masked_atom_feature_shuffle": 0.019770746205253324,
+    "typed_masked_atom_features_zero": 0.022689468452367308,
+    "typed_masked_residue_feature_shuffle": 0.0020998039468974267
+  },
+  "residue_micro": {
+    "correct": 0.48178834982564167,
+    "atom_feature_shuffle": 0.43845359900197745,
+    "atom_features_zero": 0.27459504156990866,
+    "residue_feature_shuffle": 0.022218669739243992,
+    "mismatched_ligand": 0.4062831967779371
+  }
+}

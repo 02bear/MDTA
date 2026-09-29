@@ -1,0 +1,8 @@
+{
+  "pid": 678289,
+  "mode": "start_preflight",
+  "gpu": 0,
+  "log": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/cold_start/drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final/rank16_pcim_20260914/logs/preflight.log",
+  "code": "/data1/ztx/MyModel-MDTA/experiments/similarity_balanced_drugcold_5fold/rank16_pcim_20260914",
+  "output": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/cold_start/drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final/rank16_pcim_20260914"
+}

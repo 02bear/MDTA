@@ -1,0 +1,23 @@
+[DavisDatasetP13D] input pairs: 30056
+[DavisDatasetP13D] kept pairs : 30056
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'drug_3d': 0, 'protein_1d': 0, 'protein_3d': 0}
+VAL real                             MSE=0.634075165 CI=0.807483 RM2=0.419160
+VAL global_base_only                 MSE=0.709947050 CI=0.789734 RM2=0.364911
+VAL no_fp_delta                      MSE=0.633131266 CI=0.807568 RM2=0.420385
+VAL no_ar_delta                      MSE=0.696723163 CI=0.792631 RM2=0.370168
+VAL ar_evidence_zero                 MSE=0.895112395 CI=0.743832 RM2=0.307854
+VAL ar_evidence_same_drug_permute    MSE=0.634453714 CI=0.807371 RM2=0.418938
+VAL ar_evidence_all_permute          MSE=0.634397030 CI=0.807431 RM2=0.419001
+VAL ar_head_dp_only                  MSE=0.895075738 CI=0.743838 RM2=0.307892
+VAL ar_head_local_only               MSE=0.703382492 CI=0.791747 RM2=0.368075
+TEST real                             MSE=0.658403456 CI=0.735825 RM2=0.160559
+TEST global_base_only                 MSE=0.629136682 CI=0.765193 RM2=0.237439
+TEST no_fp_delta                      MSE=0.656071842 CI=0.744608 RM2=0.171583
+TEST no_ar_delta                      MSE=0.621897995 CI=0.768648 RM2=0.236482
+TEST ar_evidence_zero                 MSE=0.844360113 CI=0.612114 RM2=0.092255
+TEST ar_evidence_same_drug_permute    MSE=0.658279657 CI=0.736062 RM2=0.160623
+TEST ar_evidence_all_permute          MSE=0.658468127 CI=0.735977 RM2=0.160429
+TEST ar_head_dp_only                  MSE=0.844323158 CI=0.612112 RM2=0.092260
+TEST ar_head_local_only               MSE=0.644203842 CI=0.762054 RM2=0.228596
+PROVENANCE {"test_prediction_max_abs_diff": 0.0625, "test_target_max_abs_diff": 0.0, "val_prediction_max_abs_diff": 0.0625, "val_target_max_abs_diff": 0.0}
+OUTPUT_DIR=/data1/ztx/MyModel-MDTA/experiments/caviar_sp1_independent_audit/outputs/checkpoint_epoch31_batch2_r2

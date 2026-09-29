@@ -1,0 +1,6 @@
+{
+  "davis_pocket_submatrix_max_error": 0.0,
+  "both_dsrc_axes_checked": true,
+  "unsupported_identity_fallback": true,
+  "synthetic_label_poisoning_invariance": true
+}

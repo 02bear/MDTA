@@ -1,0 +1,75 @@
+{
+  "adapter": {
+    "name": "p13d_pcim_rnc",
+    "config": {
+      "variant": "bidirectional",
+      "width": 32,
+      "top_k": 128,
+      "coverage_budget": 16,
+      "max_delta": 0.5,
+      "cross_max_scale": 0.25,
+      "residual_l2": 0.001,
+      "rnc_weight": 0.01,
+      "temperature": 2.0,
+      "projection_dim": 16,
+      "rnc_batch_size": 32,
+      "microbatch_size": 16,
+      "interval": 2,
+      "high_count": 8,
+      "mid_count": 8,
+      "high_threshold": 11.953871964,
+      "mid_threshold": 11.520216403,
+      "warmup_epochs": 1.0,
+      "seed": 42
+    },
+    "best": {
+      "lambda": 2.5,
+      "mse": 136.92232087675228,
+      "epoch": 1
+    },
+    "checkpoint": "/data1/ztx/MyModel-MDTA/experiments/warm_start_811/kiba_fixed_dsrc_20260927/smoke_output/pcim_dsrc_fixed/candidates/p13d_pcim_rnc/best.pt",
+    "epochs": 1,
+    "complete": true
+  },
+  "fixed_dsrc": {
+    "drug_config": {
+      "gamma": 2.0,
+      "k": 8,
+      "minimum": 0.1,
+      "tau": 0.02,
+      "beta": 0.5,
+      "clip": 1.0,
+      "scale": 1.0
+    },
+    "protein_config": {
+      "gamma": 7.0,
+      "k": 12,
+      "minimum": 0.5,
+      "tau": 0.0025,
+      "beta": 0.375,
+      "clip": 1.25,
+      "scale": 0.75
+    },
+    "adapter_lambda": 0.85,
+    "rho_drug": 0.5,
+    "rho_protein": 0.5,
+    "fusion_scale": 1.9
+  },
+  "raw_validation_selection": {
+    "lambda": 2.5,
+    "mse": 136.92232087675228,
+    "epoch": 1
+  },
+  "fixed_dsrc_validation_metrics": {
+    "mse": 135.65588394562604,
+    "rmse": 11.64714059096163,
+    "mae": 11.616962642339207,
+    "ci": 0.5233050847457628,
+    "rm2": -0.8030155602053886
+  },
+  "selection_metric": "adapter early stopping on validation; DSRC hyperparameters fixed from seed 42",
+  "selection_data": "no seed-specific DSRC tuning; test labels sealed",
+  "backbone_checkpoint": "/data1/ztx/MyModel-MDTA/experiments/warm_start_811/kiba_fixed_dsrc_20260927/smoke_output/p13d/best_model.pt",
+  "backbone_sha256": "7fcdccd56f4a5b0307dadc37363db02f6990cd95adb5b7ba5396af31a511114a",
+  "locked_at": 1790443018.9882836
+}

@@ -1,0 +1,14 @@
+[DavisDatasetP13D] input pairs: 30056
+[DavisDatasetP13D] kept pairs : 30056
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'drug_3d': 0, 'protein_1d': 0, 'protein_3d': 0}
+{
+  "rows": 30056,
+  "finite_predictions": 30056,
+  "mean": 5.433067321777344,
+  "std": 0.6899899840354919,
+  "unique_drugs_encoded": 68,
+  "unique_proteins_encoded": 442,
+  "direct_factorized_max_abs_difference": 4.76837158203125e-07,
+  "checkpoint": "outputs/Refine_experiment/davis/cold_start/drug_cold_5fold_seed42/baseline/fold_4/best_model.pt",
+  "test_metrics_computed": false
+}

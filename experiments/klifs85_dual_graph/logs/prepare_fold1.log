@@ -1,0 +1,16 @@
+{
+  "drugs": 68,
+  "proteins": 442,
+  "accepted_proteins": 423,
+  "drug_fragment_count": {
+    "min": 3,
+    "mean": 7.588235294117647,
+    "max": 13
+  },
+  "valid_klifs_count": {
+    "min": 0,
+    "mean": 81.0497737556561,
+    "max": 85
+  },
+  "checkpoint_epoch": 104
+}

@@ -1,0 +1,44 @@
+/data1/ztx/.conda/envs/dtbind/lib/python3.9/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+{
+  "evaluated_count": 328,
+  "pair_conditions": {
+    "correct": {
+      "micro": 0.07467197360707908,
+      "macro_median": 0.10412538002508914,
+      "relative_change": null
+    },
+    "atom_feature_shuffle": {
+      "micro": 0.019574165160726593,
+      "macro_median": 0.02533034664601475,
+      "relative_change": -0.7378646336077166
+    },
+    "atom_features_zero": {
+      "micro": 0.02727549914129526,
+      "macro_median": 0.0386445986754138,
+      "relative_change": -0.6347290981644889
+    },
+    "residue_feature_shuffle": {
+      "micro": 0.0020316213042753093,
+      "macro_median": 0.003519720934111555,
+      "relative_change": -0.9727927198634708
+    }
+  },
+  "residue_conditions": {
+    "correct": 0.43135123445627066,
+    "atom_feature_shuffle": 0.41861185333836587,
+    "atom_features_zero": 0.2992871230559113,
+    "residue_feature_shuffle": 0.026183878249497833,
+    "mismatched_ligand": 0.36872373365227573
+  },
+  "label_permutation_micro": 0.0015044810527283436,
+  "per_type_micro": {
+    "halogenbond": 0.00010087486994793431,
+    "hbond": 0.04117067134351586,
+    "hydrophobic": 0.014716600679205593,
+    "pication": 0.0010834398368359719,
+    "pistacking": 0.006423466629674824,
+    "saltbridge": 0.010190349386155642,
+    "waterbridge": 0.009883042458057694
+  }
+}

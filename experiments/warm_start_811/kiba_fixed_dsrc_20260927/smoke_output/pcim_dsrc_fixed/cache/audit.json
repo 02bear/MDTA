@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "cache_sha256": "4190e6f0f1140aafe09b2243ebe5193a4d6113fb13890db6441c66afc219c1ce",
+  "checkpoint_sha256": "7fcdccd56f4a5b0307dadc37363db02f6990cd95adb5b7ba5396af31a511114a",
+  "split_sha256": "5609f4f4919c1738caf7bfba53fedfc0f86781967b4ec659eadb4e29185c3f2b",
+  "training_seed": 42,
+  "base_prediction_finite": true,
+  "train": 94603,
+  "validation": 11825,
+  "test_sealed": 11826,
+  "finished": 1790443015.4032185,
+  "smoke_only": true
+}

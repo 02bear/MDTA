@@ -1,0 +1,17 @@
+{
+  "output_dir": "/data1/ztx/MyModel-MDTA/data/splits/davis_drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final",
+  "outer_score": 0.04669451303120827,
+  "inner_score": 0.31263650728222564,
+  "gates": {
+    "outer_top1_mean_range_le_0.03": true,
+    "outer_label_mean_range_le_0.10": true,
+    "outer_label_std_range_le_0.12": true,
+    "outer_constant_mse_range_le_0.20": true,
+    "inner_top1_mean_range_le_0.04": true,
+    "inner_label_mean_range_le_0.12": true,
+    "inner_label_std_range_le_0.14": true,
+    "inner_constant_mse_range_le_0.22": true,
+    "inner_validation_unique_35_of_35": true
+  },
+  "all_acceptance_gates_passed": true
+}

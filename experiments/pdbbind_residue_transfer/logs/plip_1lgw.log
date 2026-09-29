@@ -1,0 +1,150 @@
+{
+  "ligand_atom_map": [
+    {
+      "sdf_zero_based": 0,
+      "pdb_serial": 2668
+    },
+    {
+      "sdf_zero_based": 1,
+      "pdb_serial": 2669
+    },
+    {
+      "sdf_zero_based": 2,
+      "pdb_serial": 2670
+    },
+    {
+      "sdf_zero_based": 3,
+      "pdb_serial": 2671
+    },
+    {
+      "sdf_zero_based": 4,
+      "pdb_serial": 2672
+    },
+    {
+      "sdf_zero_based": 5,
+      "pdb_serial": 2673
+    },
+    {
+      "sdf_zero_based": 6,
+      "pdb_serial": 2674
+    },
+    {
+      "sdf_zero_based": 7,
+      "pdb_serial": 2675
+    },
+    {
+      "sdf_zero_based": 8,
+      "pdb_serial": 2676
+    },
+    {
+      "sdf_zero_based": 9,
+      "pdb_serial": 2677
+    },
+    {
+      "sdf_zero_based": 10,
+      "pdb_serial": 2678
+    },
+    {
+      "sdf_zero_based": 11,
+      "pdb_serial": 2679
+    },
+    {
+      "sdf_zero_based": 12,
+      "pdb_serial": 2680
+    },
+    {
+      "sdf_zero_based": 13,
+      "pdb_serial": 2681
+    }
+  ],
+  "interaction_sets": {
+    "LIG:Z:999": {
+      "counts": {
+        "hydrophobic_contacts": 3,
+        "hbonds_pdon": 0,
+        "hbonds_ldon": 1,
+        "pistacking": 0,
+        "pication_paro": 0,
+        "pication_laro": 0,
+        "saltbridge_lneg": 0,
+        "saltbridge_pneg": 0,
+        "halogen_bonds": 0,
+        "water_bridges": 0
+      },
+      "interactions": [
+        {
+          "class": "hbond",
+          "fields": {
+            "a": "Atom: 8 (30.30 9.26 2.40)",
+            "a_orig_idx": 796,
+            "d": "Atom: 7 (28.46 7.21 2.50)",
+            "d_orig_idx": 1366,
+            "h": "Atom: 1 (29.03 8.04 2.66)",
+            "distance_ah": 1.7748377390623633,
+            "distance_ad": 2.7536065441525963,
+            "angle": 159.4539315695767,
+            "type": "strong",
+            "protisdon": false,
+            "resnr": 102,
+            "restype": "GLN",
+            "reschain": "A",
+            "resnr_l": 999,
+            "restype_l": "LIG",
+            "reschain_l": "Z",
+            "sidechain": true,
+            "atype": "O2",
+            "dtype": "Npl"
+          }
+        },
+        {
+          "class": "hydroph_interaction",
+          "fields": {
+            "bsatom": "Atom: 6 (28.17 9.34 8.26)",
+            "bsatom_orig_idx": 804,
+            "ligatom": "Atom: 6 (26.80 6.78 5.77)",
+            "ligatom_orig_idx": 1361,
+            "distance": 3.834709506598903,
+            "restype": "VAL",
+            "resnr": 103,
+            "reschain": "A",
+            "restype_l": "LIG",
+            "resnr_l": 999,
+            "reschain_l": "Z"
+          }
+        },
+        {
+          "class": "hydroph_interaction",
+          "fields": {
+            "bsatom": "Atom: 6 (26.84 10.71 4.09)",
+            "bsatom_orig_idx": 862,
+            "ligatom": "Atom: 6 (27.57 7.36 4.75)",
+            "ligatom_orig_idx": 1363,
+            "distance": 3.496841288934915,
+            "restype": "VAL",
+            "resnr": 111,
+            "reschain": "A",
+            "restype_l": "LIG",
+            "resnr_l": 999,
+            "reschain_l": "Z"
+          }
+        },
+        {
+          "class": "hydroph_interaction",
+          "fields": {
+            "bsatom": "Atom: 6 (29.55 4.60 5.37)",
+            "bsatom_orig_idx": 772,
+            "ligatom": "Atom: 6 (27.57 7.36 4.75)",
+            "ligatom_orig_idx": 1363,
+            "distance": 3.447248322938167,
+            "restype": "ALA",
+            "resnr": 99,
+            "reschain": "A",
+            "restype_l": "LIG",
+            "resnr_l": 999,
+            "reschain_l": "Z"
+          }
+        }
+      ]
+    }
+  }
+}

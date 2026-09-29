@@ -1,0 +1,1413 @@
+{
+  "ligand_atom_map": [
+    {
+      "sdf_zero_based": 0,
+      "pdb_serial": 3169,
+      "coord": [
+        -8.609,
+        17.479,
+        26.967
+      ],
+      "element": "N",
+      "graph_atom_index": 0
+    },
+    {
+      "sdf_zero_based": 1,
+      "pdb_serial": 3170,
+      "coord": [
+        -8.635,
+        16.034,
+        26.795
+      ],
+      "element": "N",
+      "graph_atom_index": 1
+    },
+    {
+      "sdf_zero_based": 2,
+      "pdb_serial": 3171,
+      "coord": [
+        -8.834,
+        15.139,
+        27.793
+      ],
+      "element": "C",
+      "graph_atom_index": 2
+    },
+    {
+      "sdf_zero_based": 3,
+      "pdb_serial": 3172,
+      "coord": [
+        -8.196,
+        14.058,
+        27.749
+      ],
+      "element": "O",
+      "graph_atom_index": 3
+    },
+    {
+      "sdf_zero_based": 4,
+      "pdb_serial": 3173,
+      "coord": [
+        -9.738,
+        15.5,
+        28.737
+      ],
+      "element": "N",
+      "graph_atom_index": 4
+    },
+    {
+      "sdf_zero_based": 5,
+      "pdb_serial": 3174,
+      "coord": [
+        -10.783,
+        16.411,
+        28.69
+      ],
+      "element": "C",
+      "graph_atom_index": 5
+    },
+    {
+      "sdf_zero_based": 6,
+      "pdb_serial": 3175,
+      "coord": [
+        -10.507,
+        17.943,
+        28.312
+      ],
+      "element": "C",
+      "graph_atom_index": 6
+    },
+    {
+      "sdf_zero_based": 7,
+      "pdb_serial": 3176,
+      "coord": [
+        -11.712,
+        18.578,
+        28.625
+      ],
+      "element": "O",
+      "graph_atom_index": 7
+    },
+    {
+      "sdf_zero_based": 8,
+      "pdb_serial": 3177,
+      "coord": [
+        -9.955,
+        18.217,
+        26.928
+      ],
+      "element": "C",
+      "graph_atom_index": 8
+    },
+    {
+      "sdf_zero_based": 9,
+      "pdb_serial": 3178,
+      "coord": [
+        -7.597,
+        18.011,
+        27.981
+      ],
+      "element": "C",
+      "graph_atom_index": 9
+    },
+    {
+      "sdf_zero_based": 10,
+      "pdb_serial": 3179,
+      "coord": [
+        -6.261,
+        18.014,
+        27.26
+      ],
+      "element": "C",
+      "graph_atom_index": 10
+    },
+    {
+      "sdf_zero_based": 11,
+      "pdb_serial": 3180,
+      "coord": [
+        -5.999,
+        18.999,
+        26.29
+      ],
+      "element": "C",
+      "graph_atom_index": 11
+    },
+    {
+      "sdf_zero_based": 12,
+      "pdb_serial": 3181,
+      "coord": [
+        -4.798,
+        18.968,
+        25.587
+      ],
+      "element": "C",
+      "graph_atom_index": 12
+    },
+    {
+      "sdf_zero_based": 13,
+      "pdb_serial": 3182,
+      "coord": [
+        -3.866,
+        17.965,
+        25.866
+      ],
+      "element": "C",
+      "graph_atom_index": 13
+    },
+    {
+      "sdf_zero_based": 14,
+      "pdb_serial": 3183,
+      "coord": [
+        -4.14,
+        16.995,
+        26.834
+      ],
+      "element": "C",
+      "graph_atom_index": 14
+    },
+    {
+      "sdf_zero_based": 15,
+      "pdb_serial": 3184,
+      "coord": [
+        -5.33,
+        17.01,
+        27.541
+      ],
+      "element": "C",
+      "graph_atom_index": 15
+    },
+    {
+      "sdf_zero_based": 16,
+      "pdb_serial": 3185,
+      "coord": [
+        -11.835,
+        15.724,
+        27.779
+      ],
+      "element": "C",
+      "graph_atom_index": 16
+    },
+    {
+      "sdf_zero_based": 17,
+      "pdb_serial": 3186,
+      "coord": [
+        -12.513,
+        14.511,
+        28.44
+      ],
+      "element": "C",
+      "graph_atom_index": 17
+    },
+    {
+      "sdf_zero_based": 18,
+      "pdb_serial": 3187,
+      "coord": [
+        -13.515,
+        14.689,
+        29.41
+      ],
+      "element": "C",
+      "graph_atom_index": 18
+    },
+    {
+      "sdf_zero_based": 19,
+      "pdb_serial": 3188,
+      "coord": [
+        -14.126,
+        13.57,
+        29.989
+      ],
+      "element": "C",
+      "graph_atom_index": 19
+    },
+    {
+      "sdf_zero_based": 20,
+      "pdb_serial": 3189,
+      "coord": [
+        -13.742,
+        12.283,
+        29.609
+      ],
+      "element": "C",
+      "graph_atom_index": 20
+    },
+    {
+      "sdf_zero_based": 21,
+      "pdb_serial": 3190,
+      "coord": [
+        -12.748,
+        12.118,
+        28.647
+      ],
+      "element": "C",
+      "graph_atom_index": 21
+    },
+    {
+      "sdf_zero_based": 22,
+      "pdb_serial": 3191,
+      "coord": [
+        -12.129,
+        13.22,
+        28.057
+      ],
+      "element": "C",
+      "graph_atom_index": 22
+    },
+    {
+      "sdf_zero_based": 23,
+      "pdb_serial": 3192,
+      "coord": [
+        -9.508,
+        14.689,
+        30.031
+      ],
+      "element": "C",
+      "graph_atom_index": 23
+    },
+    {
+      "sdf_zero_based": 24,
+      "pdb_serial": 3193,
+      "coord": [
+        -9.761,
+        15.313,
+        31.393
+      ],
+      "element": "C",
+      "graph_atom_index": 24
+    },
+    {
+      "sdf_zero_based": 25,
+      "pdb_serial": 3194,
+      "coord": [
+        -10.888,
+        14.957,
+        32.122
+      ],
+      "element": "C",
+      "graph_atom_index": 25
+    },
+    {
+      "sdf_zero_based": 26,
+      "pdb_serial": 3195,
+      "coord": [
+        -11.106,
+        15.55,
+        33.365
+      ],
+      "element": "C",
+      "graph_atom_index": 26
+    },
+    {
+      "sdf_zero_based": 27,
+      "pdb_serial": 3196,
+      "coord": [
+        -10.186,
+        16.464,
+        33.869
+      ],
+      "element": "C",
+      "graph_atom_index": 27
+    },
+    {
+      "sdf_zero_based": 28,
+      "pdb_serial": 3197,
+      "coord": [
+        -9.06,
+        16.83,
+        33.141
+      ],
+      "element": "C",
+      "graph_atom_index": 28
+    },
+    {
+      "sdf_zero_based": 29,
+      "pdb_serial": 3198,
+      "coord": [
+        -8.854,
+        16.253,
+        31.895
+      ],
+      "element": "C",
+      "graph_atom_index": 29
+    },
+    {
+      "sdf_zero_based": 30,
+      "pdb_serial": 3199,
+      "coord": [
+        -10.386,
+        17.027,
+        35.07
+      ],
+      "element": "O",
+      "graph_atom_index": 30
+    },
+    {
+      "sdf_zero_based": 31,
+      "pdb_serial": 3200,
+      "coord": [
+        -12.33,
+        15.289,
+        33.995
+      ],
+      "element": "O",
+      "graph_atom_index": 31
+    },
+    {
+      "sdf_zero_based": 32,
+      "pdb_serial": 3201,
+      "coord": [
+        -13.219,
+        14.146,
+        33.846
+      ],
+      "element": "C",
+      "graph_atom_index": 32
+    },
+    {
+      "sdf_zero_based": 33,
+      "pdb_serial": 3202,
+      "coord": [
+        -7.903,
+        15.578,
+        25.526
+      ],
+      "element": "C",
+      "graph_atom_index": 33
+    },
+    {
+      "sdf_zero_based": 34,
+      "pdb_serial": 3203,
+      "coord": [
+        -8.325,
+        16.126,
+        24.19
+      ],
+      "element": "C",
+      "graph_atom_index": 34
+    },
+    {
+      "sdf_zero_based": 35,
+      "pdb_serial": 3204,
+      "coord": [
+        -9.601,
+        15.845,
+        23.679
+      ],
+      "element": "C",
+      "graph_atom_index": 35
+    },
+    {
+      "sdf_zero_based": 36,
+      "pdb_serial": 3205,
+      "coord": [
+        -9.964,
+        16.357,
+        22.435
+      ],
+      "element": "C",
+      "graph_atom_index": 36
+    },
+    {
+      "sdf_zero_based": 37,
+      "pdb_serial": 3206,
+      "coord": [
+        -9.05,
+        17.141,
+        21.725
+      ],
+      "element": "C",
+      "graph_atom_index": 37
+    },
+    {
+      "sdf_zero_based": 38,
+      "pdb_serial": 3207,
+      "coord": [
+        -7.79,
+        17.408,
+        22.246
+      ],
+      "element": "C",
+      "graph_atom_index": 38
+    },
+    {
+      "sdf_zero_based": 39,
+      "pdb_serial": 3208,
+      "coord": [
+        -7.423,
+        16.897,
+        23.47
+      ],
+      "element": "C",
+      "graph_atom_index": 39
+    },
+    {
+      "sdf_zero_based": 40,
+      "pdb_serial": 3209,
+      "coord": [
+        -9.642,
+        17.479,
+        20.566
+      ],
+      "element": "O",
+      "graph_atom_index": 40
+    },
+    {
+      "sdf_zero_based": 41,
+      "pdb_serial": 3210,
+      "coord": [
+        -6.977,
+        18.284,
+        21.532
+      ],
+      "element": "O",
+      "graph_atom_index": 41
+    },
+    {
+      "sdf_zero_based": 42,
+      "pdb_serial": 3211,
+      "coord": [
+        -6.275,
+        19.323,
+        22.266
+      ],
+      "element": "C",
+      "graph_atom_index": 42
+    },
+    {
+      "sdf_zero_based": 43,
+      "pdb_serial": 3212,
+      "coord": [
+        -8.209,
+        17.761,
+        26.072
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 44,
+      "pdb_serial": 3213,
+      "coord": [
+        -11.105,
+        16.597,
+        29.715
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 45,
+      "pdb_serial": 3214,
+      "coord": [
+        -9.668,
+        18.345,
+        28.88
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 46,
+      "pdb_serial": 3215,
+      "coord": [
+        -11.975,
+        18.341,
+        29.517
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 47,
+      "pdb_serial": 3216,
+      "coord": [
+        -10.611,
+        17.875,
+        26.127
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 48,
+      "pdb_serial": 3217,
+      "coord": [
+        -9.858,
+        19.28,
+        26.706
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 49,
+      "pdb_serial": 3218,
+      "coord": [
+        -7.566,
+        17.39,
+        28.876
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 50,
+      "pdb_serial": 3219,
+      "coord": [
+        -7.866,
+        19.009,
+        28.327
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 51,
+      "pdb_serial": 3220,
+      "coord": [
+        -6.732,
+        19.781,
+        26.09
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 52,
+      "pdb_serial": 3221,
+      "coord": [
+        -4.587,
+        19.719,
+        24.826
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 53,
+      "pdb_serial": 3222,
+      "coord": [
+        -2.92,
+        17.939,
+        25.326
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 54,
+      "pdb_serial": 3223,
+      "coord": [
+        -3.406,
+        16.215,
+        27.035
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 55,
+      "pdb_serial": 3224,
+      "coord": [
+        -5.537,
+        16.256,
+        28.3
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 56,
+      "pdb_serial": 3225,
+      "coord": [
+        -11.317,
+        15.367,
+        26.889
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 57,
+      "pdb_serial": 3226,
+      "coord": [
+        -12.611,
+        16.457,
+        27.561
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 58,
+      "pdb_serial": 3227,
+      "coord": [
+        -13.815,
+        15.693,
+        29.71
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 59,
+      "pdb_serial": 3228,
+      "coord": [
+        -14.905,
+        13.705,
+        30.74
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 60,
+      "pdb_serial": 3229,
+      "coord": [
+        -14.217,
+        11.413,
+        30.062
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 61,
+      "pdb_serial": 3230,
+      "coord": [
+        -12.449,
+        11.112,
+        28.351
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 62,
+      "pdb_serial": 3231,
+      "coord": [
+        -11.353,
+        13.078,
+        27.305
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 63,
+      "pdb_serial": 3232,
+      "coord": [
+        -8.438,
+        14.48,
+        30.028
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 64,
+      "pdb_serial": 3233,
+      "coord": [
+        -10.234,
+        13.878,
+        29.97
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 65,
+      "pdb_serial": 3234,
+      "coord": [
+        -11.592,
+        14.224,
+        31.728
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 66,
+      "pdb_serial": 3235,
+      "coord": [
+        -8.352,
+        17.556,
+        33.541
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 67,
+      "pdb_serial": 3236,
+      "coord": [
+        -7.981,
+        16.534,
+        31.305
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 68,
+      "pdb_serial": 3237,
+      "coord": [
+        -9.663,
+        17.628,
+        35.265
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 69,
+      "pdb_serial": 3238,
+      "coord": [
+        -13.545,
+        14.074,
+        32.808
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 70,
+      "pdb_serial": 3239,
+      "coord": [
+        -12.688,
+        13.236,
+        34.126
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 71,
+      "pdb_serial": 3240,
+      "coord": [
+        -14.087,
+        14.275,
+        34.493
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 72,
+      "pdb_serial": 3241,
+      "coord": [
+        -8.102,
+        14.508,
+        25.461
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 73,
+      "pdb_serial": 3242,
+      "coord": [
+        -6.879,
+        15.927,
+        25.657
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 74,
+      "pdb_serial": 3243,
+      "coord": [
+        -10.3,
+        15.233,
+        24.249
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 75,
+      "pdb_serial": 3244,
+      "coord": [
+        -10.95,
+        16.148,
+        22.02
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 76,
+      "pdb_serial": 3245,
+      "coord": [
+        -6.43,
+        17.097,
+        23.872
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 77,
+      "pdb_serial": 3246,
+      "coord": [
+        -9.042,
+        18.021,
+        20.048
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 78,
+      "pdb_serial": 3247,
+      "coord": [
+        -6.999,
+        19.961,
+        22.773
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 79,
+      "pdb_serial": 3248,
+      "coord": [
+        -5.616,
+        18.864,
+        23.002
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    },
+    {
+      "sdf_zero_based": 80,
+      "pdb_serial": 3249,
+      "coord": [
+        -5.685,
+        19.921,
+        21.572
+      ],
+      "element": "H",
+      "graph_atom_index": null
+    }
+  ],
+  "interaction_sets": {
+    "LIG:Z:999": {
+      "counts": {
+        "hydrophobic_contacts": 10,
+        "hbonds_pdon": 7,
+        "hbonds_ldon": 3,
+        "pistacking": 0,
+        "pication_paro": 0,
+        "pication_laro": 0,
+        "saltbridge_lneg": 0,
+        "saltbridge_pneg": 2,
+        "halogen_bonds": 0,
+        "water_bridges": 0
+      },
+      "interactions": [
+        {
+          "class": "saltbridge",
+          "fields": {
+            "positive": [
+              [
+                "Atom: 7 (-8.61 17.48 26.97)"
+              ],
+              [
+                "Atom: 7 (-8.61 17.48 26.97)"
+              ],
+              [
+                1563
+              ],
+              "positive",
+              [
+                -8.609,
+                17.479,
+                26.967
+              ],
+              "tertamine"
+            ],
+            "negative": [
+              [
+                "Atom: 8 (-11.42 21.27 29.04)",
+                "Atom: 8 (-9.36 20.82 29.30)"
+              ],
+              [
+                198,
+                199
+              ],
+              "negative",
+              [
+                -10.3895,
+                21.048000000000002,
+                29.1685
+              ],
+              "ASP",
+              25,
+              "A"
+            ],
+            "distance": 4.555715476190324,
+            "protispos": false,
+            "resnr": 25,
+            "restype": "ASP",
+            "reschain": "A",
+            "resnr_l": 999,
+            "restype_l": "LIG",
+            "reschain_l": "Z"
+          }
+        },
+        {
+          "class": "saltbridge",
+          "fields": {
+            "positive": [
+              [
+                "Atom: 7 (-8.61 17.48 26.97)"
+              ],
+              [
+                "Atom: 7 (-8.61 17.48 26.97)"
+              ],
+              [
+                1563
+              ],
+              "positive",
+              [
+                -8.609,
+                17.479,
+                26.967
+              ],
+              "tertamine"
+            ],
+            "negative": [
+              [
+                "Atom: 8 (-12.73 20.46 26.59)",
+                "Atom: 8 (-13.22 18.44 26.16)"
+              ],
+              [
+                959,
+                960
+              ],
+              "negative",
+              [
+                -12.9765,
+                19.450499999999998,
+                26.375
+              ],
+              "ASP",
+              25,
+              "B"
+            ],
+            "distance": 4.828284633283335,
+            "protispos": false,
+            "resnr": 25,
+            "restype": "ASP",
+            "reschain": "B",
+            "resnr_l": 999,
+            "restype_l": "LIG",
+            "reschain_l": "Z"
+          }
+        },
+        {
+          "class": "hbond",
+          "fields": {
+            "a": "Atom: 8 (-8.20 14.06 27.75)",
+            "a_orig_idx": 1566,
+            "d": "Atom: 7 (-8.93 11.10 27.62)",
+            "d_orig_idx": 381,
+            "h": "Atom: 1 (-8.64 12.04 27.66)",
+            "distance_ah": 2.0677471738249054,
+            "distance_ad": 3.049988360633529,
+            "angle": 175.28400541727856,
+            "type": "strong",
+            "protisdon": true,
+            "resnr": 50,
+            "restype": "ILE",
+            "reschain": "A",
+            "resnr_l": 999,
+            "restype_l": "LIG",
+            "reschain_l": "Z",
+            "sidechain": false,
+            "atype": "O2",
+            "dtype": "Nam"
+          }
+        },
+        {
+          "class": "hbond",
+          "fields": {
+            "a": "Atom: 8 (-8.20 14.06 27.75)",
+            "a_orig_idx": 1566,
+            "d": "Atom: 7 (-5.26 13.26 28.03)",
+            "d_orig_idx": 1142,
+            "h": "Atom: 1 (-6.19 13.58 27.98)",
+            "distance_ah": 2.0740748291894042,
+            "distance_ad": 3.054056482778274,
+            "angle": 173.33267709655772,
+            "type": "strong",
+            "protisdon": true,
+            "resnr": 50,
+            "restype": "ILE",
+            "reschain": "B",
+            "resnr_l": 999,
+            "restype_l": "LIG",
+            "reschain_l": "Z",
+            "sidechain": false,
+            "atype": "O2",
+            "dtype": "Nam"
+          }
+        },
+        {
+          "class": "hbond",
+          "fields": {
+            "a": "Atom: 8 (-10.39 17.03 35.07)",
+            "a_orig_idx": 1593,
+            "d": "Atom: 7 (-11.92 18.73 36.85)",
+            "d_orig_idx": 224,
+            "h": "Atom: 1 (-11.65 18.21 36.06)",
+            "distance_ah": 1.9972537426075638,
+            "distance_ad": 2.9051282243646313,
+            "angle": 152.28792915934912,
+            "type": "strong",
+            "protisdon": true,
+            "resnr": 30,
+            "restype": "ASP",
+            "reschain": "A",
+            "resnr_l": 999,
+            "restype_l": "LIG",
+            "reschain_l": "Z",
+            "sidechain": false,
+            "atype": "O2",
+            "dtype": "Nam"
+          }
+        },
+        {
+          "class": "hbond",
+          "fields": {
+            "a": "Atom: 8 (-12.33 15.29 33.99)",
+            "a_orig_idx": 1594,
+            "d": "Atom: 7 (-13.56 18.30 34.64)",
+            "d_orig_idx": 216,
+            "h": "Atom: 1 (-13.40 17.39 34.29)",
+            "distance_ah": 2.379125216100995,
+            "distance_ad": 3.315480206546255,
+            "angle": 158.64708791501232,
+            "type": "strong",
+            "protisdon": true,
+            "resnr": 29,
+            "restype": "ASP",
+            "reschain": "A",
+            "resnr_l": 999,
+            "restype_l": "LIG",
+            "reschain_l": "Z",
+            "sidechain": false,
+            "atype": "O2",
+            "dtype": "Nam"
+          }
+        },
+        {
+          "class": "hbond",
+          "fields": {
+            "a": "Atom: 8 (-6.98 18.28 21.53)",
+            "a_orig_idx": 1604,
+            "d": "Atom: 7 (-9.11 20.87 20.99)",
+            "d_orig_idx": 977,
+            "h": "Atom: 1 (-8.40 20.27 21.32)",
+            "distance_ah": 2.451748856497691,
+            "distance_ad": 3.3930153256358864,
+            "angle": 159.85752565779873,
+            "type": "strong",
+            "protisdon": true,
+            "resnr": 29,
+            "restype": "ASP",
+            "reschain": "B",
+            "resnr_l": 999,
+            "restype_l": "LIG",
+            "reschain_l": "Z",
+            "sidechain": false,
+            "atype": "O2",
+            "dtype": "Nam"
+          }
+        },
+        {
+          "class": "hbond",
+          "fields": {
+            "a": "Atom: 8 (-9.64 17.48 20.57)",
+            "a_orig_idx": 1603,
+            "d": "Atom: 7 (-10.19 19.68 18.75)",
+            "d_orig_idx": 985,
+            "h": "Atom: 1 (-9.80 19.19 19.52)",
+            "distance_ah": 2.011959740637591,
+            "distance_ad": 2.898513239576455,
+            "angle": 148.67708085846658,
+            "type": "strong",
+            "protisdon": true,
+            "resnr": 30,
+            "restype": "ASP",
+            "reschain": "B",
+            "resnr_l": 999,
+            "restype_l": "LIG",
+            "reschain_l": "Z",
+            "sidechain": false,
+            "atype": "O2",
+            "dtype": "Nam"
+          }
+        },
+        {
+          "class": "hbond",
+          "fields": {
+            "a": "Atom: 8 (-9.64 17.48 20.57)",
+            "a_orig_idx": 1603,
+            "d": "Atom: 8 (-7.86 17.46 17.76)",
+            "d_orig_idx": 992,
+            "h": "Atom: 1 (-8.10 16.94 18.50)",
+            "distance_ah": 2.636301417470676,
+            "distance_ad": 3.328452192836784,
+            "angle": 131.14347882848634,
+            "type": "strong",
+            "protisdon": true,
+            "resnr": 30,
+            "restype": "ASP",
+            "reschain": "B",
+            "resnr_l": 999,
+            "restype_l": "LIG",
+            "reschain_l": "Z",
+            "sidechain": true,
+            "atype": "O2",
+            "dtype": "O3"
+          }
+        },
+        {
+          "class": "hbond",
+          "fields": {
+            "a": "Atom: 8 (-14.10 17.79 30.81)",
+            "a_orig_idx": 210,
+            "d": "Atom: 8 (-11.71 18.58 28.62)",
+            "d_orig_idx": 1570,
+            "h": "Atom: 1 (-11.97 18.34 29.52)",
+            "distance_ah": 2.5420662855244363,
+            "distance_ad": 3.3257716397852692,
+            "angle": 138.91572073079146,
+            "type": "strong",
+            "protisdon": false,
+            "resnr": 27,
+            "restype": "GLY",
+            "reschain": "A",
+            "resnr_l": 999,
+            "restype_l": "LIG",
+            "reschain_l": "Z",
+            "sidechain": false,
+            "atype": "O2",
+            "dtype": "O3"
+          }
+        },
+        {
+          "class": "hbond",
+          "fields": {
+            "a": "Atom: 8 (-9.68 20.08 36.02)",
+            "a_orig_idx": 227,
+            "d": "Atom: 8 (-10.39 17.03 35.07)",
+            "d_orig_idx": 1593,
+            "h": "Atom: 1 (-9.66 17.63 35.27)",
+            "distance_ah": 2.56334644556681,
+            "distance_ad": 3.271273452342374,
+            "angle": 130.67740485840105,
+            "type": "strong",
+            "protisdon": false,
+            "resnr": 30,
+            "restype": "ASP",
+            "reschain": "A",
+            "resnr_l": 999,
+            "restype_l": "LIG",
+            "reschain_l": "Z",
+            "sidechain": false,
+            "atype": "O2",
+            "dtype": "O2"
+          }
+        },
+        {
+          "class": "hbond",
+          "fields": {
+            "a": "Atom: 8 (-7.86 17.46 17.76)",
+            "a_orig_idx": 992,
+            "d": "Atom: 8 (-9.64 17.48 20.57)",
+            "d_orig_idx": 1603,
+            "h": "Atom: 1 (-9.04 18.02 20.05)",
+            "distance_ah": 2.639657174710382,
+            "distance_ad": 3.328452192836784,
+            "angle": 128.97654167785785,
+            "type": "strong",
+            "protisdon": false,
+            "resnr": 30,
+            "restype": "ASP",
+            "reschain": "B",
+            "resnr_l": 999,
+            "restype_l": "LIG",
+            "reschain_l": "Z",
+            "sidechain": true,
+            "atype": "O3",
+            "dtype": "O2"
+          }
+        },
+        {
+          "class": "hydroph_interaction",
+          "fields": {
+            "bsatom": "Atom: 6 (-11.07 19.77 32.66)",
+            "bsatom_orig_idx": 215,
+            "ligatom": "Atom: 6 (-9.06 16.83 33.14)",
+            "ligatom_orig_idx": 1591,
+            "distance": 3.592828690600207,
+            "restype": "ALA",
+            "resnr": 28,
+            "reschain": "A",
+            "restype_l": "LIG",
+            "resnr_l": 999,
+            "reschain_l": "Z"
+          }
+        },
+        {
+          "class": "hydroph_interaction",
+          "fields": {
+            "bsatom": "Atom: 6 (-10.54 12.39 23.39)",
+            "bsatom_orig_idx": 388,
+            "ligatom": "Atom: 6 (-9.60 15.85 23.68)",
+            "ligatom_orig_idx": 1598,
+            "distance": 3.595244637017069,
+            "restype": "ILE",
+            "resnr": 50,
+            "reschain": "A",
+            "restype_l": "LIG",
+            "resnr_l": 999,
+            "reschain_l": "Z"
+          }
+        },
+        {
+          "class": "hydroph_interaction",
+          "fields": {
+            "bsatom": "Atom: 6 (-11.63 19.45 22.90)",
+            "bsatom_orig_idx": 976,
+            "ligatom": "Atom: 6 (-9.96 16.36 22.43)",
+            "ligatom_orig_idx": 1599,
+            "distance": 3.5394139345377527,
+            "restype": "ALA",
+            "resnr": 28,
+            "reschain": "B",
+            "restype_l": "LIG",
+            "resnr_l": 999,
+            "reschain_l": "Z"
+          }
+        },
+        {
+          "class": "hydroph_interaction",
+          "fields": {
+            "bsatom": "Atom: 6 (-8.60 13.42 20.23)",
+            "bsatom_orig_idx": 1133,
+            "ligatom": "Atom: 6 (-9.96 16.36 22.43)",
+            "ligatom_orig_idx": 1599,
+            "distance": 3.922348786122926,
+            "restype": "ILE",
+            "resnr": 47,
+            "reschain": "B",
+            "restype_l": "LIG",
+            "resnr_l": 999,
+            "reschain_l": "Z"
+          }
+        },
+        {
+          "class": "hydroph_interaction",
+          "fields": {
+            "bsatom": "Atom: 6 (-5.35 15.44 31.94)",
+            "bsatom_orig_idx": 1149,
+            "ligatom": "Atom: 6 (-8.85 16.25 31.89)",
+            "ligatom_orig_idx": 1592,
+            "distance": 3.5954980183557317,
+            "restype": "ILE",
+            "resnr": 50,
+            "reschain": "B",
+            "restype_l": "LIG",
+            "resnr_l": 999,
+            "reschain_l": "Z"
+          }
+        },
+        {
+          "class": "hydroph_interaction",
+          "fields": {
+            "bsatom": "Atom: 6 (-17.41 11.62 28.61)",
+            "bsatom_orig_idx": 1389,
+            "ligatom": "Atom: 6 (-13.74 12.28 29.61)",
+            "ligatom_orig_idx": 1583,
+            "distance": 3.857009722570065,
+            "restype": "VAL",
+            "resnr": 82,
+            "reschain": "B",
+            "restype_l": "LIG",
+            "resnr_l": 999,
+            "reschain_l": "Z"
+          }
+        },
+        {
+          "class": "hydroph_interaction",
+          "fields": {
+            "bsatom": "Atom: 6 (-13.56 14.58 24.45)",
+            "bsatom_orig_idx": 1405,
+            "ligatom": "Atom: 6 (-11.84 15.72 27.78)",
+            "ligatom_orig_idx": 1579,
+            "distance": 3.919418451760413,
+            "restype": "ILE",
+            "resnr": 84,
+            "reschain": "B",
+            "restype_l": "LIG",
+            "resnr_l": 999,
+            "reschain_l": "Z"
+          }
+        },
+        {
+          "class": "hydroph_interaction",
+          "fields": {
+            "bsatom": "Atom: 6 (-0.98 16.37 27.82)",
+            "bsatom_orig_idx": 620,
+            "ligatom": "Atom: 6 (-4.14 17.00 26.83)",
+            "ligatom_orig_idx": 1577,
+            "distance": 3.367931264144208,
+            "restype": "PRO",
+            "resnr": 81,
+            "reschain": "A",
+            "restype_l": "LIG",
+            "resnr_l": 999,
+            "reschain_l": "Z"
+          }
+        },
+        {
+          "class": "hydroph_interaction",
+          "fields": {
+            "bsatom": "Atom: 6 (-3.04 20.16 28.50)",
+            "bsatom_orig_idx": 628,
+            "ligatom": "Atom: 6 (-3.87 17.96 25.87)",
+            "ligatom_orig_idx": 1576,
+            "distance": 3.5303232146646297,
+            "restype": "VAL",
+            "resnr": 82,
+            "reschain": "A",
+            "restype_l": "LIG",
+            "resnr_l": 999,
+            "reschain_l": "Z"
+          }
+        },
+        {
+          "class": "hydroph_interaction",
+          "fields": {
+            "bsatom": "Atom: 6 (-13.64 8.89 27.83)",
+            "bsatom_orig_idx": 1381,
+            "ligatom": "Atom: 6 (-12.75 12.12 28.65)",
+            "ligatom_orig_idx": 1584,
+            "distance": 3.4493589259455155,
+            "restype": "PRO",
+            "resnr": 81,
+            "reschain": "B",
+            "restype_l": "LIG",
+            "resnr_l": 999,
+            "reschain_l": "Z"
+          }
+        }
+      ]
+    }
+  }
+}

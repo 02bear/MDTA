@@ -1,0 +1,505 @@
+{
+  "total_records": 3403,
+  "requested": 3403,
+  "written": 3272,
+  "already_present": 9,
+  "failures": [
+    {
+      "pdb_id": "1a94",
+      "error": "ValueError('label/SDF atom count mismatch 60 != 61')"
+    },
+    {
+      "pdb_id": "1a9m",
+      "error": "ValueError('label/SDF atom count mismatch 42 != 43')"
+    },
+    {
+      "pdb_id": "1bai",
+      "error": "ValueError('label/SDF atom count mismatch 60 != 61')"
+    },
+    {
+      "pdb_id": "1g2l",
+      "error": "ValueError('label/SDF atom count mismatch 39 != 40')"
+    },
+    {
+      "pdb_id": "1gnm",
+      "error": "ValueError('label/SDF atom count mismatch 42 != 43')"
+    },
+    {
+      "pdb_id": "1gnn",
+      "error": "ValueError('label/SDF atom count mismatch 42 != 43')"
+    },
+    {
+      "pdb_id": "1gno",
+      "error": "ValueError('label/SDF atom count mismatch 42 != 43')"
+    },
+    {
+      "pdb_id": "1jvu",
+      "error": "ValueError('label/SDF atom count mismatch 21 != 22')"
+    },
+    {
+      "pdb_id": "1laf",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "1m48",
+      "error": "ValueError('label/SDF atom count mismatch 33 != 34')"
+    },
+    {
+      "pdb_id": "1rnm",
+      "error": "ValueError('label/SDF atom count mismatch 21 != 22')"
+    },
+    {
+      "pdb_id": "1rpf",
+      "error": "ValueError('label/SDF atom count mismatch 21 != 22')"
+    },
+    {
+      "pdb_id": "1sqa",
+      "error": "ValueError('label/SDF atom count mismatch 31 != 32')"
+    },
+    {
+      "pdb_id": "1sqo",
+      "error": "ValueError('label/SDF atom count mismatch 20 != 21')"
+    },
+    {
+      "pdb_id": "1t4v",
+      "error": "ValueError('label/SDF atom count mismatch 27 != 28')"
+    },
+    {
+      "pdb_id": "1wn6",
+      "error": "ValueError('label/SDF atom count mismatch 31 != 32')"
+    },
+    {
+      "pdb_id": "2aoc",
+      "error": "ValueError('label/SDF atom count mismatch 55 != 56')"
+    },
+    {
+      "pdb_id": "2aod",
+      "error": "ValueError('label/SDF atom count mismatch 55 != 56')"
+    },
+    {
+      "pdb_id": "2aoe",
+      "error": "ValueError('label/SDF atom count mismatch 59 != 60')"
+    },
+    {
+      "pdb_id": "2aog",
+      "error": "ValueError('label/SDF atom count mismatch 54 != 55')"
+    },
+    {
+      "pdb_id": "2avm",
+      "error": "ValueError('label/SDF atom count mismatch 54 != 55')"
+    },
+    {
+      "pdb_id": "2avq",
+      "error": "ValueError('label/SDF atom count mismatch 54 != 55')"
+    },
+    {
+      "pdb_id": "2d1n",
+      "error": "ValueError('label/SDF atom count mismatch 33 != 34')"
+    },
+    {
+      "pdb_id": "2d1o",
+      "error": "ValueError('label/SDF atom count mismatch 33 != 34')"
+    },
+    {
+      "pdb_id": "2hnc",
+      "error": "ValueError('label/SDF atom count mismatch 10 != 11')"
+    },
+    {
+      "pdb_id": "2izl",
+      "error": "ValueError('label/SDF atom count mismatch 16 != 17')"
+    },
+    {
+      "pdb_id": "2q2a",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "2q8z",
+      "error": "ValueError('label/SDF atom count mismatch 22 != 23')"
+    },
+    {
+      "pdb_id": "2r2m",
+      "error": "ValueError('label/SDF atom count mismatch 30 != 31')"
+    },
+    {
+      "pdb_id": "2y7i",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "2ya7",
+      "error": "ValueError('label/SDF atom count mismatch 23 != 24')"
+    },
+    {
+      "pdb_id": "3a6t",
+      "error": "ValueError('label/SDF atom count mismatch 24 != 25')"
+    },
+    {
+      "pdb_id": "3aas",
+      "error": "ValueError('label/SDF atom count mismatch 18 != 19')"
+    },
+    {
+      "pdb_id": "3aau",
+      "error": "ValueError('label/SDF atom count mismatch 28 != 30')"
+    },
+    {
+      "pdb_id": "3bva",
+      "error": "ValueError('label/SDF atom count mismatch 54 != 55')"
+    },
+    {
+      "pdb_id": "3djv",
+      "error": "ValueError('label/SDF atom count mismatch 21 != 22')"
+    },
+    {
+      "pdb_id": "3elc",
+      "error": "ValueError('label/SDF atom count mismatch 18 != 19')"
+    },
+    {
+      "pdb_id": "3gsm",
+      "error": "ValueError('label/SDF atom count mismatch 18 != 19')"
+    },
+    {
+      "pdb_id": "3h89",
+      "error": "ValueError('label/SDF atom count mismatch 71 != 72')"
+    },
+    {
+      "pdb_id": "3h8b",
+      "error": "ValueError('label/SDF atom count mismatch 70 != 71')"
+    },
+    {
+      "pdb_id": "3hig",
+      "error": "ValueError('label/SDF atom count mismatch 21 != 23')"
+    },
+    {
+      "pdb_id": "3k37",
+      "error": "ValueError('label/SDF atom count mismatch 23 != 24')"
+    },
+    {
+      "pdb_id": "3kmx",
+      "error": "ValueError('label/SDF atom count mismatch 17 != 18')"
+    },
+    {
+      "pdb_id": "3l59",
+      "error": "ValueError('label/SDF atom count mismatch 17 != 18')"
+    },
+    {
+      "pdb_id": "3lp7",
+      "error": "ValueError('label/SDF atom count mismatch 13 != 14')"
+    },
+    {
+      "pdb_id": "3p8p",
+      "error": "ValueError('label/SDF atom count mismatch 15 != 16')"
+    },
+    {
+      "pdb_id": "3x00",
+      "error": "ValueError('label/SDF atom count mismatch 23 != 24')"
+    },
+    {
+      "pdb_id": "4arw",
+      "error": "ValueError('label/SDF atom count mismatch 24 != 25')"
+    },
+    {
+      "pdb_id": "4asj",
+      "error": "ValueError('label/SDF atom count mismatch 27 != 28')"
+    },
+    {
+      "pdb_id": "4cpz",
+      "error": "ValueError('label/SDF atom count mismatch 23 != 24')"
+    },
+    {
+      "pdb_id": "4dju",
+      "error": "ValueError('label/SDF atom count mismatch 20 != 21')"
+    },
+    {
+      "pdb_id": "4djv",
+      "error": "ValueError('label/SDF atom count mismatch 28 != 29')"
+    },
+    {
+      "pdb_id": "4djw",
+      "error": "ValueError('label/SDF atom count mismatch 26 != 27')"
+    },
+    {
+      "pdb_id": "4djx",
+      "error": "ValueError('label/SDF atom count mismatch 24 != 25')"
+    },
+    {
+      "pdb_id": "4djy",
+      "error": "ValueError('label/SDF atom count mismatch 26 != 27')"
+    },
+    {
+      "pdb_id": "4dkq",
+      "error": "ValueError('label/SDF atom count mismatch 27 != 28')"
+    },
+    {
+      "pdb_id": "4dkr",
+      "error": "ValueError('label/SDF atom count mismatch 27 != 28')"
+    },
+    {
+      "pdb_id": "4ew2",
+      "error": "ValueError('label/SDF atom count mismatch 33 != 35')"
+    },
+    {
+      "pdb_id": "4ew3",
+      "error": "ValueError('label/SDF atom count mismatch 33 != 35')"
+    },
+    {
+      "pdb_id": "4fs4",
+      "error": "ValueError('label/SDF atom count mismatch 24 != 25')"
+    },
+    {
+      "pdb_id": "4fsl",
+      "error": "ValueError('label/SDF atom count mismatch 33 != 34')"
+    },
+    {
+      "pdb_id": "4h3f",
+      "error": "ValueError('label/SDF atom count mismatch 33 != 34')"
+    },
+    {
+      "pdb_id": "4h3g",
+      "error": "ValueError('label/SDF atom count mismatch 33 != 34')"
+    },
+    {
+      "pdb_id": "4h3j",
+      "error": "ValueError('label/SDF atom count mismatch 32 != 33')"
+    },
+    {
+      "pdb_id": "4ha5",
+      "error": "ValueError('label/SDF atom count mismatch 23 != 24')"
+    },
+    {
+      "pdb_id": "4i54",
+      "error": "ValueError('label/SDF atom count mismatch 28 != 29')"
+    },
+    {
+      "pdb_id": "4jn2",
+      "error": "ValueError('label/SDF atom count mismatch 35 != 36')"
+    },
+    {
+      "pdb_id": "4k5p",
+      "error": "ValueError('label/SDF atom count mismatch 15 != 16')"
+    },
+    {
+      "pdb_id": "4n5d",
+      "error": "ValueError('label/SDF atom count mismatch 14 != 15')"
+    },
+    {
+      "pdb_id": "4n6g",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "4pow",
+      "error": "ValueError('label/SDF atom count mismatch 20 != 21')"
+    },
+    {
+      "pdb_id": "4pox",
+      "error": "ValueError('label/SDF atom count mismatch 21 != 22')"
+    },
+    {
+      "pdb_id": "4pp0",
+      "error": "ValueError('label/SDF atom count mismatch 20 != 21')"
+    },
+    {
+      "pdb_id": "4q3t",
+      "error": "ValueError('label/SDF atom count mismatch 13 != 14')"
+    },
+    {
+      "pdb_id": "4q3u",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "4s1g",
+      "error": "ValueError('label/SDF atom count mismatch 31 != 32')"
+    },
+    {
+      "pdb_id": "4wop",
+      "error": "ValueError('label/SDF atom count mismatch 29 != 30')"
+    },
+    {
+      "pdb_id": "4yhm",
+      "error": "ValueError('label/SDF atom count mismatch 35 != 36')"
+    },
+    {
+      "pdb_id": "4yho",
+      "error": "ValueError('label/SDF atom count mismatch 35 != 36')"
+    },
+    {
+      "pdb_id": "4ymx",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "4zcs",
+      "error": "ValueError('label/SDF atom count mismatch 31 != 32')"
+    },
+    {
+      "pdb_id": "4zl4",
+      "error": "ValueError('label/SDF atom count mismatch 48 != 49')"
+    },
+    {
+      "pdb_id": "4zv1",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "4zw8",
+      "error": "ValueError('label/SDF atom count mismatch 29 != 30')"
+    },
+    {
+      "pdb_id": "5cso",
+      "error": "ValueError('label/SDF atom count mismatch 17 != 18')"
+    },
+    {
+      "pdb_id": "5cst",
+      "error": "ValueError('label/SDF atom count mismatch 25 != 26')"
+    },
+    {
+      "pdb_id": "5e13",
+      "error": "ValueError('label/SDF atom count mismatch 32 != 33')"
+    },
+    {
+      "pdb_id": "5fog",
+      "error": "ValueError('label/SDF atom count mismatch 26 != 27')"
+    },
+    {
+      "pdb_id": "5gs9",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "5hbn",
+      "error": "ValueError('label/SDF atom count mismatch 16 != 17')"
+    },
+    {
+      "pdb_id": "5i3w",
+      "error": "ValueError('label/SDF atom count mismatch 35 != 36')"
+    },
+    {
+      "pdb_id": "5ijr",
+      "error": "ValueError('label/SDF atom count mismatch 13 != 14')"
+    },
+    {
+      "pdb_id": "5ito",
+      "error": "ValueError('label/SDF atom count mismatch 17 != 18')"
+    },
+    {
+      "pdb_id": "5itp",
+      "error": "ValueError('label/SDF atom count mismatch 17 != 18')"
+    },
+    {
+      "pdb_id": "5iyy",
+      "error": "ValueError('label/SDF atom count mismatch 22 != 23')"
+    },
+    {
+      "pdb_id": "5j1x",
+      "error": "ValueError('label/SDF atom count mismatch 19 != 20')"
+    },
+    {
+      "pdb_id": "5jgi",
+      "error": "ValueError('label/SDF atom count mismatch 15 != 16')"
+    },
+    {
+      "pdb_id": "5jgq",
+      "error": "ValueError('label/SDF atom count mismatch 20 != 21')"
+    },
+    {
+      "pdb_id": "5jhk",
+      "error": "ValueError('label/SDF atom count mismatch 24 != 25')"
+    },
+    {
+      "pdb_id": "5m23",
+      "error": "ValueError('label/SDF atom count mismatch 53 != 54')"
+    },
+    {
+      "pdb_id": "5m25",
+      "error": "ValueError('label/SDF atom count mismatch 45 != 46')"
+    },
+    {
+      "pdb_id": "5ot8",
+      "error": "ValueError('label/SDF atom count mismatch 17 != 18')"
+    },
+    {
+      "pdb_id": "6det",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "6e23",
+      "error": "ValueError('label/SDF atom count mismatch 34 != 35')"
+    },
+    {
+      "pdb_id": "6ej2",
+      "error": "ValueError('label/SDF atom count mismatch 28 != 29')"
+    },
+    {
+      "pdb_id": "6ej3",
+      "error": "ValueError('label/SDF atom count mismatch 28 != 29')"
+    },
+    {
+      "pdb_id": "6fh3",
+      "error": "ValueError('label/SDF atom count mismatch 16 != 17')"
+    },
+    {
+      "pdb_id": "6fmc",
+      "error": "ValueError('label/SDF atom count mismatch 40 != 41')"
+    },
+    {
+      "pdb_id": "6g3v",
+      "error": "ValueError('label/SDF atom count mismatch 20 != 22')"
+    },
+    {
+      "pdb_id": "6h8s",
+      "error": "ValueError('label/SDF atom count mismatch 20 != 21')"
+    },
+    {
+      "pdb_id": "6mj7",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "6mku",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "6ml9",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "6mla",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "6mle",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "6mlj",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "6mln",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "6mlo",
+      "error": "ValueError('label/SDF atom count mismatch 12 != 13')"
+    },
+    {
+      "pdb_id": "6ncn",
+      "error": "ValueError('label/SDF atom count mismatch 14 != 15')"
+    },
+    {
+      "pdb_id": "6nco",
+      "error": "ValueError('label/SDF atom count mismatch 24 != 25')"
+    },
+    {
+      "pdb_id": "6o5a",
+      "error": "ValueError('label/SDF atom count mismatch 54 != 55')"
+    },
+    {
+      "pdb_id": "6r4k",
+      "error": "ValueError('label/SDF atom count mismatch 28 != 29')"
+    }
+  ],
+  "success": 3281,
+  "failure_count": 122,
+  "feature_totals": {
+    "aromatic_atoms": 30696,
+    "charged_atoms": 1257,
+    "donor_atoms": 10912,
+    "acceptor_atoms": 17650,
+    "ring_atoms": 44305
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "warm_start_rank16_pcim_rnc_lowcost_tune_20260917",
+  "gpu": 1,
+  "source_output": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/warm_start/random_pair_811_seed42/rank16_pcim_pair_rnc_20260917",
+  "output": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/warm_start/random_pair_811_seed42/rank16_pcim_rnc_lowcost_tune_20260917",
+  "selection_metric": "validation_mse",
+  "test_policy": "test labels are inaccessible until selection_locked.json is persisted",
+  "fixed_backbone": {
+    "checkpoint_epoch": 88,
+    "checkpoint_sha256": "39dd6ea62781527a6a828fed183eac9bd3e30ffe406c67b5b1901cd705972329"
+  },
+  "screening": {
+    "max_epochs": 20,
+    "patience": 5,
+    "min_delta": 0.00001,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "lr": 0.0003,
+    "weight_decay": 0.00001,
+    "grad_clip": 1.0,
+    "screen_lambdas": [0.0, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0]
+  },
+  "pcim_search": {
+    "variant": "bidirectional",
+    "top_k": [32, 64, 128],
+    "coverage_budget": [16, 32, 64],
+    "width": [16, 32, 64],
+    "max_delta": 0.5,
+    "cross_max_scale": 0.25,
+    "residual_l2": 0.001
+  },
+  "rnc_search": {
+    "weights": [0.0, 0.003, 0.005, 0.01, 0.02, 0.03],
+    "temperatures": [1.0, 2.0, 4.0],
+    "projection_dim": 16,
+    "batch_size": 32,
+    "microbatch_size": 16,
+    "interval": 2,
+    "high_count": 8,
+    "mid_count": 8,
+    "high_threshold": 7.0,
+    "mid_threshold": 5.0,
+    "warmup_epochs": 1.0
+  },
+  "calibration": {
+    "lambda": [0.0, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0, 2.5],
+    "gamma": [1.0, 2.0, 4.0],
+    "k_drug": [2, 4, 8, 16],
+    "min_drug_similarity": [0.1, 0.2, 0.3],
+    "tau": [0.01, 0.02, 0.05, 0.1],
+    "beta": [0.25, 0.5, 1.0],
+    "clip": [0.5, 1.0, 1.5, 2.0, 3.0],
+    "scale": [0.0, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0],
+    "coarse_keep": 12
+  },
+  "confirmation_seeds": [42, 2026, 3407],
+  "current_validation_mse": 0.19673564572461652,
+  "minimum_meaningful_gain": 0.002
+}

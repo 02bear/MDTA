@@ -1,0 +1,65 @@
+{
+  "record_count": 15286,
+  "duplicate_record_ids": [],
+  "valid_length_count": 15286,
+  "invalid_lengths": [],
+  "invalid_label_characters": [],
+  "zero_positive_count": 8,
+  "zero_positive_examples": [
+    "1np0",
+    "2r1w",
+    "5swg",
+    "5ujo",
+    "4elb",
+    "6qmu",
+    "5uv5",
+    "3zs1"
+  ],
+  "positive_count_stats": {
+    "min": 0,
+    "median": 8,
+    "mean": 9.638819835143268,
+    "max": 162
+  },
+  "positive_rate_stats": {
+    "min": 0.0,
+    "median": 0.022900763358778626,
+    "mean": 0.027786554547834377,
+    "max": 0.25688073394495414
+  },
+  "unique_sequence_count": 10141,
+  "duplicate_sequence_group_count": 1694,
+  "protein_graph_count": 13747,
+  "ligand_graph_count": 16268,
+  "both_graphs_and_labels_count": 11656,
+  "refined_set_count": 5316,
+  "refined_with_labels_count": 4681,
+  "refined_with_labels_and_graphs_count": 3647,
+  "splits": {
+    "train": {
+      "raw_count": 9829,
+      "unique_count": 9829,
+      "with_labels": 9829,
+      "with_both_graphs": 8193
+    },
+    "val": {
+      "raw_count": 1403,
+      "unique_count": 1403,
+      "with_labels": 1403,
+      "with_both_graphs": 1138
+    },
+    "test": {
+      "raw_count": 2797,
+      "unique_count": 2797,
+      "with_labels": 2797,
+      "with_both_graphs": 2307
+    }
+  },
+  "split_union_count": 14029,
+  "split_union_with_labels_count": 14029,
+  "split_overlaps": {
+    "train_val": [],
+    "train_test": [],
+    "val_test": []
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "pid": 3230243,
+  "gpu": 1,
+  "seed": 42,
+  "working_directory": "/data1/ztx/MyModel-MDTA/experiments/warm_start_811/kiba_fixed_dsrc_20260927",
+  "process_cwd": "/data1/ztx/MyModel-MDTA",
+  "results": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/kiba/warm_start/random_pair_811_seed42/p13d_pcim_rnc_dsrc_20260927/seed_42",
+  "launched": 1790443150.7950284
+}

@@ -1,0 +1,13 @@
+{
+  "base_step_loss": 138.85977172851562,
+  "base_step_seconds": 0.5402994155883789,
+  "base_peak_mib": 5079.91357421875,
+  "passed": true,
+  "full_feature_cache": true,
+  "sparse_missing_pairs_remain_nan": true,
+  "miniature_end_to_end": true,
+  "label_poisoning_invariance": true,
+  "smoke_root": "/data1/ztx/MyModel-MDTA/experiments/warm_start_811/kiba_fixed_dsrc_20260927/smoke_output",
+  "not_scientific_results": true,
+  "finished": 1790443019.2030268
+}

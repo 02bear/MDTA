@@ -1,0 +1,32 @@
+/data1/ztx/MyModel-MDTA/experiments/klifs85_interaction/build_similarity_and_audit.py:29: ConstantInputWarning: An input array is constant; the correlation coefficient is not defined.
+  spear = float(spearmanr(y_true, y_pred).statistic) if np.std(y_pred) > 0 else 0.0
+{
+  "guardrail": "test indices and test metrics were not accessed",
+  "n_train": 20774,
+  "n_validation": 3094,
+  "n_audit_edges": 498576,
+  "n_proteins_with_klifs": 423,
+  "protein_coverage_mean": 0.9535268545150757,
+  "train_similarity_vs_abs_affinity_difference_spearman": 0.030530488870411217,
+  "high_similarity_cliff_rate": 0.019109896544993166,
+  "validation": {
+    "global_mean": {
+      "mse": 0.7600213047138674,
+      "rmse": 0.87179200771392,
+      "pearson": -1.2440890810675882e-15,
+      "spearman": NaN
+    },
+    "drug_only_kernel": {
+      "mse": 0.5847338281124265,
+      "rmse": 0.7646789052356724,
+      "pearson": 0.48561370523214525,
+      "spearman": 0.4330074666685384
+    },
+    "joint_kernel": {
+      "mse": 0.4857967761777249,
+      "rmse": 0.6969912310622888,
+      "pearson": 0.6137125857290533,
+      "spearman": 0.503273102129543
+    }
+  }
+}

@@ -1,0 +1,149 @@
+/data1/ztx/.conda/envs/dtbind/lib/python3.9/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+proteins=25/442
+proteins=50/442
+proteins=75/442
+proteins=100/442
+proteins=125/442
+proteins=150/442
+proteins=175/442
+proteins=200/442
+proteins=225/442
+proteins=250/442
+proteins=275/442
+proteins=300/442
+proteins=325/442
+proteins=350/442
+proteins=375/442
+proteins=400/442
+proteins=425/442
+{
+  "rows": 30056,
+  "unique_drugs": 68,
+  "unique_proteins": 442,
+  "checkpoint": "experiments/pdbbind_to_davis_transfer/outputs/source_rich_base_selected_fold1_clean/source_base_selected_best.pt",
+  "topk": 64,
+  "temperature": 0.5,
+  "pocket_cache": "data/processed/davis/multiscale/protein_pockets_p2rank_top3_v2.pt",
+  "max_pockets": 3,
+  "candidate_residue_count": {
+    "min": 8,
+    "mean": 53.7420814479638,
+    "max": 96
+  },
+  "conditions": {
+    "pretrained": {
+      "shape": [
+        30056,
+        128
+      ],
+      "finite": 3847168,
+      "feature_std_mean": 1.763733148574829,
+      "sample_norm_std": 12.170493125915527,
+      "mean_pairmap_logit_std": 3.8000526485891775,
+      "mean_top_logit_std": 1.256397925883468
+    },
+    "random": {
+      "shape": [
+        30056,
+        128
+      ],
+      "finite": 3847168,
+      "feature_std_mean": 0.4145032465457916,
+      "sample_norm_std": 1.4677479267120361,
+      "mean_pairmap_logit_std": 0.9253250329929017,
+      "mean_top_logit_std": 0.3317828163418335
+    },
+    "atom_shuffle": {
+      "shape": [
+        30056,
+        128
+      ],
+      "finite": 3847168,
+      "feature_std_mean": 1.8289189338684082,
+      "sample_norm_std": 12.192562103271484,
+      "mean_pairmap_logit_std": 3.800318429230184,
+      "mean_top_logit_std": 1.2354754240732737
+    },
+    "mismatch": {
+      "shape": [
+        30056,
+        128
+      ],
+      "finite": 3847168,
+      "feature_std_mean": 1.763733148574829,
+      "sample_norm_std": 12.170493125915527
+    }
+  },
+  "mismatch_mapping": {
+    "11314340": "24889392",
+    "24889392": "11409972",
+    "11409972": "11338033",
+    "11338033": "10184653",
+    "10184653": "5287969",
+    "5287969": "6450551",
+    "6450551": "11364421",
+    "11364421": "9926054",
+    "9926054": "16007391",
+    "16007391": "5328940",
+    "5328940": "11234052",
+    "11234052": "11656518",
+    "11656518": "6918454",
+    "6918454": "156414",
+    "156414": "9933475",
+    "9933475": "11626560",
+    "11626560": "3062316",
+    "3062316": "156422",
+    "156422": "44150621",
+    "44150621": "176167",
+    "176167": "176870",
+    "176870": "42642645",
+    "42642645": "11717001",
+    "11717001": "16725726",
+    "16725726": "11617559",
+    "11617559": "123631",
+    "123631": "5291",
+    "5291": "4908365",
+    "4908365": "11427553",
+    "11427553": "208908",
+    "208908": "126565",
+    "126565": "11485656",
+    "11485656": "9929127",
+    "9929127": "11712649",
+    "11712649": "10074640",
+    "10074640": "51004351",
+    "51004351": "11667893",
+    "11667893": "9915743",
+    "9915743": "644241",
+    "644241": "447077",
+    "447077": "10461815",
+    "10461815": "9884685",
+    "9884685": "24180719",
+    "24180719": "25243800",
+    "25243800": "10113978",
+    "10113978": "17755052",
+    "17755052": "11984591",
+    "11984591": "153999",
+    "153999": "25127112",
+    "25127112": "176155",
+    "176155": "24779724",
+    "24779724": "3025986",
+    "3025986": "10138260",
+    "10138260": "10127622",
+    "10127622": "216239",
+    "216239": "44259",
+    "44259": "5329102",
+    "5329102": "16038120",
+    "16038120": "10427712",
+    "10427712": "16722836",
+    "16722836": "3038522",
+    "3038522": "9926791",
+    "9926791": "5494449",
+    "5494449": "3038525",
+    "3038525": "3081361",
+    "3081361": "9809715",
+    "9809715": "151194",
+    "151194": "11314340"
+  },
+  "pretrained_vs_shuffle_mean_l2": 24.587440490722656
+}

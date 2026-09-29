@@ -1,0 +1,2133 @@
+Retrieving notices: - \ | / - \ | done
+Collecting package metadata (current_repodata.json): - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - \ | / - done
+Solving environment: | / - \ | done
+
+## Package Plan ##
+
+  environment location: /data1/ztx/.conda/envs/plip-mdta
+
+  added / updated specs:
+    - openbabel
+    - pip
+    - python=3.10
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    _openmp_mutex-4.5          |           20_gnu          28 KB  conda-forge
+    bzip2-1.0.8                |      hda65f42_10         252 KB  conda-forge
+    ca-certificates-2026.7.22  |       hbd8a1cb_0         129 KB  conda-forge
+    cairo-1.18.4               |       h3c89d7e_2         967 KB  conda-forge
+    fontconfig-2.18.3          |       h4db4eae_1         289 KB  conda-forge
+    fonts-conda-ecosystem-1    |                0           4 KB  conda-forge
+    fonts-conda-forge-1        |       hc364b38_1           4 KB  conda-forge
+    icu-78.3                   |  py310h44b86e0_2        13.8 MB  conda-forge
+    ld_impl_linux-64-2.46.1    |default_hbd61a6d_102         728 KB  conda-forge
+    libexpat-2.8.1             |       hecca717_1          76 KB  conda-forge
+    libffi-3.7.0               |       h81df57d_1          66 KB  conda-forge
+    libfreetype-2.14.3         |       ha770c72_2           8 KB  conda-forge
+    libfreetype6-2.14.3        |       h5e6c136_2         379 KB  conda-forge
+    libgcc-16.2.0              |       ha9f2e26_4         1.0 MB  conda-forge
+    libglib-2.88.3             |       he503a2a_2         4.5 MB  conda-forge
+    libgomp-16.2.0             |       he0feb66_4         625 KB  conda-forge
+    libiconv-1.18              |       h0cb94f2_3         771 KB  conda-forge
+    liblzma-5.8.3              |       hb03c661_1         110 KB  conda-forge
+    libnsl-2.0.1               |       hb9d3cd8_1          33 KB  conda-forge
+    libpng-1.6.58              |       h922cc85_1         309 KB  conda-forge
+    libsqlite-3.53.4           |       h13e7031_1         952 KB  conda-forge
+    libstdcxx-16.2.0           |       h934c35e_4         6.3 MB  conda-forge
+    libuuid-2.42.2             |       h5347b49_0          39 KB  conda-forge
+    libxcb-1.17.0              |       hb83e432_2         386 KB  conda-forge
+    libxcrypt-4.4.38           |       h280c20c_0         100 KB  conda-forge
+    libxml2-2.15.3             |       h49c6c72_1          45 KB  conda-forge
+    libxml2-16-2.15.3          |       hca6bf5a_1         547 KB  conda-forge
+    libzlib-1.3.2              |       h25fd6f3_3          62 KB  conda-forge
+    ncurses-6.6                |       hdb14827_1         890 KB  conda-forge
+    openbabel-3.2.1            |  py310h2850659_1         5.4 MB  conda-forge
+    openssl-3.6.4              |       h781a0a9_0         3.1 MB  conda-forge
+    packaging-26.3             |     pyhc364b38_0         114 KB  conda-forge
+    pcre2-10.47                |       h8b3dc9c_1         1.2 MB  conda-forge
+    pip-26.2.1                 |     pyh8b19718_0         1.1 MB  conda-forge
+    pixman-0.46.4              |       h54a6638_3         368 KB  conda-forge
+    pthread-stubs-0.4          |    hb03c661_1003           9 KB  conda-forge
+    python-3.10.21             |h267e890_0_cpython        24.2 MB  conda-forge
+    python_abi-3.10            |          6_cp310           7 KB  conda-forge
+    readline-8.3               |       hd6e31c0_1         341 KB  conda-forge
+    setuptools-84.0.0          |     pyh332efcf_0         512 KB  conda-forge
+    tk-8.6.13                  | noxft_h1df4ec4_4         3.4 MB  conda-forge
+    tzdata-2026c               |       h151e31d_0         116 KB  conda-forge
+    wheel-0.48.0               |     pyhd8ed1ab_0          34 KB  conda-forge
+    xorg-libice-1.1.2          |       h280c20c_0          61 KB  conda-forge
+    xorg-libsm-1.2.6           |       h0d788c3_1          30 KB  conda-forge
+    xorg-libx11-1.8.13         |       he1eb515_1         820 KB  conda-forge
+    xorg-libxau-1.0.12         |       hb03c661_2          16 KB  conda-forge
+    xorg-libxdmcp-1.1.5        |       hb03c661_2          21 KB  conda-forge
+    xorg-libxext-1.3.7         |       h7cc23a3_1          52 KB  conda-forge
+    xorg-libxrender-0.9.12     |       hb03c661_1          34 KB  conda-forge
+    zstd-1.5.7                 |       hb78ec9c_7         587 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:        74.7 MB
+
+The following NEW packages will be INSTALLED:
+
+  _openmp_mutex      conda-forge/linux-64::_openmp_mutex-4.5-20_gnu 
+  bzip2              conda-forge/linux-64::bzip2-1.0.8-hda65f42_10 
+  ca-certificates    conda-forge/noarch::ca-certificates-2026.7.22-hbd8a1cb_0 
+  cairo              conda-forge/linux-64::cairo-1.18.4-h3c89d7e_2 
+  font-ttf-dejavu-s~ conda-forge/noarch::font-ttf-dejavu-sans-mono-2.37-hab24e00_0 
+  font-ttf-inconsol~ conda-forge/noarch::font-ttf-inconsolata-3.000-h77eed37_0 
+  font-ttf-source-c~ conda-forge/noarch::font-ttf-source-code-pro-2.038-h77eed37_0 
+  font-ttf-ubuntu    conda-forge/noarch::font-ttf-ubuntu-0.83-h77eed37_3 
+  fontconfig         conda-forge/linux-64::fontconfig-2.18.3-h4db4eae_1 
+  fonts-conda-ecosy~ conda-forge/noarch::fonts-conda-ecosystem-1-0 
+  fonts-conda-forge  conda-forge/noarch::fonts-conda-forge-1-hc364b38_1 
+  icu                conda-forge/linux-64::icu-78.3-py310h44b86e0_2 
+  ld_impl_linux-64   conda-forge/linux-64::ld_impl_linux-64-2.46.1-default_hbd61a6d_102 
+  libexpat           conda-forge/linux-64::libexpat-2.8.1-hecca717_1 
+  libffi             conda-forge/linux-64::libffi-3.7.0-h81df57d_1 
+  libfreetype        conda-forge/linux-64::libfreetype-2.14.3-ha770c72_2 
+  libfreetype6       conda-forge/linux-64::libfreetype6-2.14.3-h5e6c136_2 
+  libgcc             conda-forge/linux-64::libgcc-16.2.0-ha9f2e26_4 
+  libglib            conda-forge/linux-64::libglib-2.88.3-he503a2a_2 
+  libgomp            conda-forge/linux-64::libgomp-16.2.0-he0feb66_4 
+  libiconv           conda-forge/linux-64::libiconv-1.18-h0cb94f2_3 
+  liblzma            conda-forge/linux-64::liblzma-5.8.3-hb03c661_1 
+  libnsl             conda-forge/linux-64::libnsl-2.0.1-hb9d3cd8_1 
+  libpng             conda-forge/linux-64::libpng-1.6.58-h922cc85_1 
+  libsqlite          conda-forge/linux-64::libsqlite-3.53.4-h13e7031_1 
+  libstdcxx          conda-forge/linux-64::libstdcxx-16.2.0-h934c35e_4 
+  libuuid            conda-forge/linux-64::libuuid-2.42.2-h5347b49_0 
+  libxcb             conda-forge/linux-64::libxcb-1.17.0-hb83e432_2 
+  libxcrypt          conda-forge/linux-64::libxcrypt-4.4.38-h280c20c_0 
+  libxml2            conda-forge/linux-64::libxml2-2.15.3-h49c6c72_1 
+  libxml2-16         conda-forge/linux-64::libxml2-16-2.15.3-hca6bf5a_1 
+  libzlib            conda-forge/linux-64::libzlib-1.3.2-h25fd6f3_3 
+  ncurses            conda-forge/linux-64::ncurses-6.6-hdb14827_1 
+  openbabel          conda-forge/linux-64::openbabel-3.2.1-py310h2850659_1 
+  openssl            conda-forge/linux-64::openssl-3.6.4-h781a0a9_0 
+  packaging          conda-forge/noarch::packaging-26.3-pyhc364b38_0 
+  pcre2              conda-forge/linux-64::pcre2-10.47-h8b3dc9c_1 
+  pip                conda-forge/noarch::pip-26.2.1-pyh8b19718_0 
+  pixman             conda-forge/linux-64::pixman-0.46.4-h54a6638_3 
+  pthread-stubs      conda-forge/linux-64::pthread-stubs-0.4-hb03c661_1003 
+  python             conda-forge/linux-64::python-3.10.21-h267e890_0_cpython 
+  python_abi         conda-forge/linux-64::python_abi-3.10-6_cp310 
+  readline           conda-forge/linux-64::readline-8.3-hd6e31c0_1 
+  setuptools         conda-forge/noarch::setuptools-84.0.0-pyh332efcf_0 
+  tk                 conda-forge/linux-64::tk-8.6.13-noxft_h1df4ec4_4 
+  tzdata             conda-forge/noarch::tzdata-2026c-h151e31d_0 
+  wheel              conda-forge/noarch::wheel-0.48.0-pyhd8ed1ab_0 
+  xorg-libice        conda-forge/linux-64::xorg-libice-1.1.2-h280c20c_0 
+  xorg-libsm         conda-forge/linux-64::xorg-libsm-1.2.6-h0d788c3_1 
+  xorg-libx11        conda-forge/linux-64::xorg-libx11-1.8.13-he1eb515_1 
+  xorg-libxau        conda-forge/linux-64::xorg-libxau-1.0.12-hb03c661_2 
+  xorg-libxdmcp      conda-forge/linux-64::xorg-libxdmcp-1.1.5-hb03c661_2 
+  xorg-libxext       conda-forge/linux-64::xorg-libxext-1.3.7-h7cc23a3_1 
+  xorg-libxrender    conda-forge/linux-64::xorg-libxrender-0.9.12-hb03c661_1 
+  zstd               conda-forge/linux-64::zstd-1.5.7-hb78ec9c_7 
+
+
+
+Downloading and Extracting Packages: ...working...python-3.10.21       | 24.2 MB   |            |   0% 
+icu-78.3             | 13.8 MB   |            |   0% [A
+
+libstdcxx-16.2.0     | 6.3 MB    |            |   0% [A[A
+
+
+openbabel-3.2.1      | 5.4 MB    |            |   0% [A[A[A
+
+
+
+libglib-2.88.3       | 4.5 MB    |            |   0% [A[A[A[A
+
+
+
+
+tk-8.6.13            | 3.4 MB    |            |   0% [A[A[A[A[A
+
+
+
+
+
+openssl-3.6.4        | 3.1 MB    |            |   0% [A[A[A[A[A[A
+
+
+
+
+
+
+pcre2-10.47          | 1.2 MB    |            |   0% [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+pip-26.2.1           | 1.1 MB    |            |   0% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    |            |   0% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+cairo-1.18.4         | 967 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+libsqlite-3.53.4     | 952 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+xorg-libx11-1.8.13   | 820 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libiconv-1.18        | 771 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ld_impl_linux-64-2.4 | 728 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libxml2-16-2.15.3    | 547 KB    |            |   0% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+openbabel-3.2.1      | 5.4 MB    |            |   0% [A[A[A
+
+libstdcxx-16.2.0     | 6.3 MB    |            |   0% [A[Apython-3.10.21       | 24.2 MB   |            |   0% 
+icu-78.3             | 13.8 MB   |            |   0% [A
+
+
+
+libglib-2.88.3       | 4.5 MB    |            |   0% [A[A[A[A
+
+
+openbabel-3.2.1      | 5.4 MB    | 1          |   1% [A[A[A
+
+libstdcxx-16.2.0     | 6.3 MB    | 1          |   1% [A[Apython-3.10.21       | 24.2 MB   |            |   0% 
+icu-78.3             | 13.8 MB   |            |   1% [A
+
+
+
+libglib-2.88.3       | 4.5 MB    | 1          |   2% [A[A[A[A
+
+
+openbabel-3.2.1      | 5.4 MB    | 4          |   4% [A[A[A
+
+libstdcxx-16.2.0     | 6.3 MB    | 3          |   3% [A[Apython-3.10.21       | 24.2 MB   |            |   1% 
+icu-78.3             | 13.8 MB   | 1          |   2% [A
+
+
+
+libglib-2.88.3       | 4.5 MB    | 4          |   5% [A[A[A[A
+
+
+openbabel-3.2.1      | 5.4 MB    | 9          |  10% [A[A[A
+
+libstdcxx-16.2.0     | 6.3 MB    | 8          |   8% [A[Apython-3.10.21       | 24.2 MB   | 2          |   2% 
+
+
+
+libglib-2.88.3       | 4.5 MB    | #1         |  11% [A[A[A[A
+icu-78.3             | 13.8 MB   | 3          |   4% [A
+
+
+openbabel-3.2.1      | 5.4 MB    | #7         |  18% [A[A[A
+
+libstdcxx-16.2.0     | 6.3 MB    | #5         |  15% [A[Apython-3.10.21       | 24.2 MB   | 3          |   4% 
+icu-78.3             | 13.8 MB   | 6          |   7% [A
+
+
+
+libglib-2.88.3       | 4.5 MB    | ##         |  20% [A[A[A[A
+
+
+openbabel-3.2.1      | 5.4 MB    | ##9        |  29% [A[A[A
+
+libstdcxx-16.2.0     | 6.3 MB    | ##5        |  25% [A[Apython-3.10.21       | 24.2 MB   | 6          |   6% 
+
+
+
+libglib-2.88.3       | 4.5 MB    | ###3       |  33% [A[A[A[A
+icu-78.3             | 13.8 MB   | #1         |  11% [A
+
+
+openbabel-3.2.1      | 5.4 MB    | ####1      |  41% [A[A[Apython-3.10.21       | 24.2 MB   | 9          |   9% 
+
+libstdcxx-16.2.0     | 6.3 MB    | ###6       |  36% [A[A
+
+
+
+libglib-2.88.3       | 4.5 MB    | ####8      |  48% [A[A[A[A
+icu-78.3             | 13.8 MB   | #6         |  16% [Apython-3.10.21       | 24.2 MB   | #1         |  11% 
+
+
+openbabel-3.2.1      | 5.4 MB    | #####      |  50% [A[A[A
+
+libstdcxx-16.2.0     | 6.3 MB    | ####3      |  44% [A[A
+
+
+
+libglib-2.88.3       | 4.5 MB    | #####8     |  59% [A[A[A[A
+icu-78.3             | 13.8 MB   | #9         |  19% [Apython-3.10.21       | 24.2 MB   | #4         |  15% 
+
+
+openbabel-3.2.1      | 5.4 MB    | ######6    |  67% [A[A[A
+
+libstdcxx-16.2.0     | 6.3 MB    | #####7     |  57% [A[A
+
+
+
+libglib-2.88.3       | 4.5 MB    | #######5   |  76% [A[A[A[A
+icu-78.3             | 13.8 MB   | ##5        |  25% [Apython-3.10.21       | 24.2 MB   | #7         |  17% 
+icu-78.3             | 13.8 MB   | ##9        |  29% [A
+
+libstdcxx-16.2.0     | 6.3 MB    | ######7    |  68% [A[A
+
+
+openbabel-3.2.1      | 5.4 MB    | #######8   |  78% [A[A[A
+
+
+
+libglib-2.88.3       | 4.5 MB    | ########8  |  88% [A[A[A[A
+
+libstdcxx-16.2.0     | 6.3 MB    | #######5   |  75% [A[A
+
+
+openbabel-3.2.1      | 5.4 MB    | ########6  |  87% [A[A[A
+icu-78.3             | 13.8 MB   | ###2       |  32% [Apython-3.10.21       | 24.2 MB   | #9         |  19% 
+icu-78.3             | 13.8 MB   | ###5       |  35% [A
+
+
+openbabel-3.2.1      | 5.4 MB    | #########4 |  94% [A[A[A
+icu-78.3             | 13.8 MB   | ###9       |  40% [Apython-3.10.21       | 24.2 MB   | ##         |  21% 
+
+libstdcxx-16.2.0     | 6.3 MB    | ########1  |  82% [A[A
+
+
+
+libglib-2.88.3       | 4.5 MB    | #########8 |  98% [A[A[A[Apython-3.10.21       | 24.2 MB   | ##6        |  26% 
+icu-78.3             | 13.8 MB   | ####5      |  45% [A
+
+
+openbabel-3.2.1      | 5.4 MB    | ########## | 100% [A[A[A
+
+
+
+libglib-2.88.3       | 4.5 MB    | ########## | 100% [A[A[A[A
+
+libstdcxx-16.2.0     | 6.3 MB    | ########## | 100% [A[A
+
+libstdcxx-16.2.0     | 6.3 MB    | ########## | 100% [A[Apython-3.10.21       | 24.2 MB   | ###2       |  33% 
+icu-78.3             | 13.8 MB   | #####7     |  57% [A
+
+
+
+
+
+openssl-3.6.4        | 3.1 MB    |            |   1% [A[A[A[A[A[A
+
+
+
+
+tk-8.6.13            | 3.4 MB    |            |   0% [A[A[A[A[A
+
+
+
+
+
+
+pcre2-10.47          | 1.2 MB    | 1          |   1% [A[A[A[A[A[A[A
+
+libstdcxx-16.2.0     | 6.3 MB    | ########## | 100% [A[A
+
+
+openbabel-3.2.1      | 5.4 MB    | ########## | 100% [A[A[A
+
+
+
+
+
+openssl-3.6.4        | 3.1 MB    | #          |  10% [A[A[A[A[A[A
+
+
+
+
+tk-8.6.13            | 3.4 MB    | 9          |   9% [A[A[A[A[A
+
+
+
+
+
+
+pcre2-10.47          | 1.2 MB    | ###        |  31% [A[A[A[A[A[A[A
+
+
+
+libglib-2.88.3       | 4.5 MB    | ########## | 100% [A[A[A[A
+
+
+
+
+
+openssl-3.6.4        | 3.1 MB    | #6         |  16% [A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | ###6       |  36% 
+icu-78.3             | 13.8 MB   | ######3    |  63% [A
+
+
+
+
+
+
+pcre2-10.47          | 1.2 MB    | ####8      |  48% [A[A[A[A[A[A[A
+
+
+
+
+tk-8.6.13            | 3.4 MB    | #4         |  14% [A[A[A[A[A
+
+
+
+
+
+openssl-3.6.4        | 3.1 MB    | ##1        |  21% [A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | ###9       |  39% 
+
+
+
+
+
+openssl-3.6.4        | 3.1 MB    | ####2      |  42% [A[A[A[A[A[A
+
+
+
+
+
+
+pcre2-10.47          | 1.2 MB    | ######     |  60% [A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | ####1      |  41% 
+icu-78.3             | 13.8 MB   | ######7    |  68% [A
+
+
+
+
+tk-8.6.13            | 3.4 MB    | ##8        |  28% [A[A[A[A[A
+
+
+
+
+
+openssl-3.6.4        | 3.1 MB    | #####8     |  59% [A[A[A[A[A[A
+
+
+
+
+
+
+pcre2-10.47          | 1.2 MB    | ########7  |  87% [A[A[A[A[A[A[A
+
+
+
+
+
+
+pcre2-10.47          | 1.2 MB    | ########## | 100% [A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | ####3      |  43% 
+icu-78.3             | 13.8 MB   | #######5   |  75% [A
+
+
+
+
+
+
+pcre2-10.47          | 1.2 MB    | ########## | 100% [A[A[A[A[A[A[A
+
+
+
+
+tk-8.6.13            | 3.4 MB    | #####2     |  52% [A[A[A[A[Apython-3.10.21       | 24.2 MB   | ####5      |  45% 
+icu-78.3             | 13.8 MB   | ########   |  80% [A
+
+
+
+
+
+openssl-3.6.4        | 3.1 MB    | ######9    |  69% [A[A[A[A[A[A
+
+
+
+
+
+
+
+pip-26.2.1           | 1.1 MB    | 1          |   1% [A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | ####8      |  48% 
+
+
+
+
+
+
+
+pip-26.2.1           | 1.1 MB    | 5          |   5% [A[A[A[A[A[A[A[A
+
+
+
+
+
+openssl-3.6.4        | 3.1 MB    | ########3  |  83% [A[A[A[A[A[A
+
+
+
+
+tk-8.6.13            | 3.4 MB    | #######5   |  75% [A[A[A[A[A
+
+
+
+
+
+
+
+pip-26.2.1           | 1.1 MB    | 8          |   8% [A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | #####1     |  51% 
+
+
+
+
+tk-8.6.13            | 3.4 MB    | ########4  |  84% [A[A[A[A[A
+
+
+
+
+
+openssl-3.6.4        | 3.1 MB    | #########1 |  92% [A[A[A[A[A[A
+icu-78.3             | 13.8 MB   | ########4  |  85% [A
+
+
+
+
+
+
+
+pip-26.2.1           | 1.1 MB    | #####4     |  55% [A[A[A[A[A[A[A[A
+
+
+
+
+
+openssl-3.6.4        | 3.1 MB    | ########## | 100% [A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | #####5     |  56% 
+
+
+
+
+tk-8.6.13            | 3.4 MB    | #########8 |  99% [A[A[A[A[A
+icu-78.3             | 13.8 MB   | ########9  |  90% [A
+
+
+
+
+tk-8.6.13            | 3.4 MB    | ########## | 100% [A[A[A[A[A
+
+
+
+
+
+
+
+pip-26.2.1           | 1.1 MB    | #########  |  90% [A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | #####9     |  60% 
+
+
+
+
+
+
+
+pip-26.2.1           | 1.1 MB    | ########## | 100% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | 1          |   2% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+cairo-1.18.4         | 967 KB    | 1          |   2% [A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | ######3    |  63% 
+
+
+
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | ##3        |  23% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+libsqlite-3.53.4     | 952 KB    | 1          |   2% [A[A[A[A[A[A[A[A[A[A[A
+icu-78.3             | 13.8 MB   | #########4 |  94% [A
+
+
+
+
+
+openssl-3.6.4        | 3.1 MB    | ########## | 100% [A[A[A[A[A[A
+
+
+
+
+
+openssl-3.6.4        | 3.1 MB    | ########## | 100% [A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+cairo-1.18.4         | 967 KB    | ##4        |  25% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | ###5       |  36% [A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | ######5    |  66% 
+
+
+
+
+
+
+
+
+
+
+libsqlite-3.53.4     | 952 KB    | ##6        |  27% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+cairo-1.18.4         | 967 KB    | ###9       |  40% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | #####2     |  53% [A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | ######8    |  68% 
+
+
+
+
+
+
+
+
+
+
+libsqlite-3.53.4     | 952 KB    | ####3      |  44% [A[A[A[A[A[A[A[A[A[A[A
+icu-78.3             | 13.8 MB   | #########7 |  97% [A
+
+
+
+
+
+
+
+
+
+cairo-1.18.4         | 967 KB    | #####6     |  56% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | #######2   |  73% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+libsqlite-3.53.4     | 952 KB    | ######     |  61% [A[A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | #######    |  71% 
+
+
+
+
+
+
+
+
+
+cairo-1.18.4         | 967 KB    | #######9   |  79% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+tk-8.6.13            | 3.4 MB    | ########## | 100% [A[A[A[A[A
+
+
+
+
+
+
+
+pip-26.2.1           | 1.1 MB    | ########## | 100% [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | ########9  |  90% [A[A[A[A[A[A[A[A[A
+icu-78.3             | 13.8 MB   | ########## | 100% [A
+
+
+
+
+
+
+
+
+
+
+libsqlite-3.53.4     | 952 KB    | ########4  |  84% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | ########## | 100% [A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | #######2   |  73% 
+
+
+
+
+
+
+
+
+
+cairo-1.18.4         | 967 KB    | #########7 |  98% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+cairo-1.18.4         | 967 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+libsqlite-3.53.4     | 952 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | #######4   |  75% 
+
+
+
+
+
+
+
+
+libgcc-16.2.0        | 1.0 MB    | ########## | 100% [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    | 1          |   2% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+xorg-libx11-1.8.13   | 820 KB    | 1          |   2% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libiconv-1.18        | 771 KB    | 2          |   2% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+libsqlite-3.53.4     | 952 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+cairo-1.18.4         | 967 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | #######6   |  77% 
+
+
+
+
+
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    | ###2       |  32% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ld_impl_linux-64-2.4 | 728 KB    | 2          |   2% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+xorg-libx11-1.8.13   | 820 KB    | ###1       |  31% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libiconv-1.18        | 771 KB    | ###1       |  31% [A[A[A[A[A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | #######8   |  79% 
+
+
+
+
+
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    | #####5     |  56% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ld_impl_linux-64-2.4 | 728 KB    | ###2       |  33% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+xorg-libx11-1.8.13   | 820 KB    | #####6     |  57% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libiconv-1.18        | 771 KB    | #####3     |  54% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+icu-78.3             | 13.8 MB   | ########## | 100% [Apython-3.10.21       | 24.2 MB   | ########   |  81% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ld_impl_linux-64-2.4 | 728 KB    | #####4     |  55% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    | #######9   |  79% [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+xorg-libx11-1.8.13   | 820 KB    | #######8   |  78% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libiconv-1.18        | 771 KB    | #######6   |  77% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | ########3  |  83% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ld_impl_linux-64-2.4 | 728 KB    | ########1  |  81% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+xorg-libx11-1.8.13   | 820 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+xorg-libx11-1.8.13   | 820 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libiconv-1.18        | 771 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ld_impl_linux-64-2.4 | 728 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | ########5  |  85% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    | 2          |   3% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | ########7  |  87% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libxml2-16-2.15.3    | 547 KB    | 2          |   3% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    | 2          |   3% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    | ####3      |  44% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libiconv-1.18        | 771 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+libiconv-1.18        | 771 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | ########9  |  89% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libxml2-16-2.15.3    | 547 KB    | ####3      |  44% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    | ####       |  41% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    | #######4   |  74% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ld_impl_linux-64-2.4 | 728 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libxml2-16-2.15.3    | 547 KB    | #######3   |  73% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    | ######5    |  65% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | #########1 |  91% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+xorg-libx11-1.8.13   | 820 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libxml2-16-2.15.3    | 547 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    | ########9  |  90% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | #########3 |  93% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libgomp-16.2.0       | 625 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libxml2-16-2.15.3    | 547 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+libxml2-16-2.15.3    | 547 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | #########4 |  95% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+zstd-1.5.7           | 587 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | #########6 |  97% python-3.10.21       | 24.2 MB   | #########8 |  99% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ ... (more hidden) ...[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | ########## | 100% 
+
+
+
+
+
+
+
+
+
+
+
+ncurses-6.6          | 890 KB    | ########## | 100% [A[A[A[A[A[A[A[A[A[A[A[Apython-3.10.21       | 24.2 MB   | ########## | 100% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A                                                     
+                                                     [A
+
+                                                     [A[A
+
+
+                                                     [A[A[A
+
+
+
+                                                     [A[A[A[A
+
+
+
+
+                                                     [A[A[A[A[A
+
+
+
+
+
+                                                     [A[A[A[A[A[A
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                     [A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+[A
+
+[A[A
+
+
+[A[A[A
+
+
+
+[A[A[A[A
+
+
+
+
+[A[A[A[A[A
+
+
+
+
+
+[A[A[A[A[A[A
+
+
+
+
+
+
+[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+[A
+
+[A[A
+
+
+[A[A[A
+
+
+
+[A[A[A[A
+
+
+
+
+[A[A[A[A[A
+
+
+
+
+
+[A[A[A[A[A[A
+
+
+
+
+
+
+[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+[A[A[A[A[A[A[A[A[A[A[A[A done
+Preparing transaction: - \ | done
+Verifying transaction: - \ | / - \ | / - \ | done
+Executing transaction: - \ | / - \ | / - \ | / - \ | / - \ | / - done
+#
+# To activate this environment, use
+#
+#     $ conda activate /data1/ztx/.conda/envs/plip-mdta
+#
+# To deactivate an active environment, use
+#
+#     $ conda deactivate
+
+Collecting plip
+  Downloading plip-3.0.1-py3-none-any.whl.metadata (13 kB)
+Collecting numpy>=1.13.3 (from plip)
+  Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (62 kB)
+Collecting lxml>=4.2.1 (from plip)
+  Downloading lxml-6.1.2-cp310-cp310-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.3 kB)
+Collecting openbabel>=3.2.0 (from plip)
+  Downloading openbabel-3.2.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (4.0 kB)
+Downloading plip-3.0.1-py3-none-any.whl (99 kB)
+Downloading lxml-6.1.2-cp310-cp310-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (5.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.3/5.3 MB 13.9 MB/s  0:00:00
+Downloading numpy-2.2.6-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (16.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.8/16.8 MB 27.6 MB/s  0:00:00
+Downloading openbabel-3.2.1-cp310-cp310-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (12.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.6/12.6 MB 11.9 MB/s  0:00:01
+Installing collected packages: openbabel, numpy, lxml, plip
+
+Successfully installed lxml-6.1.2 numpy-2.2.6 openbabel-3.2.1 plip-3.0.1

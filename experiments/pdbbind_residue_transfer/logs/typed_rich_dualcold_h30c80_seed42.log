@@ -1,0 +1,77 @@
+/data1/ztx/.conda/envs/dtbind/lib/python3.9/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+{"epoch": 1, "loss": 0.410707315307951, "base_micro": 0.03767760666543477, "typed_masked_micro": 0.03721397724971234, "typed_masked_macro": 0.08101869120557607}
+{"epoch": 2, "loss": 0.35497029382939926, "base_micro": 0.038739079104402885, "typed_masked_micro": 0.038025663831523226, "typed_masked_macro": 0.0843911534374039}
+{"epoch": 3, "loss": 0.32625139786481355, "base_micro": 0.039765730623240604, "typed_masked_micro": 0.038274779905349623, "typed_masked_macro": 0.08723703209072171}
+{"epoch": 4, "loss": 0.29981141431802294, "base_micro": 0.04007927235485585, "typed_masked_micro": 0.038003881480619256, "typed_masked_macro": 0.08761506613702458}
+{"epoch": 5, "loss": 0.28126566119494895, "base_micro": 0.039553303899209136, "typed_masked_micro": 0.03723836414766475, "typed_masked_macro": 0.08733426433418347}
+{"epoch": 6, "loss": 0.2673468969467028, "base_micro": 0.03993918793608444, "typed_masked_micro": 0.037620356023203995, "typed_masked_macro": 0.08780880839900239}
+{"epoch": 7, "loss": 0.25568174201748106, "base_micro": 0.039816445684501184, "typed_masked_micro": 0.03725875072690107, "typed_masked_macro": 0.08721883534230658}
+{"epoch": 8, "loss": 0.2455186459800887, "base_micro": 0.04051767408393432, "typed_masked_micro": 0.037447926026029255, "typed_masked_macro": 0.08654854445582798}
+{"epoch": 9, "loss": 0.23447176787885837, "base_micro": 0.040108187823537526, "typed_masked_micro": 0.03744889023152977, "typed_masked_macro": 0.08640227655604603}
+{"epoch": 10, "loss": 0.22392229631503408, "base_micro": 0.039262441734599, "typed_masked_micro": 0.03621486879151198, "typed_masked_macro": 0.08446197178132614}
+{"early_stop_epoch": 10, "best_validation_macro": 0.08780880839900239, "patience": 4}
+FINAL {
+  "base": {
+    "auprc_micro": 0.028535333091624784,
+    "auprc_macro": 0.0632301315577844,
+    "positive_rate": 0.0010712880310927747,
+    "ap_enrichment": 26.636471484253512
+  },
+  "typed_union_raw": {
+    "auprc_micro": 0.02749525933303084,
+    "auprc_macro": 0.06103417744987082,
+    "positive_rate": 0.0010712880310927747,
+    "ap_enrichment": 25.66560862720002
+  },
+  "typed_union_masked": {
+    "auprc_micro": 0.025104903260281548,
+    "auprc_macro": 0.059665469820852045,
+    "positive_rate": 0.0010712880310927747,
+    "ap_enrichment": 23.434316945250586
+  },
+  "per_type_masked": {
+    "hbond": {
+      "positive_count": 1104,
+      "positive_rate": 0.00023194783022679414,
+      "auprc_micro": 0.020256435089462215,
+      "auprc_macro": 0.062220938251698395
+    },
+    "hydrophobic": {
+      "positive_count": 1649,
+      "positive_rate": 0.00034645106163404304,
+      "auprc_micro": 0.012561644526853405,
+      "auprc_macro": 0.05393127160565349
+    },
+    "waterbridge": {
+      "positive_count": 478,
+      "positive_rate": 0.00010042668736268804,
+      "auprc_micro": 0.005009358289123533,
+      "auprc_macro": 0.041299799214656124
+    },
+    "saltbridge": {
+      "positive_count": 725,
+      "positive_rate": 0.0001523208124224871,
+      "auprc_micro": 0.05371623761306587,
+      "auprc_macro": 0.22233258371972525
+    },
+    "pistacking": {
+      "positive_count": 1079,
+      "positive_rate": 0.00022669538841912215,
+      "auprc_micro": 0.02792327589723181,
+      "auprc_macro": 0.11313196875078671
+    },
+    "pication": {
+      "positive_count": 140,
+      "positive_rate": 2.9413674122963026e-05,
+      "auprc_micro": 0.0012722231099279975,
+      "auprc_macro": 0.03735872087864609
+    },
+    "halogenbond": {
+      "positive_count": 18,
+      "positive_rate": 3.7817581015238173e-06,
+      "auprc_micro": 0.0010815038738066036,
+      "auprc_macro": 0.02192910584767779
+    }
+  }
+}

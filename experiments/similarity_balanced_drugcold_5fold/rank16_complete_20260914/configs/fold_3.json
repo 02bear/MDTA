@@ -1,0 +1,23 @@
+{
+  "pairs_csv": "data/raw/davis/pairs.csv",
+  "drug_1d_dir": "data/processed/davis/drug_1d_chemberta2",
+  "drug_2d_dir": "data/processed/davis/drug_2d",
+  "drug_3d_dir": "data/processed/davis/drug_3d",
+  "protein_1d_dir": "data/processed/davis/protein_1d_esm2",
+  "protein_3d_dir": "data/processed/davis/protein_3d_gvp",
+  "split_json": "/data1/ztx/MyModel-MDTA/data/splits/davis_drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final/fold_3/split.json",
+  "output_dir": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/cold_start/drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final/bilinear_rank16_complete_20260914/fold_3",
+  "seed": 42,
+  "train_ratio": 0.8,
+  "batch_size": 16,
+  "num_workers": 0,
+  "epochs": 500,
+  "lr": 0.0003,
+  "weight_decay": 1e-05,
+  "early_stop_patience": 60,
+  "early_stop_min_delta": 0.0001,
+  "drug_1d_in_dim": 768,
+  "drug_3d_node_in_dim": 10,
+  "hidden_dim": 128,
+  "dropout": 0.1
+}

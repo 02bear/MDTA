@@ -1,0 +1,29 @@
+{
+  "drug_similarity": "Morgan radius 2 2048-bit Tanimoto",
+  "protein_similarity": "KLIFS85 masked identity divided by 85, identical to Davis",
+  "status_counts": {
+    "ok": 180,
+    "ok_sequence_fallback": 39,
+    "unavailable": 10
+  },
+  "method_counts": {
+    "exact_sequence_reuse": 180,
+    "davis_calibrated_sequence_fallback": 39,
+    "none": 10
+  },
+  "unavailable_protein_ids": [
+    "Q15078",
+    "Q15118",
+    "P67870",
+    "O43741",
+    "P54619",
+    "Q9UGI9",
+    "Q9UGJ0",
+    "Q9Y478",
+    "O00418",
+    "P78527"
+  ],
+  "unavailable_policy": "protein DSRC branch has zero support; preserve drug branch and all pairs",
+  "similarity_sha256": "53ab8993277854ccbd093e24dc85831b6a7ee8ebffec63d0af6b96752841f5fe",
+  "no_affinity_labels_used_for_similarities": true
+}

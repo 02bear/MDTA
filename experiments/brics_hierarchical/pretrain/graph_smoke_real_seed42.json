@@ -1,0 +1,15 @@
+{
+  "guardrail": "unique training drugs only; validation/test rows and labels were not used",
+  "condition": "real",
+  "seed": 42,
+  "training_drugs": 47,
+  "steps": 10,
+  "history": [
+    {
+      "step": 10,
+      "loss": 0.08964137613773346,
+      "reconstruction": 0.08495378136634826,
+      "alignment": 0.04687593460083008
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "dataset": "KIBA",
+  "rows": 118254,
+  "drugs": 2111,
+  "proteins": 229,
+  "split_sizes": [
+    94603,
+    11825,
+    11826
+  ],
+  "pairs_sha256": "58ec737c2ff80752405ac62ca6cce16173f44bc38cec566f9d60eedcf0d1c6b9",
+  "split_sha256": "5609f4f4919c1738caf7bfba53fedfc0f86781967b4ec659eadb4e29185c3f2b",
+  "dropped_pairs": 0,
+  "missing_features": 0,
+  "new_base_features": 0,
+  "rnc_mid_threshold": 11.520216403,
+  "rnc_high_threshold": 11.953871964,
+  "rnc_threshold_policy": "training labels only, quantiles 0.5/0.75; raw KIBA labels retained",
+  "unobserved_pairs": "NaN, never residual references"
+}

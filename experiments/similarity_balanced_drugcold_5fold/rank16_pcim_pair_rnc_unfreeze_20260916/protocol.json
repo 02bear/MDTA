@@ -1,0 +1,183 @@
+{
+  "name": "rank16_pcim_pair_rnc_unfreeze_20260916",
+  "split": "davis_drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final",
+  "folds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "seeds": [
+    42
+  ],
+  "backbone_seed": 42,
+  "variants": [
+    "unfreeze_last",
+    "unfreeze_full"
+  ],
+  "primary_variant": "unfreeze_full",
+  "width": 32,
+  "top_k": 64,
+  "heads": 2,
+  "graph_layers": 1,
+  "condition_dim": 16,
+  "residue_type_dim": 8,
+  "max_delta": 0.5,
+  "dropout": 0.1,
+  "batch_size": 16,
+  "eval_batch_size": 16,
+  "epochs": 60,
+  "patience": 10,
+  "min_delta": 1e-05,
+  "lr": 0.0003,
+  "weight_decay": 1e-05,
+  "grad_clip": 1.0,
+  "residual_l2": 0.001,
+  "lambdas": [
+    0.0,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "optimizer": "AdamW",
+  "loss": "MSE(finetuned_rank16 + delta, y) + 0.01 scheduled standard RNC + 1e-3 mean(delta^2)",
+  "selection": "minimum validation MSE of combined model + recomputed R1; lambda 0 is baseline",
+  "r1": "locked historical per-fold hyperparameters, residuals recomputed for each checkpoint and lambda",
+  "schedule": "Two GPUs: last-block broad unfreezing vs progressive full unfreezing; seed 42 x five folds each",
+  "gpu": 0,
+  "frozen_backbone_eval": true,
+  "source_feature_cache": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/cold_start/drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final/rank16_pcim_20260914/cache",
+  "test_policy": "score only after per-run checkpoint and lambda are locked; no adaptive test-based selection",
+  "interpretation": "latent compatibility, not physical contact; independent ligand/protein coordinates never mixed",
+  "evidence_limit": "same repeatedly inspected development split; varying adapter seeds does not vary backbone seeds",
+  "candidate_selection": "validation MSE after rebuilt R1 over locked Rank16, locked frozen pair-RNC, fine-tuned Rank16, and fine-tuned Rank16+lambda*delta",
+  "coverage_budget": 32,
+  "historical_controls": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/cold_start/drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final/rank16_pcim_bidir_xattn_20260915",
+  "historical_reuse": false,
+  "cross_attention": {
+    "stage": "after frozen Rank16 local projection and before coverage Top-64 pair selection",
+    "atom_source": "drug_3d_encoder(..., return_node=True)[node_feat], 128D then projected to 32D",
+    "residue_source": "protein_3d_encoder(..., return_node=True)[node_feat], 128D plus 8D residue type then projected to 32D",
+    "global_features": "excluded from new cross-attention; retained only in the existing gate and pool",
+    "directions": [
+      "atoms query residues and update atoms",
+      "residues query atoms and update residues"
+    ],
+    "width": 32,
+    "heads": 2,
+    "max_residual_scale": 0.25,
+    "extra_parameters": 8578,
+    "gate": "0.25*tanh(gamma) per direction; gamma initialized exactly zero",
+    "controls": [
+      "atom_conditioned",
+      "residue_conditioned",
+      "cross off",
+      "opposite entity shuffled"
+    ],
+    "diagnostics": [
+      "directional entropy",
+      "update RMS and ratio",
+      "gate values",
+      "Top-64 Jaccard",
+      "rebuilt R1 validation MSE"
+    ]
+  },
+  "minimum_gpu_free_mib": 35000,
+  "gpu_sharing_authorized": true,
+  "variant_specs": {
+    "baseline": {
+      "rnc_mode": "none",
+      "rnc_weight": 0.0
+    },
+    "rnc_standard_a001": {
+      "rnc_mode": "standard",
+      "rnc_weight": 0.01
+    },
+    "rnc_standard_a003": {
+      "rnc_mode": "standard",
+      "rnc_weight": 0.03
+    },
+    "rnc_high_a001": {
+      "rnc_mode": "high_weighted",
+      "rnc_weight": 0.01
+    },
+    "rnc_high_a003": {
+      "rnc_mode": "high_weighted",
+      "rnc_weight": 0.03
+    }
+  },
+  "rnc": {
+    "representation": "16D L2-normalized projection of the 32D conditioned PairGraph pooled vector z",
+    "labels": "full observed pKd affinity from the training partition only",
+    "projection": [
+      32,
+      32,
+      16
+    ],
+    "projection_dim": 16,
+    "temperature": 2.0,
+    "batch_size": 32,
+    "microbatch_size": 16,
+    "interval": 2,
+    "high_count": 8,
+    "mid_count": 8,
+    "high_threshold": 7.0,
+    "mid_threshold": 5.0,
+    "high_width": 0.5,
+    "high_strength": 2.0,
+    "warmup_epochs": 1.0,
+    "sampling": "8 y>=7, 8 5<y<7, then 16 distinct remaining training pairs; shortages filled from remaining pairs",
+    "standard": "original continuous-label Rank-N-Contrast ordering",
+    "high_weighted": "same RNC ordering; anchor weight 1+2*sigmoid((y-7)/0.5)",
+    "inference": "projection head is unused at inference"
+  },
+  "evaluation_interval": 2,
+  "early_stop_start_epoch": 6,
+  "patience_evaluations": 6,
+  "rnc_weight": 0.01,
+  "gpu_assignment": {
+    "unfreeze_last": 0,
+    "unfreeze_full": 1
+  },
+  "learning_rates": {
+    "interaction": 0.0003,
+    "rank_head_fusion_out": 3e-05,
+    "egnn_last": 1e-05,
+    "one_d": 5e-06,
+    "egnn_early": 5e-06
+  },
+  "unfreeze_schedule": {
+    "epochs_1_2": "warm-started PCIM/cross-attention/RNC only; Rank16 eval and frozen",
+    "epochs_3_5": "Rank16 low-rank head, both fusions, both 1D encoders, both 3D out projections and third EGNN layers",
+    "epoch_6_plus_last": "same broad last-block set remains trainable",
+    "epoch_6_plus_full": "all Rank16 parameters trainable"
+  },
+  "adapter_initialization": {
+    "1": {
+      "path": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/cold_start/drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final/rank16_pcim_pair_rnc_20260915/runs/rnc_standard_a001/seed_42/fold_1/best_active.pt",
+      "sha256": "d498d00cb115a3ef83cfe463e6c51b4075f1486ea93d55799ce0fc3debfff23a",
+      "reason": "best_active keeps a trained RNC representation when the final stage-1 selector fell back"
+    },
+    "2": {
+      "path": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/cold_start/drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final/rank16_pcim_pair_rnc_20260915/runs/rnc_standard_a001/seed_42/fold_2/best.pt",
+      "sha256": "663ae2eeef7f82ed7891a6aaf5e3f7afc200c790af9b65d437dc1906e2510014",
+      "reason": "stage-1 selected best checkpoint"
+    },
+    "3": {
+      "path": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/cold_start/drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final/rank16_pcim_pair_rnc_20260915/runs/rnc_standard_a001/seed_42/fold_3/best_active.pt",
+      "sha256": "43bc3b16a3b2e931c861daed655cc41f5d87f8070e664d808c9c8851f7bbc29e",
+      "reason": "best_active keeps a trained RNC representation when the final stage-1 selector fell back"
+    },
+    "4": {
+      "path": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/cold_start/drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final/rank16_pcim_pair_rnc_20260915/runs/rnc_standard_a001/seed_42/fold_4/best_active.pt",
+      "sha256": "04a8406257cc99444d020f77df4465315b30539dbd59103b9a2853c76a76a5c6",
+      "reason": "best_active keeps a trained RNC representation when the final stage-1 selector fell back"
+    },
+    "5": {
+      "path": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/cold_start/drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final/rank16_pcim_pair_rnc_20260915/runs/rnc_standard_a001/seed_42/fold_5/best_active.pt",
+      "sha256": "1a05e8c62ded4e68325a35332b4ef93718dd0b5431bf88c0ee74dc47277d9f88",
+      "reason": "best_active keeps a trained RNC representation when the final stage-1 selector fell back"
+    }
+  }
+}

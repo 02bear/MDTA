@@ -1,0 +1,124 @@
+[DavisDatasetP13D] input pairs: 118254
+[DavisDatasetP13D] kept pairs : 118254
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'drug_3d': 0, 'protein_1d': 0, 'protein_3d': 0}
+PREFLIGHT_PASSED {"passed": true, "train": 94603, "validation": 11825, "test_sealed": 11826, "split_sha256": "5609f4f4919c1738caf7bfba53fedfc0f86781967b4ec659eadb4e29185c3f2b", "checkpoint_sha256": "7fcdccd56f4a5b0307dadc37363db02f6990cd95adb5b7ba5396af31a511114a", "adapter_parameters": 37728, "adapter": {"variant": "bidirectional", "width": 32, "top_k": 128, "coverage_budget": 16, "max_delta": 0.5, "cross_max_scale": 0.25, "residual_l2": 0.001, "rnc_weight": 0.01, "temperature": 2.0, "projection_dim": 16, "rnc_batch_size": 32, "microbatch_size": 16, "interval": 2, "high_count": 8, "mid_count": 8, "high_threshold": 11.953871964, "mid_threshold": 11.520216403, "warmup_epochs": 1.0, "seed": 42}, "screening": {"max_epochs": 60, "patience": 10, "min_delta": 1e-05, "batch_size": 16, "eval_batch_size": 64, "lr": 0.0003, "weight_decay": 1e-05, "grad_clip": 1.0, "screen_lambdas": [0.0, 0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 2.0, 2.5]}, "test_policy": "all hyperparameters fixed before new-seed test evaluation", "finished": 1790443002.3642406}
+[DavisDatasetP13D] input pairs: 118254
+[DavisDatasetP13D] kept pairs : 118254
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'drug_3d': 0, 'protein_1d': 0, 'protein_3d': 0}
+CACHE_DRUG 0/2111
+CACHE_DRUG 20/2111
+CACHE_DRUG 40/2111
+CACHE_DRUG 60/2111
+CACHE_DRUG 80/2111
+CACHE_DRUG 100/2111
+CACHE_DRUG 120/2111
+CACHE_DRUG 140/2111
+CACHE_DRUG 160/2111
+CACHE_DRUG 180/2111
+CACHE_DRUG 200/2111
+CACHE_DRUG 220/2111
+CACHE_DRUG 240/2111
+CACHE_DRUG 260/2111
+CACHE_DRUG 280/2111
+CACHE_DRUG 300/2111
+CACHE_DRUG 320/2111
+CACHE_DRUG 340/2111
+CACHE_DRUG 360/2111
+CACHE_DRUG 380/2111
+CACHE_DRUG 400/2111
+CACHE_DRUG 420/2111
+CACHE_DRUG 440/2111
+CACHE_DRUG 460/2111
+CACHE_DRUG 480/2111
+CACHE_DRUG 500/2111
+CACHE_DRUG 520/2111
+CACHE_DRUG 540/2111
+CACHE_DRUG 560/2111
+CACHE_DRUG 580/2111
+CACHE_DRUG 600/2111
+CACHE_DRUG 620/2111
+CACHE_DRUG 640/2111
+CACHE_DRUG 660/2111
+CACHE_DRUG 680/2111
+CACHE_DRUG 700/2111
+CACHE_DRUG 720/2111
+CACHE_DRUG 740/2111
+CACHE_DRUG 760/2111
+CACHE_DRUG 780/2111
+CACHE_DRUG 800/2111
+CACHE_DRUG 820/2111
+CACHE_DRUG 840/2111
+CACHE_DRUG 860/2111
+CACHE_DRUG 880/2111
+CACHE_DRUG 900/2111
+CACHE_DRUG 920/2111
+CACHE_DRUG 940/2111
+CACHE_DRUG 960/2111
+CACHE_DRUG 980/2111
+CACHE_DRUG 1000/2111
+CACHE_DRUG 1020/2111
+CACHE_DRUG 1040/2111
+CACHE_DRUG 1060/2111
+CACHE_DRUG 1080/2111
+CACHE_DRUG 1100/2111
+CACHE_DRUG 1120/2111
+CACHE_DRUG 1140/2111
+CACHE_DRUG 1160/2111
+CACHE_DRUG 1180/2111
+CACHE_DRUG 1200/2111
+CACHE_DRUG 1220/2111
+CACHE_DRUG 1240/2111
+CACHE_DRUG 1260/2111
+CACHE_DRUG 1280/2111
+CACHE_DRUG 1300/2111
+CACHE_DRUG 1320/2111
+CACHE_DRUG 1340/2111
+CACHE_DRUG 1360/2111
+CACHE_DRUG 1380/2111
+CACHE_DRUG 1400/2111
+CACHE_DRUG 1420/2111
+CACHE_DRUG 1440/2111
+CACHE_DRUG 1460/2111
+CACHE_DRUG 1480/2111
+CACHE_DRUG 1500/2111
+CACHE_DRUG 1520/2111
+CACHE_DRUG 1540/2111
+CACHE_DRUG 1560/2111
+CACHE_DRUG 1580/2111
+CACHE_DRUG 1600/2111
+CACHE_DRUG 1620/2111
+CACHE_DRUG 1640/2111
+CACHE_DRUG 1660/2111
+CACHE_DRUG 1680/2111
+CACHE_DRUG 1700/2111
+CACHE_DRUG 1720/2111
+CACHE_DRUG 1740/2111
+CACHE_DRUG 1760/2111
+CACHE_DRUG 1780/2111
+CACHE_DRUG 1800/2111
+CACHE_DRUG 1820/2111
+CACHE_DRUG 1840/2111
+CACHE_DRUG 1860/2111
+CACHE_DRUG 1880/2111
+CACHE_DRUG 1900/2111
+CACHE_DRUG 1920/2111
+CACHE_DRUG 1940/2111
+CACHE_DRUG 1960/2111
+CACHE_DRUG 1980/2111
+CACHE_DRUG 2000/2111
+CACHE_DRUG 2020/2111
+CACHE_DRUG 2040/2111
+CACHE_DRUG 2060/2111
+CACHE_DRUG 2080/2111
+CACHE_DRUG 2100/2111
+CACHE_PROTEIN 0/229
+CACHE_PROTEIN 50/229
+CACHE_PROTEIN 100/229
+CACHE_PROTEIN 150/229
+CACHE_PROTEIN 200/229
+CACHE_FINISHED seed=42
+TRAIN p13d_pcim_rnc epoch=1 step=0/4 mse=133.348328
+EPOCH p13d_pcim_rnc {"epoch": 1, "train_mse": 133.72213554382324, "train_loss": 133.74152434289456, "rnc_loss": 2.582215189933777, "validation": [{"lambda": 0.0, "mse": 137.09642465775661}, {"lambda": 0.25, "mse": 137.07900926685267}, {"lambda": 0.5, "mse": 137.06159498990502}, {"lambda": 0.75, "mse": 137.04418182691376}, {"lambda": 1.0, "mse": 137.02676977787883}, {"lambda": 1.25, "mse": 137.00935884280022}, {"lambda": 1.5, "mse": 136.99194902167795}, {"lambda": 2.0, "mse": 136.95713272130246}, {"lambda": 2.5, "mse": 136.92232087675228}], "best": {"lambda": 2.5, "mse": 136.92232087675228, "epoch": 1}, "stale": 0, "seconds": 0.5800325870513916}
+SELECTION_LOCKED {"adapter": {"name": "p13d_pcim_rnc", "config": {"variant": "bidirectional", "width": 32, "top_k": 128, "coverage_budget": 16, "max_delta": 0.5, "cross_max_scale": 0.25, "residual_l2": 0.001, "rnc_weight": 0.01, "temperature": 2.0, "projection_dim": 16, "rnc_batch_size": 32, "microbatch_size": 16, "interval": 2, "high_count": 8, "mid_count": 8, "high_threshold": 11.953871964, "mid_threshold": 11.520216403, "warmup_epochs": 1.0, "seed": 42}, "best": {"lambda": 2.5, "mse": 136.92232087675228, "epoch": 1}, "checkpoint": "/data1/ztx/MyModel-MDTA/experiments/warm_start_811/kiba_fixed_dsrc_20260927/smoke_output/pcim_dsrc_fixed/candidates/p13d_pcim_rnc/best.pt", "epochs": 1, "complete": true}, "fixed_dsrc": {"drug_config": {"gamma": 2.0, "k": 8, "minimum": 0.1, "tau": 0.02, "beta": 0.5, "clip": 1.0, "scale": 1.0}, "protein_config": {"gamma": 7.0, "k": 12, "minimum": 0.5, "tau": 0.0025, "beta": 0.375, "clip": 1.25, "scale": 0.75}, "adapter_lambda": 0.85, "rho_drug": 0.5, "rho_protein": 0.5, "fusion_scale": 1.9}, "raw_validation_selection": {"lambda": 2.5, "mse": 136.92232087675228, "epoch": 1}, "fixed_dsrc_validation_metrics": {"mse": 135.65588394562604, "rmse": 11.64714059096163, "mae": 11.616962642339207, "ci": 0.5233050847457628, "rm2": -0.8030155602053886}, "selection_metric": "adapter early stopping on validation; DSRC hyperparameters fixed from seed 42", "selection_data": "no seed-specific DSRC tuning; test labels sealed", "backbone_checkpoint": "/data1/ztx/MyModel-MDTA/experiments/warm_start_811/kiba_fixed_dsrc_20260927/smoke_output/p13d/best_model.pt", "backbone_sha256": "7fcdccd56f4a5b0307dadc37363db02f6990cd95adb5b7ba5396af31a511114a", "locked_at": 1790443018.9882836}
+FINAL_RESULT {"complete": true, "training_seed": 42, "model": "pure_p13d_plus_pcim_standard_rnc_0.01_plus_fixed_DSRC", "selection": {"adapter": {"name": "p13d_pcim_rnc", "config": {"variant": "bidirectional", "width": 32, "top_k": 128, "coverage_budget": 16, "max_delta": 0.5, "cross_max_scale": 0.25, "residual_l2": 0.001, "rnc_weight": 0.01, "temperature": 2.0, "projection_dim": 16, "rnc_batch_size": 32, "microbatch_size": 16, "interval": 2, "high_count": 8, "mid_count": 8, "high_threshold": 11.953871964, "mid_threshold": 11.520216403, "warmup_epochs": 1.0, "seed": 42}, "best": {"lambda": 2.5, "mse": 136.92232087675228, "epoch": 1}, "checkpoint": "/data1/ztx/MyModel-MDTA/experiments/warm_start_811/kiba_fixed_dsrc_20260927/smoke_output/pcim_dsrc_fixed/candidates/p13d_pcim_rnc/best.pt", "epochs": 1, "complete": true}, "fixed_dsrc": {"drug_config": {"gamma": 2.0, "k": 8, "minimum": 0.1, "tau": 0.02, "beta": 0.5, "clip": 1.0, "scale": 1.0}, "protein_config": {"gamma": 7.0, "k": 12, "minimum": 0.5, "tau": 0.0025, "beta": 0.375, "clip": 1.25, "scale": 0.75}, "adapter_lambda": 0.85, "rho_drug": 0.5, "rho_protein": 0.5, "fusion_scale": 1.9}, "raw_validation_selection": {"lambda": 2.5, "mse": 136.92232087675228, "epoch": 1}, "fixed_dsrc_validation_metrics": {"mse": 135.65588394562604, "rmse": 11.64714059096163, "mae": 11.616962642339207, "ci": 0.5233050847457628, "rm2": -0.8030155602053886}, "selection_metric": "adapter early stopping on validation; DSRC hyperparameters fixed from seed 42", "selection_data": "no seed-specific DSRC tuning; test labels sealed", "backbone_checkpoint": "/data1/ztx/MyModel-MDTA/experiments/warm_start_811/kiba_fixed_dsrc_20260927/smoke_output/p13d/best_model.pt", "backbone_sha256": "7fcdccd56f4a5b0307dadc37363db02f6990cd95adb5b7ba5396af31a511114a", "locked_at": 1790443018.9882836}, "test": {"p13d_raw": {"mse": 138.05610324085958, "rmse": 11.749727794330369, "mae": 11.721364340321479, "ci": 0.5770833333333333, "rm2": -0.04251983768611195}, "p13d_pcim_rnc_raw": {"mse": 137.9968218173786, "rmse": 11.747204851256258, "mae": 11.7188313056344, "ci": 0.575, "rm2": -0.030194054643491473}, "DSRC": {"mse": 135.86977831376885, "rmse": 11.656319243816585, "mae": 11.629114858911603, "ci": 0.60625, "rm2": -6.034941192306659}}, "high_affinity_count": 8, "high_affinity": {"p13d_pcim_rnc_raw": {"mse": 166.53446836105488, "rmse": 12.904823453308259, "mae": 12.891980388033655, "ci": 0.39285714285714285, "rm2": -0.48589058337638497}, "DSRC": {"mse": 163.30593846635844, "rmse": 12.779121193038215, "mae": 12.76495594365186, "ci": 0.39285714285714285, "rm2": -1.8029838344370357}}, "correction": {"absolute_mean": 0.0897164467227963, "absolute_max": 0.6089868914614346, "drug_confidence_mean": 0.04721918248568226, "protein_confidence_mean": 0.0}, "raw_replay_matches_original": true, "label_poisoning_invariance": true, "test_policy": "test evaluated once after fixed DSRC configuration and adapter checkpoint were locked", "finished": 1790443019.1740637}
+SMOKE_PASSED {"base_step_loss": 138.85977172851562, "base_step_seconds": 0.5402994155883789, "base_peak_mib": 5079.91357421875, "passed": true, "full_feature_cache": true, "sparse_missing_pairs_remain_nan": true, "miniature_end_to_end": true, "label_poisoning_invariance": true, "smoke_root": "/data1/ztx/MyModel-MDTA/experiments/warm_start_811/kiba_fixed_dsrc_20260927/smoke_output", "not_scientific_results": true, "finished": 1790443019.2030268}

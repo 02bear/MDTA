@@ -1,0 +1,1086 @@
+[
+  {
+    "pdb_id": "10gs",
+    "sequence_len": 416,
+    "positive_count": 15,
+    "protein_graph": {
+      "x": [
+        416,
+        1024
+      ],
+      "edge_attr": [
+        11622,
+        8
+      ],
+      "y": [
+        416
+      ],
+      "edge_index": [
+        2,
+        11622
+      ],
+      "pdbid": "10gs",
+      "surface_x": [
+        416,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        33,
+        82
+      ],
+      "edge_index": [
+        2,
+        66
+      ],
+      "edge_attr": [
+        66,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 208,
+          "standard_aa": 208
+        },
+        "B": {
+          "polymer_aa": 208,
+          "standard_aa": 208
+        }
+      },
+      "total_polymer_aa": 416,
+      "total_standard_aa": 416
+    }
+  },
+  {
+    "pdb_id": "184l",
+    "sequence_len": 162,
+    "positive_count": 10,
+    "protein_graph": {
+      "x": [
+        162,
+        1024
+      ],
+      "edge_attr": [
+        4290,
+        8
+      ],
+      "y": [
+        162
+      ],
+      "edge_index": [
+        2,
+        4290
+      ],
+      "pdbid": "184l",
+      "surface_x": [
+        162,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        10,
+        82
+      ],
+      "edge_index": [
+        2,
+        18
+      ],
+      "edge_attr": [
+        18,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 162,
+          "standard_aa": 162
+        }
+      },
+      "total_polymer_aa": 162,
+      "total_standard_aa": 162
+    }
+  },
+  {
+    "pdb_id": "186l",
+    "sequence_len": 162,
+    "positive_count": 8,
+    "protein_graph": {
+      "x": [
+        162,
+        1024
+      ],
+      "edge_attr": [
+        4314,
+        8
+      ],
+      "y": [
+        162
+      ],
+      "edge_index": [
+        2,
+        4314
+      ],
+      "pdbid": "186l",
+      "surface_x": [
+        162,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        10,
+        82
+      ],
+      "edge_index": [
+        2,
+        18
+      ],
+      "edge_attr": [
+        18,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 162,
+          "standard_aa": 162
+        }
+      },
+      "total_polymer_aa": 162,
+      "total_standard_aa": 162
+    }
+  },
+  {
+    "pdb_id": "187l",
+    "sequence_len": 162,
+    "positive_count": 6,
+    "protein_graph": {
+      "x": [
+        162,
+        1024
+      ],
+      "edge_attr": [
+        4314,
+        8
+      ],
+      "y": [
+        162
+      ],
+      "edge_index": [
+        2,
+        4314
+      ],
+      "pdbid": "187l",
+      "surface_x": [
+        162,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        8,
+        82
+      ],
+      "edge_index": [
+        2,
+        14
+      ],
+      "edge_attr": [
+        14,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 162,
+          "standard_aa": 162
+        }
+      },
+      "total_polymer_aa": 162,
+      "total_standard_aa": 162
+    }
+  },
+  {
+    "pdb_id": "188l",
+    "sequence_len": 162,
+    "positive_count": 7,
+    "protein_graph": {
+      "x": [
+        162,
+        1024
+      ],
+      "edge_attr": [
+        4292,
+        8
+      ],
+      "y": [
+        162
+      ],
+      "edge_index": [
+        2,
+        4292
+      ],
+      "pdbid": "188l",
+      "surface_x": [
+        162,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        8,
+        82
+      ],
+      "edge_index": [
+        2,
+        14
+      ],
+      "edge_attr": [
+        14,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 162,
+          "standard_aa": 162
+        }
+      },
+      "total_polymer_aa": 162,
+      "total_standard_aa": 162
+    }
+  },
+  {
+    "pdb_id": "1a28",
+    "sequence_len": 251,
+    "positive_count": 10,
+    "protein_graph": {
+      "x": [
+        251,
+        1024
+      ],
+      "edge_attr": [
+        6908,
+        8
+      ],
+      "y": [
+        251
+      ],
+      "edge_index": [
+        2,
+        6908
+      ],
+      "pdbid": "1a28",
+      "surface_x": [
+        251,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        23,
+        82
+      ],
+      "edge_index": [
+        2,
+        50
+      ],
+      "edge_attr": [
+        50,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 251,
+          "standard_aa": 251
+        }
+      },
+      "total_polymer_aa": 251,
+      "total_standard_aa": 251
+    }
+  },
+  {
+    "pdb_id": "1a4k",
+    "sequence_len": 869,
+    "positive_count": 13,
+    "protein_graph": {
+      "x": [
+        869,
+        1024
+      ],
+      "edge_attr": [
+        25724,
+        8
+      ],
+      "y": [
+        869
+      ],
+      "edge_index": [
+        2,
+        25724
+      ],
+      "pdbid": "1a4k",
+      "surface_x": [
+        869,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        31,
+        82
+      ],
+      "edge_index": [
+        2,
+        66
+      ],
+      "edge_attr": [
+        66,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "L": {
+          "polymer_aa": 217,
+          "standard_aa": 217
+        },
+        "H": {
+          "polymer_aa": 217,
+          "standard_aa": 217
+        },
+        "A": {
+          "polymer_aa": 216,
+          "standard_aa": 216
+        },
+        "B": {
+          "polymer_aa": 219,
+          "standard_aa": 219
+        }
+      },
+      "total_polymer_aa": 869,
+      "total_standard_aa": 869
+    }
+  },
+  {
+    "pdb_id": "1a4r",
+    "sequence_len": 380,
+    "positive_count": 10,
+    "protein_graph": {
+      "x": [
+        380,
+        1024
+      ],
+      "edge_attr": [
+        11196,
+        8
+      ],
+      "y": [
+        380
+      ],
+      "edge_index": [
+        2,
+        11196
+      ],
+      "pdbid": "1a4r",
+      "surface_x": [
+        380,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        28,
+        82
+      ],
+      "edge_index": [
+        2,
+        58
+      ],
+      "edge_attr": [
+        58,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 190,
+          "standard_aa": 190
+        },
+        "B": {
+          "polymer_aa": 190,
+          "standard_aa": 190
+        }
+      },
+      "total_polymer_aa": 380,
+      "total_standard_aa": 380
+    }
+  },
+  {
+    "pdb_id": "1a94",
+    "sequence_len": 198,
+    "positive_count": 25,
+    "protein_graph": {
+      "x": [
+        198,
+        1024
+      ],
+      "edge_attr": [
+        5560,
+        8
+      ],
+      "y": [
+        198
+      ],
+      "edge_index": [
+        2,
+        5560
+      ],
+      "pdbid": "1a94",
+      "surface_x": [
+        198,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        61,
+        82
+      ],
+      "edge_index": [
+        2,
+        120
+      ],
+      "edge_attr": [
+        120,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 99,
+          "standard_aa": 99
+        },
+        "B": {
+          "polymer_aa": 99,
+          "standard_aa": 99
+        }
+      },
+      "total_polymer_aa": 198,
+      "total_standard_aa": 198
+    }
+  },
+  {
+    "pdb_id": "1a99",
+    "sequence_len": 682,
+    "positive_count": 13,
+    "protein_graph": {
+      "x": [
+        682,
+        1024
+      ],
+      "edge_attr": [
+        21236,
+        8
+      ],
+      "y": [
+        682
+      ],
+      "edge_index": [
+        2,
+        21236
+      ],
+      "pdbid": "1a99",
+      "surface_x": [
+        682,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        6,
+        82
+      ],
+      "edge_index": [
+        2,
+        8
+      ],
+      "edge_attr": [
+        8,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 341,
+          "standard_aa": 341
+        },
+        "B": {
+          "polymer_aa": 341,
+          "standard_aa": 341
+        }
+      },
+      "total_polymer_aa": 682,
+      "total_standard_aa": 682
+    }
+  },
+  {
+    "pdb_id": "1a9m",
+    "sequence_len": 198,
+    "positive_count": 14,
+    "protein_graph": {
+      "x": [
+        198,
+        1024
+      ],
+      "edge_attr": [
+        5536,
+        8
+      ],
+      "y": [
+        198
+      ],
+      "edge_index": [
+        2,
+        5536
+      ],
+      "pdbid": "1a9m",
+      "surface_x": [
+        198,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        43,
+        82
+      ],
+      "edge_index": [
+        2,
+        84
+      ],
+      "edge_attr": [
+        84,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 99,
+          "standard_aa": 99
+        },
+        "B": {
+          "polymer_aa": 99,
+          "standard_aa": 99
+        }
+      },
+      "total_polymer_aa": 198,
+      "total_standard_aa": 198
+    }
+  },
+  {
+    "pdb_id": "1aaq",
+    "sequence_len": 198,
+    "positive_count": 15,
+    "protein_graph": {
+      "x": [
+        198,
+        1024
+      ],
+      "edge_attr": [
+        5412,
+        8
+      ],
+      "y": [
+        198
+      ],
+      "edge_index": [
+        2,
+        5412
+      ],
+      "pdbid": "1aaq",
+      "surface_x": [
+        198,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        41,
+        82
+      ],
+      "edge_index": [
+        2,
+        80
+      ],
+      "edge_attr": [
+        80,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 99,
+          "standard_aa": 99
+        },
+        "B": {
+          "polymer_aa": 99,
+          "standard_aa": 99
+        }
+      },
+      "total_polymer_aa": 198,
+      "total_standard_aa": 198
+    }
+  },
+  {
+    "pdb_id": "1add",
+    "sequence_len": 349,
+    "positive_count": 6,
+    "protein_graph": {
+      "x": [
+        349,
+        1024
+      ],
+      "edge_attr": [
+        11272,
+        8
+      ],
+      "y": [
+        349
+      ],
+      "edge_index": [
+        2,
+        11272
+      ],
+      "pdbid": "1add",
+      "surface_x": [
+        349,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        19,
+        82
+      ],
+      "edge_index": [
+        2,
+        40
+      ],
+      "edge_attr": [
+        40,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 349,
+          "standard_aa": 349
+        }
+      },
+      "total_polymer_aa": 349,
+      "total_standard_aa": 349
+    }
+  },
+  {
+    "pdb_id": "1adl",
+    "sequence_len": 262,
+    "positive_count": 5,
+    "protein_graph": {
+      "x": [
+        262,
+        1024
+      ],
+      "edge_attr": [
+        6566,
+        8
+      ],
+      "y": [
+        262
+      ],
+      "edge_index": [
+        2,
+        6566
+      ],
+      "pdbid": "1adl",
+      "surface_x": [
+        262,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        22,
+        82
+      ],
+      "edge_index": [
+        2,
+        40
+      ],
+      "edge_attr": [
+        40,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 131,
+          "standard_aa": 131
+        },
+        "B": {
+          "polymer_aa": 131,
+          "standard_aa": 131
+        }
+      },
+      "total_polymer_aa": 262,
+      "total_standard_aa": 262
+    }
+  },
+  {
+    "pdb_id": "1ado",
+    "sequence_len": 1452,
+    "positive_count": 15,
+    "protein_graph": {
+      "x": [
+        1452,
+        1024
+      ],
+      "edge_attr": [
+        49162,
+        8
+      ],
+      "y": [
+        1452
+      ],
+      "edge_index": [
+        2,
+        49162
+      ],
+      "pdbid": "1ado",
+      "surface_x": [
+        1452,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        10,
+        82
+      ],
+      "edge_index": [
+        2,
+        16
+      ],
+      "edge_attr": [
+        16,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 363,
+          "standard_aa": 363
+        },
+        "B": {
+          "polymer_aa": 363,
+          "standard_aa": 363
+        },
+        "C": {
+          "polymer_aa": 363,
+          "standard_aa": 363
+        },
+        "D": {
+          "polymer_aa": 363,
+          "standard_aa": 363
+        }
+      },
+      "total_polymer_aa": 1452,
+      "total_standard_aa": 1452
+    }
+  },
+  {
+    "pdb_id": "1afk",
+    "sequence_len": 124,
+    "positive_count": 8,
+    "protein_graph": {
+      "x": [
+        124,
+        1024
+      ],
+      "edge_attr": [
+        3320,
+        8
+      ],
+      "y": [
+        124
+      ],
+      "edge_index": [
+        2,
+        3320
+      ],
+      "pdbid": "1afk",
+      "surface_x": [
+        124,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        31,
+        82
+      ],
+      "edge_index": [
+        2,
+        64
+      ],
+      "edge_attr": [
+        64,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 124,
+          "standard_aa": 124
+        }
+      },
+      "total_polymer_aa": 124,
+      "total_standard_aa": 124
+    }
+  },
+  {
+    "pdb_id": "1afl",
+    "sequence_len": 124,
+    "positive_count": 6,
+    "protein_graph": {
+      "x": [
+        124,
+        1024
+      ],
+      "edge_attr": [
+        3296,
+        8
+      ],
+      "y": [
+        124
+      ],
+      "edge_index": [
+        2,
+        3296
+      ],
+      "pdbid": "1afl",
+      "surface_x": [
+        124,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        31,
+        82
+      ],
+      "edge_index": [
+        2,
+        64
+      ],
+      "edge_attr": [
+        64,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 124,
+          "standard_aa": 124
+        }
+      },
+      "total_polymer_aa": 124,
+      "total_standard_aa": 124
+    }
+  },
+  {
+    "pdb_id": "1ai4",
+    "sequence_len": 763,
+    "positive_count": 5,
+    "protein_graph": {
+      "x": [
+        763,
+        1024
+      ],
+      "edge_attr": [
+        24360,
+        8
+      ],
+      "y": [
+        763
+      ],
+      "edge_index": [
+        2,
+        24360
+      ],
+      "pdbid": "1ai4",
+      "surface_x": [
+        763,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        12,
+        82
+      ],
+      "edge_index": [
+        2,
+        22
+      ],
+      "edge_attr": [
+        22,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 206,
+          "standard_aa": 206
+        },
+        "B": {
+          "polymer_aa": 557,
+          "standard_aa": 557
+        }
+      },
+      "total_polymer_aa": 763,
+      "total_standard_aa": 763
+    }
+  },
+  {
+    "pdb_id": "1ai5",
+    "sequence_len": 763,
+    "positive_count": 6,
+    "protein_graph": {
+      "x": [
+        763,
+        1024
+      ],
+      "edge_attr": [
+        24586,
+        8
+      ],
+      "y": [
+        763
+      ],
+      "edge_index": [
+        2,
+        24586
+      ],
+      "pdbid": "1ai5",
+      "surface_x": [
+        763,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        13,
+        82
+      ],
+      "edge_index": [
+        2,
+        24
+      ],
+      "edge_attr": [
+        24,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 206,
+          "standard_aa": 206
+        },
+        "B": {
+          "polymer_aa": 557,
+          "standard_aa": 557
+        }
+      },
+      "total_polymer_aa": 763,
+      "total_standard_aa": 763
+    }
+  },
+  {
+    "pdb_id": "1ai7",
+    "sequence_len": 763,
+    "positive_count": 5,
+    "protein_graph": {
+      "x": [
+        763,
+        1024
+      ],
+      "edge_attr": [
+        24602,
+        8
+      ],
+      "y": [
+        763
+      ],
+      "edge_index": [
+        2,
+        24602
+      ],
+      "pdbid": "1ai7",
+      "surface_x": [
+        763,
+        10
+      ]
+    },
+    "ligand_graph": {
+      "x": [
+        7,
+        82
+      ],
+      "edge_index": [
+        2,
+        12
+      ],
+      "edge_attr": [
+        12,
+        6
+      ]
+    },
+    "raw_pdb": {
+      "chains": {
+        "A": {
+          "polymer_aa": 206,
+          "standard_aa": 206
+        },
+        "B": {
+          "polymer_aa": 557,
+          "standard_aa": 557
+        }
+      },
+      "total_polymer_aa": 763,
+      "total_standard_aa": 763
+    }
+  }
+]

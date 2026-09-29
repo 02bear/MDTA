@@ -1,0 +1,57 @@
+{
+  "name": "rank16_pcim_postr1_20260914",
+  "split": "davis_drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final",
+  "folds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "seeds": [
+    42,
+    2026,
+    3407
+  ],
+  "backbone_seed": 42,
+  "variants": [
+    "pair_graph",
+    "pair_pool",
+    "global_mlp"
+  ],
+  "primary_variant": "pair_graph",
+  "width": 32,
+  "top_k": 64,
+  "heads": 2,
+  "graph_layers": 1,
+  "condition_dim": 16,
+  "residue_type_dim": 8,
+  "max_delta": 0.5,
+  "dropout": 0.1,
+  "batch_size": 16,
+  "eval_batch_size": 64,
+  "epochs": 60,
+  "patience": 10,
+  "min_delta": 1e-05,
+  "lr": 0.0003,
+  "weight_decay": 1e-05,
+  "grad_clip": 1.0,
+  "residual_l2": 0.001,
+  "lambdas": [
+    0,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "optimizer": "AdamW",
+  "loss": "MSE(raw_delta, train_y - leave-one-drug-out Rank16+R1) + 1e-3*mean(delta^2)",
+  "selection": "minimum validation MSE of Rank16+R1 + lambda*delta; lambda 0 is exact baseline",
+  "r1": "locked historical per-fold hyperparameters; training target uses leave-one-drug-out R1 references",
+  "schedule": "3 variants x 3 adapter seeds x 5 folds; pair_graph runs first",
+  "gpu": 0,
+  "frozen_backbone_eval": true,
+  "source_feature_cache": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/cold_start/drug_cold_similarity_affinity_balanced_5fold_seed42_v2_final/rank16_pcim_20260914/cache",
+  "test_policy": "score only after per-run checkpoint and lambda are locked; no adaptive test-based selection",
+  "interpretation": "latent atom-residue compatibility residual after Rank16+R1, not physical contact",
+  "evidence_limit": "same repeatedly inspected development split; varying adapter seeds does not vary backbone seeds"
+}

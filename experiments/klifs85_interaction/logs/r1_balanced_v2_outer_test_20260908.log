@@ -1,0 +1,298 @@
+DEVICE: cuda
+
+===== FOLD 1 =====
+[DavisDatasetP13D] input pairs: 30056
+[DavisDatasetP13D] kept pairs : 30056
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'drug_3d': 0, 'protein_1d': 0, 'protein_3d': 0}
+  infer 0/194
+  infer 100/194
+  infer 0/1879
+  infer 100/1879
+  infer 200/1879
+  infer 300/1879
+  infer 400/1879
+  infer 500/1879
+  infer 600/1879
+  infer 700/1879
+  infer 800/1879
+  infer 900/1879
+  infer 1000/1879
+  infer 1100/1879
+  infer 1200/1879
+  infer 1300/1879
+  infer 1400/1879
+  infer 1500/1879
+  infer 1600/1879
+  infer 1700/1879
+  infer 1800/1879
+{
+  "fold": 1,
+  "R1_best": {
+    "gamma": 1.0,
+    "k_drug": 8,
+    "min_drug_similarity": 0.2,
+    "tau": 0.05,
+    "beta": 0.0,
+    "clip": 1.0,
+    "scale": 1.0,
+    "inner_mse": 0.4870891958235542,
+    "inner_gain": 0.06793604682087656
+  },
+  "P13D_test_mse": 0.6283756526805825,
+  "R1_test_mse": 0.5018657776081485,
+  "delta": -0.12650987507243394,
+  "improved_drugs": 11,
+  "worsened_drugs": 1
+}
+
+===== FOLD 2 =====
+[DavisDatasetP13D] input pairs: 30056
+[DavisDatasetP13D] kept pairs : 30056
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'drug_3d': 0, 'protein_1d': 0, 'protein_3d': 0}
+  infer 0/194
+  infer 100/194
+  infer 0/1879
+  infer 100/1879
+  infer 200/1879
+  infer 300/1879
+  infer 400/1879
+  infer 500/1879
+  infer 600/1879
+  infer 700/1879
+  infer 800/1879
+  infer 900/1879
+  infer 1000/1879
+  infer 1100/1879
+  infer 1200/1879
+  infer 1300/1879
+  infer 1400/1879
+  infer 1500/1879
+  infer 1600/1879
+  infer 1700/1879
+  infer 1800/1879
+{
+  "fold": 2,
+  "R1_best": {
+    "gamma": 2.0,
+    "k_drug": 8,
+    "min_drug_similarity": 0.0,
+    "tau": 0.05,
+    "beta": 0.0,
+    "clip": 1.0,
+    "scale": 1.0,
+    "inner_mse": 0.19246014397319117,
+    "inner_gain": 0.00986270052835228
+  },
+  "P13D_test_mse": 0.7290746956483939,
+  "R1_test_mse": 0.6990823706152667,
+  "delta": -0.02999232503312721,
+  "improved_drugs": 12,
+  "worsened_drugs": 2
+}
+
+===== FOLD 3 =====
+[DavisDatasetP13D] input pairs: 30056
+[DavisDatasetP13D] kept pairs : 30056
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'drug_3d': 0, 'protein_1d': 0, 'protein_3d': 0}
+  infer 0/194
+  infer 100/194
+  infer 0/1879
+  infer 100/1879
+  infer 200/1879
+  infer 300/1879
+  infer 400/1879
+  infer 500/1879
+  infer 600/1879
+  infer 700/1879
+  infer 800/1879
+  infer 900/1879
+  infer 1000/1879
+  infer 1100/1879
+  infer 1200/1879
+  infer 1300/1879
+  infer 1400/1879
+  infer 1500/1879
+  infer 1600/1879
+  infer 1700/1879
+  infer 1800/1879
+{
+  "fold": 3,
+  "R1_best": {
+    "gamma": 2.0,
+    "k_drug": 8,
+    "min_drug_similarity": 0.0,
+    "tau": 0.05,
+    "beta": 0.0,
+    "clip": 1.0,
+    "scale": 1.0,
+    "inner_mse": 0.29154382902057957,
+    "inner_gain": 0.02353698618877209
+  },
+  "P13D_test_mse": 0.741049916838049,
+  "R1_test_mse": 0.6940591801483535,
+  "delta": -0.046990736689695445,
+  "improved_drugs": 9,
+  "worsened_drugs": 5
+}
+
+===== FOLD 4 =====
+[DavisDatasetP13D] input pairs: 30056
+[DavisDatasetP13D] kept pairs : 30056
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'drug_3d': 0, 'protein_1d': 0, 'protein_3d': 0}
+  infer 0/194
+  infer 100/194
+  infer 0/1879
+  infer 100/1879
+  infer 200/1879
+  infer 300/1879
+  infer 400/1879
+  infer 500/1879
+  infer 600/1879
+  infer 700/1879
+  infer 800/1879
+  infer 900/1879
+  infer 1000/1879
+  infer 1100/1879
+  infer 1200/1879
+  infer 1300/1879
+  infer 1400/1879
+  infer 1500/1879
+  infer 1600/1879
+  infer 1700/1879
+  infer 1800/1879
+{
+  "fold": 4,
+  "R1_best": {
+    "gamma": 1.0,
+    "k_drug": 8,
+    "min_drug_similarity": 0.2,
+    "tau": 0.05,
+    "beta": 0.0,
+    "clip": 1.0,
+    "scale": 1.0,
+    "inner_mse": 0.24355720946071283,
+    "inner_gain": 0.034986242097296366
+  },
+  "P13D_test_mse": 0.652824457147886,
+  "R1_test_mse": 0.6411466049925294,
+  "delta": -0.01167785215535655,
+  "improved_drugs": 7,
+  "worsened_drugs": 4
+}
+
+===== FOLD 5 =====
+[DavisDatasetP13D] input pairs: 30056
+[DavisDatasetP13D] kept pairs : 30056
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'drug_3d': 0, 'protein_1d': 0, 'protein_3d': 0}
+  infer 0/194
+  infer 100/194
+  infer 0/1879
+  infer 100/1879
+  infer 200/1879
+  infer 300/1879
+  infer 400/1879
+  infer 500/1879
+  infer 600/1879
+  infer 700/1879
+  infer 800/1879
+  infer 900/1879
+  infer 1000/1879
+  infer 1100/1879
+  infer 1200/1879
+  infer 1300/1879
+  infer 1400/1879
+  infer 1500/1879
+  infer 1600/1879
+  infer 1700/1879
+  infer 1800/1879
+{
+  "fold": 5,
+  "R1_best": {
+    "gamma": 2.0,
+    "k_drug": 4,
+    "min_drug_similarity": 0.0,
+    "tau": 0.05,
+    "beta": 0.5,
+    "clip": 1.0,
+    "scale": 1.0,
+    "inner_mse": 0.2503883236666808,
+    "inner_gain": 0.02911807438001074
+  },
+  "P13D_test_mse": 0.6960182042488235,
+  "R1_test_mse": 0.6476911422473295,
+  "delta": -0.04832706200149406,
+  "improved_drugs": 12,
+  "worsened_drugs": 1
+}
+
+FINAL={
+  "summary": {
+    "P13D": {
+      "macro": {
+        "mse": {
+          "mean": 0.689468585312747,
+          "sample_std": 0.04834075349177782
+        },
+        "ci": {
+          "mean": 0.7040928623092466,
+          "sample_std": 0.03622473790528481
+        },
+        "rm2": {
+          "mean": 0.1740177163222721,
+          "sample_std": 0.048792484356098176
+        }
+      },
+      "pooled": {
+        "mse": 0.689911151624935,
+        "rmse": 0.8306089041329469,
+        "mae": 0.5257557322917418,
+        "ci": 0.6940692153002695,
+        "rm2": 0.15348451460282223,
+        "pearson": 0.4129628592439376,
+        "spearman": 0.3636078555462904,
+        "r2": 0.13814081331816408,
+        "bias": -0.014466635512011083
+      }
+    },
+    "R1": {
+      "macro": {
+        "mse": {
+          "mean": 0.6367690151223255,
+          "sample_std": 0.07984744348961977
+        },
+        "ci": {
+          "mean": 0.7281024943234523,
+          "sample_std": 0.04359773185592025
+        },
+        "rm2": {
+          "mean": 0.22431939462041434,
+          "sample_std": 0.0880112409485791
+        }
+      },
+      "pooled": {
+        "mse": 0.6365440192841607,
+        "rmse": 0.7978370881854019,
+        "mae": 0.5064452325990431,
+        "ci": 0.7220210817421799,
+        "rm2": 0.20585964588058633,
+        "pearson": 0.4793035187909797,
+        "spearman": 0.41515176231435147,
+        "r2": 0.20480875043793756,
+        "bias": -0.006803371505931067
+      }
+    }
+  },
+  "bootstrap": {
+    "delta_definition": "MSE(R1)-MSE(P13D)",
+    "mean_delta_mse": -0.053367132340774254,
+    "95_ci": [
+      -0.08766338103084662,
+      -0.02510436979089139
+    ],
+    "P_R1_better": 1.0,
+    "improved_drugs": 51,
+    "worsened_drugs": 13,
+    "n_drugs": 68,
+    "cluster": "outer-test drug; all 442 protein pairs"
+  }
+}

@@ -1,0 +1,81 @@
+/data1/ztx/.conda/envs/dtbind/lib/python3.9/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+{"epoch": 1, "loss": 0.4178208943396784, "base_micro": 0.08268726579284097, "typed_masked_micro": 0.0820103162282344, "typed_masked_macro": 0.14231416696688426}
+{"epoch": 2, "loss": 0.35834004530944386, "base_micro": 0.08232068331115856, "typed_masked_micro": 0.080454126288703, "typed_masked_macro": 0.13789976195086592}
+{"epoch": 3, "loss": 0.3256572746819385, "base_micro": 0.08739063807214362, "typed_masked_micro": 0.08536168434111718, "typed_masked_macro": 0.15242065069206778}
+{"epoch": 4, "loss": 0.3015081412826165, "base_micro": 0.08903119394095318, "typed_masked_micro": 0.08563175461657169, "typed_masked_macro": 0.1504298509964025}
+{"epoch": 5, "loss": 0.28240594862699053, "base_micro": 0.09528661392459192, "typed_masked_micro": 0.09064140804459642, "typed_masked_macro": 0.15771936598052053}
+{"epoch": 6, "loss": 0.2671928679422907, "base_micro": 0.09362386502446375, "typed_masked_micro": 0.08862184380004166, "typed_masked_macro": 0.161371459958154}
+{"epoch": 7, "loss": 0.2541977310845651, "base_micro": 0.10225857922812166, "typed_masked_micro": 0.09404217456330798, "typed_masked_macro": 0.16572738884298932}
+{"epoch": 8, "loss": 0.2430993694110728, "base_micro": 0.1007865552876542, "typed_masked_micro": 0.09247260775472776, "typed_masked_macro": 0.16851494995799282}
+{"epoch": 9, "loss": 0.23246758307824367, "base_micro": 0.10153176913871106, "typed_masked_micro": 0.09243195389684869, "typed_masked_macro": 0.1651116286217006}
+{"epoch": 10, "loss": 0.22461089146218444, "base_micro": 0.10274507971773988, "typed_masked_micro": 0.09276284745174423, "typed_masked_macro": 0.16764596312817334}
+{"epoch": 11, "loss": 0.21694271815670996, "base_micro": 0.10238332102340132, "typed_masked_micro": 0.09251635676244495, "typed_masked_macro": 0.17080447723126177}
+{"epoch": 12, "loss": 0.2094056558654723, "base_micro": 0.10123787273640159, "typed_masked_micro": 0.09030938638454665, "typed_masked_macro": 0.16564061739321803}
+{"epoch": 13, "loss": 0.20163630544301692, "base_micro": 0.10682168848310919, "typed_masked_micro": 0.09451269282142943, "typed_masked_macro": 0.17412267548083268}
+{"epoch": 14, "loss": 0.19562824936399079, "base_micro": 0.10045892992983138, "typed_masked_micro": 0.09047362701099898, "typed_masked_macro": 0.16737429975058496}
+{"epoch": 15, "loss": 0.19100977980287565, "base_micro": 0.10283643829583437, "typed_masked_micro": 0.0909173251491324, "typed_masked_macro": 0.1720060374054187}
+FINAL {
+  "base": {
+    "auprc_micro": 0.10485517343782072,
+    "auprc_macro": 0.16784590682849493,
+    "positive_rate": 0.001488960124629258,
+    "ap_enrichment": 70.42174716662008
+  },
+  "typed_union_raw": {
+    "auprc_micro": 0.09713112413714792,
+    "auprc_macro": 0.16154237950748224,
+    "positive_rate": 0.001488960124629258,
+    "ap_enrichment": 65.23420105782415
+  },
+  "typed_union_masked": {
+    "auprc_micro": 0.08710611148395993,
+    "auprc_macro": 0.15326791439270965,
+    "positive_rate": 0.001488960124629258,
+    "ap_enrichment": 58.50130573889534
+  },
+  "per_type_masked": {
+    "hbond": {
+      "positive_count": 1561,
+      "positive_rate": 0.0004676593067497528,
+      "auprc_micro": 0.07206164030238033,
+      "auprc_macro": 0.18851028649254753
+    },
+    "hydrophobic": {
+      "positive_count": 1331,
+      "positive_rate": 0.00039875370742083346,
+      "auprc_micro": 0.043786032284982686,
+      "auprc_macro": 0.12147168898580135
+    },
+    "waterbridge": {
+      "positive_count": 789,
+      "positive_rate": 0.00023637616465442345,
+      "auprc_micro": 0.02222506980546187,
+      "auprc_macro": 0.09959839515456709
+    },
+    "saltbridge": {
+      "positive_count": 691,
+      "positive_rate": 0.00020701638754905778,
+      "auprc_micro": 0.235233325617804,
+      "auprc_macro": 0.488880091617917
+    },
+    "pistacking": {
+      "positive_count": 501,
+      "positive_rate": 0.00015009437071212439,
+      "auprc_micro": 0.08310509299179861,
+      "auprc_macro": 0.3204914560735975
+    },
+    "pication": {
+      "positive_count": 148,
+      "positive_rate": 4.433925522034812e-05,
+      "auprc_micro": 0.04344184518855924,
+      "auprc_macro": 0.2779165662599121
+    },
+    "halogenbond": {
+      "positive_count": 23,
+      "positive_rate": 6.890559932891938e-06,
+      "auprc_micro": 0.07967814368905855,
+      "auprc_macro": 0.42232636377458405
+    }
+  }
+}

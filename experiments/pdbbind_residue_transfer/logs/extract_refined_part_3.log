@@ -1,0 +1,605 @@
+1nki 11 0.0
+5g1z 19 0.0
+4k18 16 0.0
+5nw1 18 0.0
+3hmp 7 0.0
+2j4g 10 0.0
+5nw7 21 0.0
+6rnt 21 0.0
+3oy0 7 0.0
+1r0p 12 0.0
+2gz2 17 0.0
+3hu3 20 0.0
+3ljz 15 0.0
+4bup 27 0.0
+6jdi 30 0.0
+6mj7 9 0.0
+2mas 9 0.0
+6g9x 3 0.0
+3rz7 9 0.0
+4u8w FAILED ValueError('Ligand coordinate mismatch: nearest distance 17.1961')
+5j7w 20 0.0
+4cu8 8 0.0
+3fv2 18 0.0
+4kyk 9 0.0
+2qpu 9 0.0
+3dx3 5 0.0
+1p1q 13 0.0
+6n78 FAILED ValueError('Ligand coordinate mismatch: nearest distance 30.7589')
+4ufm 8 0.0
+2x97 19 0.0
+6ggb 6 0.0
+4tmn 16 0.0
+6no9 6 0.0
+4io3 15 0.0
+6oja 13 0.0
+3t60 16 0.0
+1pxn 11 0.0
+4tqn 10 0.0
+3zll 6 0.0
+1ebw 26 0.0
+5eh8 9 0.0
+2xyf 20 0.0
+4poh 16 0.0
+5nn6 FAILED ValueError('Ligand coordinate mismatch: nearest distance 45.4190')
+4qjw 11 0.0
+5aml 11 0.0
+3ubd 18 0.0
+4w9i 14 0.0
+1w5v 24 0.0
+4lj8 22 0.0
+4ruz 5 0.0
+4bb9 24 0.0
+1sgu 22 0.0
+6exi FAILED ValueError('Ligand coordinate mismatch: nearest distance 3.9562')
+4pvy 26 0.0
+1ppm 20 0.0
+3da9 12 0.0
+6mla 14 0.0
+4mgd FAILED ValueError('Ligand coordinate mismatch: nearest distance 12.2376')
+4o2b 11 0.0
+3cdb 17 0.0
+4zek 8 0.0
+2ews 31 0.0
+3ppm 12 0.0
+3b2q 22 0.0
+4bny 4 0.0
+5nlk 15 0.0
+5cap 4 0.0
+4uye 10 0.0
+4att 15 0.0
+4uoh 22 0.0
+5wp5 10 0.0
+3f80 15 0.0
+3ru1 11 0.0
+4xtv 26 0.0
+5gj9 7 0.0
+4djv 19 0.0
+5jgq 10 0.0
+5o1f 8 0.0
+6h36 10 0.0
+4m2w 3 0.0
+5n31 15 0.0
+1zge 4 0.0
+6faf 13 0.0
+1n4k 42 0.0
+4pv5 9 0.0
+4km2 8 0.0
+3jya 6 0.0
+1qf0 23 0.0
+5l9l 19 0.0
+1qbq 14 0.0
+6e5l 14 0.0
+3o9d 18 0.0
+7std 18 0.0
+4zba 32 0.0
+5cj6 13 0.0
+2xj7 14 0.0
+2o4l 17 0.0
+6g36 FAILED ValueError('Ligand coordinate mismatch: nearest distance 8.7614')
+6dl2 8 0.0
+2bet 29 0.0
+4k3n 8 0.0
+3f6g 8 0.0
+1msm 20 0.0
+4asj 16 0.0
+5t19 16 0.0
+5lz4 14 0.0
+2b9a 9 0.0
+1pot 7 0.0
+1igb 8 0.0
+2vrj 11 0.0
+5cbm 8 0.0
+5wyz 27 0.0
+1ado 13 0.0
+3lxe 15 0.0
+4a95 11 0.0
+2wbg 10 0.0
+6got 15 0.0
+2i4v 17 0.0
+1ec9 22 0.0
+1pfu 3 0.0
+4oag 37 0.0
+4kow 16 0.0
+5f1x 23 0.0
+6ei5 25 0.0
+6b4n FAILED ValueError('Ligand coordinate mismatch: nearest distance 15.5197')
+1kv1 14 0.0
+4w97 48 0.0
+5kqx 20 0.0
+3o9p 35 0.0
+5fh8 13 0.0
+5afv 11 0.0
+4tte 7 0.0
+5dex 20 0.0
+2vmd 8 0.0
+1lnm 16 0.0
+6mja FAILED ValueError('Ligand coordinate mismatch: nearest distance 7.2564')
+4q19 21 0.0
+3vhd 14 0.0
+3rtf 12 0.0
+3ebi 23 0.0
+2zxd 6 0.0
+3gcs 24 0.0
+2psu 19 0.0
+1lee 22 0.0
+6ouv FAILED ValueError('Ligand coordinate mismatch: nearest distance 24.4782')
+1bgq 10 0.0
+4i8z 21 0.0
+1det 9 0.0
+6gnp 1 0.0
+3fvl 9 0.0
+2pvl FAILED ValueError('Ligand coordinate mismatch: nearest distance 14.4639')
+2d1o 16 0.0
+5ect 25 0.0
+2i2c 14 0.0
+3ctt 8 0.0
+5w44 FAILED ValueError('Ligand coordinate mismatch: nearest distance 3.8694')
+1xq0 19 0.0
+3bfu 12 0.0
+4z1k 14 0.0
+3nox 17 0.0
+4pmm 16 0.0
+3k99 10 0.0
+3b3x 15 0.0
+1c86 16 0.0
+4q93 16 0.0
+456c 8 0.0
+5km9 9 0.0
+6gfs 10 0.0
+3pce 9 0.0
+6dys 11 0.0
+2qhy 18 0.0
+2weh 3 0.0
+6g3v 4 0.0
+3ebp FAILED ValueError('Ligand coordinate mismatch: nearest distance 13.5558')
+3l4z 13 0.0
+2cc7 20 0.0
+4tln 8 0.0
+6i62 19 0.0
+4mrg 10 0.0
+4m2v 4 0.0
+4del FAILED ValueError('Ligand coordinate mismatch: nearest distance 2.5155')
+6n9l 30 0.0
+1n4h 15 0.0
+1gno 20 0.0
+1w3j 5 0.0
+4dkq 21 0.0
+6udu 20 0.0
+4pb2 FAILED ValueError('Ligand coordinate mismatch: nearest distance 7.2888')
+5ia5 21 0.0
+1qbs FAILED ValueError('Ligand coordinate mismatch: nearest distance 20.8504')
+3r17 4 0.0
+3pb7 5 0.0
+2xj1 FAILED ValueError('Ligand coordinate mismatch: nearest distance 34.3153')
+6dj2 FAILED ValueError('Ligand coordinate mismatch: nearest distance 18.7796')
+3d8w 18 0.0
+2h21 16 0.0
+3r7o FAILED ValueError('Ligand coordinate mismatch: nearest distance 27.8248')
+4xas 14 0.0
+2rkg 19 0.0
+3uug 12 0.0
+2weq 17 0.0
+3bva 29 0.0
+6std 16 0.0
+4a6b 23 0.0
+1ndw 21 0.0
+3h1x 9 0.0
+4xt2 8 0.0
+4uin 11 0.0
+1d4y 13 0.0
+4u6z 9 0.0
+1njd 25 0.0
+1m5w 29 0.0
+5vcv FAILED ValueError('Ligand coordinate mismatch: nearest distance 22.1268')
+5iyy 13 0.0
+4ysl 15 0.0
+4fm7 16 0.0
+6gjr 19 0.0
+6hzy 9 0.0
+5lwd 10 0.0
+2wq5 11 0.0
+2vzr 15 0.0
+3ouj 15 0.0
+3d8z 6 0.0
+5nxg 9 0.0
+2std 19 0.0
+4wop 28 0.0
+5ljq 11 0.0
+4owv 6 0.0
+3iss 23 0.0
+5mo8 24 0.0
+1k6t 19 0.0
+5wqc 8 0.0
+5m23 19 0.0
+2sim 27 0.0
+3qqa 10 0.0
+2hhn 14 0.0
+4wn5 14 0.0
+3zk6 13 0.0
+4mpn 7 0.0
+3st5 21 0.0
+6htg 7 0.0
+1g53 7 0.0
+2fqt 11 0.0
+4fsl 36 0.0
+5i3w 16 0.0
+3iod 10 0.0
+6p9e 21 0.0
+6mji FAILED ValueError('Ligand coordinate mismatch: nearest distance 46.2306')
+5dlx 10 0.0
+3i6o 23 0.0
+5od1 18 0.0
+4p6x 8 0.0
+4umc 34 0.0
+4zyf 14 0.0
+3po6 6 0.0
+5k0m 18 0.0
+1dl7 8 0.0
+5xpi 22 0.0
+4o0a 17 0.0
+4ujb FAILED ValueError('Ligand coordinate mismatch: nearest distance 33.6253')
+3bxg 33 0.0
+5ngz 3 0.0
+4fl2 22 0.0
+1v1j 12 0.0
+4dld 13 0.0
+2y8c 8 0.0
+5tt3 4 0.0
+4w52 7 0.0
+4u6c 13 0.0
+4uyf 17 0.0
+3q44 20 0.0
+1cny 4 0.0
+5wyx 25 0.0
+3ml5 9 0.0
+2xxt 14 0.0
+5vyy FAILED ValueError('Ligand coordinate mismatch: nearest distance 22.4321')
+2xjx 13 0.0
+6i12 17 0.0
+4fai 20 0.0
+4bt4 12 0.0
+4ago 6 0.0
+4kzu 11 0.0
+6f90 12 0.0
+1g85 3 0.0
+4k4j 18 0.0
+3wz8 17 0.0
+6n7a FAILED ValueError('Ligand coordinate mismatch: nearest distance 30.3664')
+5ti0 2 0.0
+3p3g 16 0.0
+1zoh 1 0.0
+5n0e 7 0.0
+4b73 12 0.0
+2pog 19 0.0
+5n84 FAILED ValueError('Ligand coordinate mismatch: nearest distance 24.0875')
+2bpv 16 0.0
+4xu2 24 0.0
+1aaq 18 0.0
+4br3 25 0.0
+5cau 6 0.0
+5txy 6 0.0
+4g0p 25 0.0
+6ma3 22 0.0
+5uxf 28 0.0
+2jkp 11 0.0
+6qav FAILED ValueError('Ligand coordinate mismatch: nearest distance 30.9833')
+3s6t 10 0.0
+5uc4 12 0.0
+4rr6 10 0.0
+2rk8 11 0.0
+2wec 14 0.0
+5os4 4 0.0
+1xt8 8 0.0
+1ork 14 0.0
+5llo 12 0.0
+6gga 6 0.0
+3bl0 4 0.0
+3jvs 8 0.0
+4lj5 13 0.0
+5cs6 5 0.0
+5f1r 11 0.0
+4o0x FAILED ValueError('Ligand coordinate mismatch: nearest distance 16.7393')
+6oe1 12 0.0
+5vp9 17 0.0
+6abx 24 0.0
+4loo 6 0.0
+4mc6 19 0.0
+4o05 15 0.0
+3v2q 15 0.0
+3b4p 12 0.0
+3qxv 24 0.0
+4m8x 18 0.0
+6dpt 15 0.0
+2h3e 21 0.0
+4ceb 17 0.0
+5ka1 20 0.0
+2hmv 20 0.0
+2yk1 13 0.0
+2xxx 13 0.0
+5j1r 6 0.0
+6mku 14 0.0
+2cbj 12 0.0
+4f1l 14 0.0
+2jgs 15 0.0
+6ma4 29 0.0
+4i9u 8 0.0
+3el4 19 0.0
+3c2o 21 0.0
+4kiu 24 0.0
+5ny3 8 0.0
+3d6o 10 0.0
+5vb5 FAILED ValueError('Ligand coordinate mismatch: nearest distance 9.6730')
+5wbo 2 0.0
+1njc 28 0.0
+4qge 16 0.0
+4ca8 35 0.0
+4ddm 6 0.0
+6epa FAILED ValueError('Ligand coordinate mismatch: nearest distance 13.6071')
+6t1i 13 0.0
+6r1a 7 0.0
+1o0f 39 0.0
+4xu3 24 0.0
+4fxp 29 0.0
+4agq 8 0.0
+6aro 11 0.0
+3tao 19 0.0
+6g2s 19 0.0
+6ugn 9 0.0
+4cgi 13 0.0
+2o4r 10 0.0
+2r2m 16 0.0
+4agp 8 0.0
+4fev FAILED ValueError('Ligand coordinate mismatch: nearest distance 12.3110')
+4cs9 18 0.0
+5cso 13 0.0
+4mrw 10 0.0
+5nkc 12 0.0
+4i8w 22 0.0
+6j1l 16 0.0
+5evz 16 0.0
+5t8o 10 0.0
+3gi6 17 0.0
+6qlp 19 0.0
+3d52 9 0.0
+5i3v 23 0.0
+5l8a 25 0.0
+5nw2 17 0.0
+1pgp 29 0.0
+4bt3 11 0.0
+2c94 26 0.0
+2hzy 15 0.0
+1d7j 6 0.0
+3lka 14 0.0
+2b4l 8 0.0
+4yxi 4 0.0
+4io7 9 0.0
+5ekm FAILED ValueError('Ligand coordinate mismatch: nearest distance 26.7152')
+5llg 8 0.0
+4cpw 21 0.0
+4dff 9 0.0
+6g2c 7 0.0
+3k1j 24 0.0
+6nfh 8 0.0
+4c5d 27 0.0
+5j82 16 0.0
+5o1d 6 0.0
+2gsu 32 0.0
+3mzc 9 0.0
+1xh4 FAILED ValueError('Ligand coordinate mismatch: nearest distance 23.6842')
+6hlx 24 0.0
+3n9r 16 0.0
+2fvd 13 0.0
+1s89 20 0.0
+3gs6 9 0.0
+5ayt 10 0.0
+6d1h 12 0.0
+5htl FAILED ValueError('Ligand coordinate mismatch: nearest distance 8.3219')
+3pb9 6 0.0
+6nwl 10 0.0
+5lud 5 0.0
+4aci FAILED ValueError('Ligand coordinate mismatch: nearest distance 31.7393')
+1ucn 25 0.0
+1odi 7 0.0
+4rux 7 0.0
+3vje 46 0.0
+6jdl 30 0.0
+4m3p 7 0.0
+3uil 6 0.0
+4g90 6 0.0
+6qas FAILED ValueError('Ligand coordinate mismatch: nearest distance 16.1025')
+2vqt 8 0.0
+5wgp 10 0.0
+2p3b 28 0.0
+4kp8 9 0.0
+5hwu 27 0.0
+6e7u FAILED ValueError('Ligand coordinate mismatch: nearest distance 9.8927')
+1ogx 3 0.0
+5d6j 37 0.0
+2p7a 13 0.0
+3u92 15 0.0
+3nhi 15 0.0
+2wvt 7 0.0
+6hsh 5 0.0
+6ndl 30 0.0
+5g46 FAILED ValueError('Ligand coordinate mismatch: nearest distance 11.3015')
+4gg7 10 0.0
+3kr4 9 0.0
+3qlm 11 0.0
+4jx9 9 0.0
+2ccb 22 0.0
+6ncn 14 0.0
+4cp5 31 0.0
+2pqz 15 0.0
+3str 12 0.0
+4cu7 8 0.0
+3c2u 12 0.0
+{
+  "success": 420,
+  "failures": [
+    {
+      "pdb_id": "4u8w",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 17.1961')"
+    },
+    {
+      "pdb_id": "6n78",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 30.7589')"
+    },
+    {
+      "pdb_id": "5nn6",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 45.4190')"
+    },
+    {
+      "pdb_id": "6exi",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 3.9562')"
+    },
+    {
+      "pdb_id": "4mgd",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 12.2376')"
+    },
+    {
+      "pdb_id": "6g36",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 8.7614')"
+    },
+    {
+      "pdb_id": "6b4n",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 15.5197')"
+    },
+    {
+      "pdb_id": "6mja",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 7.2564')"
+    },
+    {
+      "pdb_id": "6ouv",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 24.4782')"
+    },
+    {
+      "pdb_id": "2pvl",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 14.4639')"
+    },
+    {
+      "pdb_id": "5w44",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 3.8694')"
+    },
+    {
+      "pdb_id": "3ebp",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 13.5558')"
+    },
+    {
+      "pdb_id": "4del",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 2.5155')"
+    },
+    {
+      "pdb_id": "4pb2",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 7.2888')"
+    },
+    {
+      "pdb_id": "1qbs",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 20.8504')"
+    },
+    {
+      "pdb_id": "2xj1",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 34.3153')"
+    },
+    {
+      "pdb_id": "6dj2",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 18.7796')"
+    },
+    {
+      "pdb_id": "3r7o",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 27.8248')"
+    },
+    {
+      "pdb_id": "5vcv",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 22.1268')"
+    },
+    {
+      "pdb_id": "6mji",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 46.2306')"
+    },
+    {
+      "pdb_id": "4ujb",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 33.6253')"
+    },
+    {
+      "pdb_id": "5vyy",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 22.4321')"
+    },
+    {
+      "pdb_id": "6n7a",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 30.3664')"
+    },
+    {
+      "pdb_id": "5n84",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 24.0875')"
+    },
+    {
+      "pdb_id": "6qav",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 30.9833')"
+    },
+    {
+      "pdb_id": "4o0x",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 16.7393')"
+    },
+    {
+      "pdb_id": "5vb5",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 9.6730')"
+    },
+    {
+      "pdb_id": "6epa",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 13.6071')"
+    },
+    {
+      "pdb_id": "4fev",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 12.3110')"
+    },
+    {
+      "pdb_id": "5ekm",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 26.7152')"
+    },
+    {
+      "pdb_id": "1xh4",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 23.6842')"
+    },
+    {
+      "pdb_id": "5htl",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 8.3219')"
+    },
+    {
+      "pdb_id": "4aci",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 31.7393')"
+    },
+    {
+      "pdb_id": "6qas",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 16.1025')"
+    },
+    {
+      "pdb_id": "6e7u",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 9.8927')"
+    },
+    {
+      "pdb_id": "5g46",
+      "error": "ValueError('Ligand coordinate mismatch: nearest distance 11.3015')"
+    }
+  ]
+}

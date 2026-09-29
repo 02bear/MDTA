@@ -1,0 +1,1645 @@
+{
+  "records": [
+    {
+      "pdb_id": "1lgw",
+      "atom_count": 8,
+      "residue_count": 162,
+      "pairs": [
+        {
+          "atom_index": 6,
+          "residue_index": 101,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 1,
+          "residue_index": 102,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 110,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 98,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "6ftw",
+      "atom_count": 31,
+      "residue_count": 331,
+      "pairs": [
+        {
+          "atom_index": 28,
+          "residue_index": 288,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 25,
+          "residue_index": 287,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 11,
+          "residue_index": 291,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 18,
+          "residue_index": 291,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 19,
+          "residue_index": 291,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 20,
+          "residue_index": 291,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 21,
+          "residue_index": 291,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 22,
+          "residue_index": 291,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 16,
+          "residue_index": 238,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 22,
+          "residue_index": 255,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 8,
+          "residue_index": 295,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 30,
+          "residue_index": 192,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [
+        "metal_complex"
+      ],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "6i64",
+      "atom_count": 16,
+      "residue_count": 448,
+      "pairs": [
+        {
+          "atom_index": 14,
+          "residue_index": 82,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 15,
+          "residue_index": 112,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 14,
+          "residue_index": 41,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 1,
+          "residue_index": 92,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 2,
+          "residue_index": 92,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 5,
+          "residue_index": 92,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 6,
+          "residue_index": 92,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 9,
+          "residue_index": 92,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 11,
+          "residue_index": 92,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 2,
+          "residue_index": 37,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 6,
+          "residue_index": 38,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 1,
+          "residue_index": 75,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 4,
+          "residue_index": 197,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 7,
+          "residue_index": 201,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 7,
+          "residue_index": 92,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 8,
+          "residue_index": 201,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 14,
+          "residue_index": 82,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "4io5",
+      "atom_count": 6,
+      "residue_count": 484,
+      "pairs": [
+        {
+          "atom_index": 3,
+          "residue_index": 85,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 5,
+          "residue_index": 85,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 80,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 5,
+          "residue_index": 133,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 0,
+          "residue_index": 173,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 78,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 4,
+          "residue_index": 60,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "3zns",
+      "atom_count": 37,
+      "residue_count": 368,
+      "pairs": [
+        {
+          "atom_index": 1,
+          "residue_index": 92,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 26,
+          "residue_index": 309,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 27,
+          "residue_index": 309,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 28,
+          "residue_index": 309,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 29,
+          "residue_index": 309,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 30,
+          "residue_index": 309,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 11,
+          "residue_index": 145,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 12,
+          "residue_index": 145,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 13,
+          "residue_index": 145,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 14,
+          "residue_index": 145,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 15,
+          "residue_index": 145,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 16,
+          "residue_index": 145,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 34,
+          "residue_index": 27,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 35,
+          "residue_index": 145,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 36,
+          "residue_index": 145,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 14,
+          "residue_index": 204,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 32,
+          "residue_index": 309,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 32,
+          "residue_index": 26,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 13,
+          "residue_index": 204,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 5,
+          "residue_index": 173,
+          "type": "halogenbond",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [
+        "metal_complex"
+      ],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "6bs3",
+      "atom_count": 27,
+      "residue_count": 685,
+      "pairs": [
+        {
+          "atom_index": 0,
+          "residue_index": 23,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 1,
+          "residue_index": 23,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 7,
+          "residue_index": 23,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 2,
+          "residue_index": 23,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 23,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 23,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 1,
+          "residue_index": 24,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 2,
+          "residue_index": 20,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 21,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 22,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 6,
+          "residue_index": 25,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 19,
+          "residue_index": 229,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 23,
+          "residue_index": 307,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 22,
+          "residue_index": 305,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 20,
+          "residue_index": 230,
+          "type": "pication",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 21,
+          "residue_index": 230,
+          "type": "pication",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 23,
+          "residue_index": 230,
+          "type": "pication",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 24,
+          "residue_index": 230,
+          "type": "pication",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 25,
+          "residue_index": 230,
+          "type": "pication",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 26,
+          "residue_index": 230,
+          "type": "pication",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 2,
+          "residue_index": 49,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 1,
+          "residue_index": 49,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 2,
+          "residue_index": 24,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [
+        "metal_complex"
+      ],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "1e3g",
+      "atom_count": 21,
+      "residue_count": 250,
+      "pairs": [
+        {
+          "atom_index": 19,
+          "residue_index": 42,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 19,
+          "residue_index": 83,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 20,
+          "residue_index": 208,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 18,
+          "residue_index": 32,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 0,
+          "residue_index": 38,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 76,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 80,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 95,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 15,
+          "residue_index": 207,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 10,
+          "residue_index": 35,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 19,
+          "residue_index": 83,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "3dp4",
+      "atom_count": 13,
+      "residue_count": 258,
+      "pairs": [
+        {
+          "atom_index": 3,
+          "residue_index": 92,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 4,
+          "residue_index": 92,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 87,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 4,
+          "residue_index": 138,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 10,
+          "residue_index": 139,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 0,
+          "residue_index": 87,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 5,
+          "residue_index": 57,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 5,
+          "residue_index": 134,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 10,
+          "residue_index": 134,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 11,
+          "residue_index": 187,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 4,
+          "residue_index": 139,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [
+        "metal_complex"
+      ],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "3ip5",
+      "atom_count": 6,
+      "residue_count": 348,
+      "pairs": [
+        {
+          "atom_index": 3,
+          "residue_index": 78,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 5,
+          "residue_index": 101,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 0,
+          "residue_index": 225,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 4,
+          "residue_index": 76,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 149,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "3b24",
+      "atom_count": 11,
+      "residue_count": 209,
+      "pairs": [
+        {
+          "atom_index": 10,
+          "residue_index": 77,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 8,
+          "residue_index": 77,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 4,
+          "residue_index": 77,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 4,
+          "residue_index": 168,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 10,
+          "residue_index": 36,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 0,
+          "residue_index": 39,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 0,
+          "residue_index": 42,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 0,
+          "residue_index": 80,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 4,
+          "residue_index": 81,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 8,
+          "residue_index": 36,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 8,
+          "residue_index": 35,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 5,
+          "residue_index": 39,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 8,
+          "residue_index": 39,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "4cfl",
+      "atom_count": 23,
+      "residue_count": 127,
+      "pairs": [
+        {
+          "atom_index": 0,
+          "residue_index": 98,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 11,
+          "residue_index": 39,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 4,
+          "residue_index": 41,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 16,
+          "residue_index": 97,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 2,
+          "residue_index": 104,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 4,
+          "residue_index": 45,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 9,
+          "residue_index": 50,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 11,
+          "residue_index": 50,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 7,
+          "residue_index": 104,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 0,
+          "residue_index": 55,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "5wex",
+      "atom_count": 21,
+      "residue_count": 258,
+      "pairs": [
+        {
+          "atom_index": 16,
+          "residue_index": 195,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 13,
+          "residue_index": 195,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 6,
+          "residue_index": 118,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 1,
+          "residue_index": 127,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 7,
+          "residue_index": 194,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 5,
+          "residue_index": 198,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 1,
+          "residue_index": 194,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 6,
+          "residue_index": 194,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [
+        "metal_complex"
+      ],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "3m1k",
+      "atom_count": 8,
+      "residue_count": 256,
+      "pairs": [
+        {
+          "atom_index": 4,
+          "residue_index": 195,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 0,
+          "residue_index": 90,
+          "type": "pication",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 1,
+          "residue_index": 90,
+          "type": "pication",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 2,
+          "residue_index": 90,
+          "type": "pication",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 90,
+          "type": "pication",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 5,
+          "residue_index": 90,
+          "type": "pication",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 6,
+          "residue_index": 90,
+          "type": "pication",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 2,
+          "residue_index": 117,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 2,
+          "residue_index": 193,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [
+        "metal_complex"
+      ],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "3hkq",
+      "atom_count": 15,
+      "residue_count": 257,
+      "pairs": [
+        {
+          "atom_index": 0,
+          "residue_index": 195,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 88,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 12,
+          "residue_index": 194,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 14,
+          "residue_index": 194,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 63,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [
+        "metal_complex"
+      ],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "4rfd",
+      "atom_count": 16,
+      "residue_count": 257,
+      "pairs": [
+        {
+          "atom_index": 4,
+          "residue_index": 194,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 6,
+          "residue_index": 194,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 1,
+          "residue_index": 117,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 7,
+          "residue_index": 193,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 1,
+          "residue_index": 193,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [
+        "metal_complex"
+      ],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "4mo8",
+      "atom_count": 16,
+      "residue_count": 257,
+      "pairs": [
+        {
+          "atom_index": 1,
+          "residue_index": 194,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 15,
+          "residue_index": 194,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 195,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 11,
+          "residue_index": 126,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 11,
+          "residue_index": 193,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [
+        "metal_complex"
+      ],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "1k4h",
+      "atom_count": 18,
+      "residue_count": 372,
+      "pairs": [
+        {
+          "atom_index": 7,
+          "residue_index": 145,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 9,
+          "residue_index": 145,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 17,
+          "residue_index": 145,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 11,
+          "residue_index": 192,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 11,
+          "residue_index": 219,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 15,
+          "residue_index": 220,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 5,
+          "residue_index": 95,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 6,
+          "residue_index": 95,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 12,
+          "residue_index": 95,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 13,
+          "residue_index": 95,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 14,
+          "residue_index": 95,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 16,
+          "residue_index": 95,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 17,
+          "residue_index": 92,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [
+        "metal_complex"
+      ],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "1pro",
+      "atom_count": 43,
+      "residue_count": 198,
+      "pairs": [
+        {
+          "atom_index": 0,
+          "residue_index": 24,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 0,
+          "residue_index": 123,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 49,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 3,
+          "residue_index": 148,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 30,
+          "residue_index": 29,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 31,
+          "residue_index": 28,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 41,
+          "residue_index": 127,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 40,
+          "residue_index": 128,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 7,
+          "residue_index": 26,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 28,
+          "residue_index": 27,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 35,
+          "residue_index": 49,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 36,
+          "residue_index": 126,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 36,
+          "residue_index": 145,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 29,
+          "residue_index": 148,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 20,
+          "residue_index": 180,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 16,
+          "residue_index": 182,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 14,
+          "residue_index": 80,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 13,
+          "residue_index": 81,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 21,
+          "residue_index": 179,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "4dkr",
+      "atom_count": 27,
+      "residue_count": 339,
+      "pairs": [
+        {
+          "atom_index": 25,
+          "residue_index": 228,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 26,
+          "residue_index": 228,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 22,
+          "residue_index": 228,
+          "type": "saltbridge",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 14,
+          "residue_index": 271,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 17,
+          "residue_index": 319,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 6,
+          "residue_index": 273,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 7,
+          "residue_index": 273,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 8,
+          "residue_index": 273,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 9,
+          "residue_index": 273,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 10,
+          "residue_index": 273,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 11,
+          "residue_index": 273,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 9,
+          "residue_index": 140,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 11,
+          "residue_index": 230,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 6,
+          "residue_index": 242,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 6,
+          "residue_index": 270,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 9,
+          "residue_index": 273,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 26,
+          "residue_index": 228,
+          "type": "waterbridge",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [],
+      "max_coord_match_distance": 0.0
+    },
+    {
+      "pdb_id": "6pve",
+      "atom_count": 38,
+      "residue_count": 270,
+      "pairs": [
+        {
+          "atom_index": 27,
+          "residue_index": 95,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 29,
+          "residue_index": 152,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 34,
+          "residue_index": 99,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 34,
+          "residue_index": 96,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 35,
+          "residue_index": 210,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 35,
+          "residue_index": 222,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 36,
+          "residue_index": 34,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 36,
+          "residue_index": 78,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 37,
+          "residue_index": 76,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 37,
+          "residue_index": 172,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 13,
+          "residue_index": 72,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 26,
+          "residue_index": 151,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 28,
+          "residue_index": 222,
+          "type": "hbond",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 0,
+          "residue_index": 20,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 1,
+          "residue_index": 20,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 4,
+          "residue_index": 20,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 30,
+          "residue_index": 20,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 31,
+          "residue_index": 20,
+          "type": "pistacking",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 16,
+          "residue_index": 29,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 18,
+          "residue_index": 213,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 19,
+          "residue_index": 213,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 16,
+          "residue_index": 213,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 17,
+          "residue_index": 213,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 21,
+          "residue_index": 33,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 20,
+          "residue_index": 173,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        },
+        {
+          "atom_index": 21,
+          "residue_index": 251,
+          "type": "hydrophobic",
+          "coord_match_distance": 0.0
+        }
+      ],
+      "skipped_interaction_classes": [],
+      "max_coord_match_distance": 0.0
+    }
+  ],
+  "failures": []
+}

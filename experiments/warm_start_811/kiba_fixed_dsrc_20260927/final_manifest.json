@@ -1,0 +1,106 @@
+{
+  "files": {
+    "train_p13d_seed.py": {
+      "bytes": 9210,
+      "sha256": "6a43e49f54ddb18f4343856ce6ea663a8dc8eafa5bd21a9d6eb9c436c7ea0c48"
+    },
+    "run_seed.py": {
+      "bytes": 4183,
+      "sha256": "d5c7668b27ee94812a83c022cdad381c2f42863f89f8e93b5089778ce9b4c8ab"
+    },
+    "setup_experiment.py": {
+      "bytes": 6606,
+      "sha256": "a6ea9bbc0b713b35719ec6694eb5944d7c1e854640739c9c83ce0b8b5bbe74d7"
+    },
+    "smoke_test.py": {
+      "bytes": 3556,
+      "sha256": "8bbf62fd8e7e1b3cb583e1a14122560746f7ad7e0f9d326b8e95f757ab9e98a4"
+    },
+    "launch.py": {
+      "bytes": 4020,
+      "sha256": "62cd846eeaa5ea919f1a3b0891ba929fe743b5265fed8679ce7afa4adf7b902b"
+    },
+    "tune_experiment.py": {
+      "bytes": 24298,
+      "sha256": "802543ae05a408d68aeec5ea622ac91886986a21ae85fa59ed834110dadfa86f"
+    },
+    "README.md": {
+      "bytes": 3724,
+      "sha256": "9636b449bb6ba557f0bc1971c951e904f47a8317e602cdc873a542040d021394"
+    },
+    "calibrate_sequence_fallback.py": {
+      "bytes": 4251,
+      "sha256": "d29e7b915f23c6f29e8e55d4ebdd8f6acd7719d1f592106eff629268bdc35b4a"
+    },
+    "entity_similarities.npz": {
+      "bytes": 7966879,
+      "sha256": "53ab8993277854ccbd093e24dc85831b6a7ee8ebffec63d0af6b96752841f5fe"
+    },
+    "rnc_loss.py": {
+      "bytes": 5591,
+      "sha256": "f5ab1b1971e5200e719d879dbbbd68c7845905c434b45fdf288ab4da6e7e49e1"
+    },
+    "run_fixed_pipeline.py": {
+      "bytes": 27150,
+      "sha256": "26653dea05503141dd259848d88c5db00ae58ab989c723b4cb1b4f796a54f458"
+    },
+    "pair_interaction.py": {
+      "bytes": 12449,
+      "sha256": "a99fa2434429322c28b376ecf5b8c81a487a2b97d702562920f8473f88fae1a3"
+    },
+    "prepare_data.py": {
+      "bytes": 9301,
+      "sha256": "79c413114fd985768da72080b6d2090ae44ed3c7f7ca147a5d43008b986cb8c2"
+    },
+    "source/train_p13d_earlystop.py": {
+      "bytes": 17163,
+      "sha256": "797d1cd115d31b82855e54f84734941dc21f6cb1319b56777be77160215a01a1"
+    },
+    "source/models/drug_3d_egnn_encoder.py": {
+      "bytes": 4353,
+      "sha256": "caad5a6ba8e3a42ec9e575e0063fad00f2ea94ea41073850ea3f93753a111671"
+    },
+    "source/models/fusion.py": {
+      "bytes": 689,
+      "sha256": "1182053c6f0594c1406a64b51a2de4730844dd90bb044d7389dbef6888fa4ea9"
+    },
+    "source/models/protein_3d_egnn_encoder.py": {
+      "bytes": 7388,
+      "sha256": "cd01b42fb48ca6c438be4a1951ab1fce5070614788900876d6c45df3eb522a4a"
+    },
+    "source/models/model_p13d.py": {
+      "bytes": 2657,
+      "sha256": "fc584a5b8aec5da904566855c9a8135cf7c7d4ba0ca591a254924499f613b19a"
+    },
+    "source/models/protein_1d_encoder.py": {
+      "bytes": 254,
+      "sha256": "3ce9cb6f49cf4fc63e4b1a76e86ebff56d90892bf1a9441f7a3913a8bf915f4b"
+    },
+    "source/models/__init__.py": {
+      "bytes": 20,
+      "sha256": "6e1a0d7b4ba5fd2d55969fb8b96e369fc2c8670c7fb9d18c07f672c92d911aca"
+    },
+    "source/models/decoder.py": {
+      "bytes": 550,
+      "sha256": "738730319b8d042664d4f4bfa06a58d7a0ba9cf624e42f12341e4668f605a684"
+    },
+    "source/models/drug_1d_encoder.py": {
+      "bytes": 280,
+      "sha256": "afb662754ac975dfefd28dd1a5d3a81ccc92ffaeb6409f813f3230a54a23d1d1"
+    },
+    "source/datasets/davis_dataset_p13d.py": {
+      "bytes": 5933,
+      "sha256": "2ff49db3920a23dbc97350725460522ef7d94b3e7ea847dfe9eb25e46e32e8fe"
+    },
+    "source/datasets/collate_p13d.py": {
+      "bytes": 3338,
+      "sha256": "1b976f25e8ec3404ea508108d923826492cb517dd3bc223ca5c482d049f43db1"
+    },
+    "source/datasets/__init__.py": {
+      "bytes": 7,
+      "sha256": "013a1b1cababc4f6668775cedc98f3737ae19517ceffb832a175e888fb59dc37"
+    }
+  },
+  "existing_base_features_unmodified": true,
+  "timestamp": 1790443150.7317278
+}

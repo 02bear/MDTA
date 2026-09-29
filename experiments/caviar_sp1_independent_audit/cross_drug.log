@@ -1,0 +1,6 @@
+[DavisDatasetP13D] input pairs: 30056
+[DavisDatasetP13D] kept pairs : 30056
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'drug_3d': 0, 'protein_1d': 0, 'protein_3d': 0}
+VAL REAL=0.633923590 CROSS_DRUG_PERM=0.634217739 DELTA=+0.000294149
+TEST REAL=0.657971323 CROSS_DRUG_PERM=0.657989323 DELTA=+0.000018001
+OUTPUT=/data1/ztx/MyModel-MDTA/experiments/caviar_sp1_independent_audit/outputs/cross_drug_results.json

@@ -1,0 +1,32 @@
+{
+  "name": "p13d_pcim_rnc",
+  "config": {
+    "variant": "bidirectional",
+    "width": 32,
+    "top_k": 128,
+    "coverage_budget": 16,
+    "max_delta": 0.5,
+    "cross_max_scale": 0.25,
+    "residual_l2": 0.001,
+    "rnc_weight": 0.01,
+    "temperature": 2.0,
+    "projection_dim": 16,
+    "rnc_batch_size": 32,
+    "microbatch_size": 16,
+    "interval": 2,
+    "high_count": 8,
+    "mid_count": 8,
+    "high_threshold": 11.953871964,
+    "mid_threshold": 11.520216403,
+    "warmup_epochs": 1.0,
+    "seed": 42
+  },
+  "best": {
+    "lambda": 2.5,
+    "mse": 136.92232087675228,
+    "epoch": 1
+  },
+  "checkpoint": "/data1/ztx/MyModel-MDTA/experiments/warm_start_811/kiba_fixed_dsrc_20260927/smoke_output/pcim_dsrc_fixed/candidates/p13d_pcim_rnc/best.pt",
+  "epochs": 1,
+  "complete": true
+}

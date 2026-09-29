@@ -1,0 +1,61 @@
+{
+  "name": "warm_start_811_rank16_pcim_pair_rnc_20260917",
+  "split": "/data1/ztx/MyModel-MDTA/data/splits/davis_fixed_split_811_full.json",
+  "seed": 42,
+  "gpu": 1,
+  "backbone": {
+    "epochs": 500,
+    "batch_size": 16,
+    "lr": 0.0003,
+    "weight_decay": 0.00001,
+    "early_stop_patience": 60,
+    "early_stop_min_delta": 0.0001,
+    "hidden_dim": 128,
+    "dropout": 0.1,
+    "head_rank": 16
+  },
+  "adapter": {
+    "variant": "bidirectional",
+    "width": 32,
+    "top_k": 64,
+    "coverage_budget": 32,
+    "max_delta": 0.5,
+    "cross_max_scale": 0.25,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "epochs": 60,
+    "patience": 10,
+    "min_delta": 0.00001,
+    "lr": 0.0003,
+    "weight_decay": 0.00001,
+    "grad_clip": 1.0,
+    "residual_l2": 0.001,
+    "lambdas": [0.0, 0.25, 0.5, 1.0]
+  },
+  "rnc": {
+    "mode": "standard",
+    "weight": 0.01,
+    "projection_dim": 16,
+    "temperature": 2.0,
+    "batch_size": 32,
+    "microbatch_size": 16,
+    "interval": 2,
+    "high_count": 8,
+    "mid_count": 8,
+    "high_threshold": 7.0,
+    "mid_threshold": 5.0,
+    "warmup_epochs": 1.0
+  },
+  "r1": {
+    "selection": "validation only; residual references restricted to training pairs",
+    "gamma": [1.0, 2.0, 4.0],
+    "k_drug": [4, 8, 16, 32],
+    "min_drug_similarity": [0.0, 0.2, 0.4],
+    "tau": [0.05, 0.1, 0.25, 0.5, 1.0],
+    "beta": [0.0, 0.5, 1.0, 2.0],
+    "clip": [0.25, 0.5, 1.0],
+    "scale": [0.25, 0.5, 0.75, 1.0]
+  },
+  "test_policy": "test labels are accessed only after the best validation checkpoint and lambda are persisted",
+  "output": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/warm_start/random_pair_811_seed42/rank16_pcim_pair_rnc_20260917"
+}

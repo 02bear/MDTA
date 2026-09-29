@@ -1,0 +1,270 @@
+FEATURES_VERIFIED drug_1d_chemberta2 2111
+FEATURES_VERIFIED drug_3d 2111
+FEATURES_VERIFIED protein_1d_esm2 229
+FEATURES_VERIFIED protein_3d_gvp 229
+/opt/anaconda3/lib/python3.11/site-packages/Bio/Align/__init__.py:4414: BiopythonDeprecationWarning: The attribute 'query_internal_open_gap_score' was renamed to 'open_internal_deletion_score'. This was done to be consistent with the
+AlignmentCounts object returned by the .counts method of an Alignment object.
+  warnings.warn(
+/opt/anaconda3/lib/python3.11/site-packages/Bio/Align/__init__.py:4414: BiopythonDeprecationWarning: The attribute 'query_internal_extend_gap_score' was renamed to 'extend_internal_deletion_score'. This was done to be consistent with the
+AlignmentCounts object returned by the .counts method of an Alignment object.
+  warnings.warn(
+/opt/anaconda3/lib/python3.11/site-packages/Bio/Align/__init__.py:4414: BiopythonDeprecationWarning: The attribute 'query_left_open_gap_score' was renamed to 'open_left_deletion_score'. This was done to be consistent with the
+AlignmentCounts object returned by the .counts method of an Alignment object.
+  warnings.warn(
+/opt/anaconda3/lib/python3.11/site-packages/Bio/Align/__init__.py:4414: BiopythonDeprecationWarning: The attribute 'query_left_extend_gap_score' was renamed to 'extend_left_deletion_score'. This was done to be consistent with the
+AlignmentCounts object returned by the .counts method of an Alignment object.
+  warnings.warn(
+/opt/anaconda3/lib/python3.11/site-packages/Bio/Align/__init__.py:4414: BiopythonDeprecationWarning: The attribute 'query_right_open_gap_score' was renamed to 'open_right_deletion_score'. This was done to be consistent with the
+AlignmentCounts object returned by the .counts method of an Alignment object.
+  warnings.warn(
+/opt/anaconda3/lib/python3.11/site-packages/Bio/Align/__init__.py:4414: BiopythonDeprecationWarning: The attribute 'query_right_extend_gap_score' was renamed to 'extend_right_deletion_score'. This was done to be consistent with the
+AlignmentCounts object returned by the .counts method of an Alignment object.
+  warnings.warn(
+/opt/anaconda3/lib/python3.11/site-packages/Bio/Align/__init__.py:4414: BiopythonDeprecationWarning: The attribute 'target_internal_open_gap_score' was renamed to 'open_internal_insertion_score'. This was done to be consistent with the
+AlignmentCounts object returned by the .counts method of an Alignment object.
+  warnings.warn(
+/opt/anaconda3/lib/python3.11/site-packages/Bio/Align/__init__.py:4414: BiopythonDeprecationWarning: The attribute 'target_internal_extend_gap_score' was renamed to 'extend_internal_insertion_score'. This was done to be consistent with the
+AlignmentCounts object returned by the .counts method of an Alignment object.
+  warnings.warn(
+/opt/anaconda3/lib/python3.11/site-packages/Bio/Align/__init__.py:4414: BiopythonDeprecationWarning: The attribute 'target_left_open_gap_score' was renamed to 'open_left_insertion_score'. This was done to be consistent with the
+AlignmentCounts object returned by the .counts method of an Alignment object.
+  warnings.warn(
+/opt/anaconda3/lib/python3.11/site-packages/Bio/Align/__init__.py:4414: BiopythonDeprecationWarning: The attribute 'target_left_extend_gap_score' was renamed to 'extend_left_insertion_score'. This was done to be consistent with the
+AlignmentCounts object returned by the .counts method of an Alignment object.
+  warnings.warn(
+/opt/anaconda3/lib/python3.11/site-packages/Bio/Align/__init__.py:4414: BiopythonDeprecationWarning: The attribute 'target_right_open_gap_score' was renamed to 'open_right_insertion_score'. This was done to be consistent with the
+AlignmentCounts object returned by the .counts method of an Alignment object.
+  warnings.warn(
+/opt/anaconda3/lib/python3.11/site-packages/Bio/Align/__init__.py:4414: BiopythonDeprecationWarning: The attribute 'target_right_extend_gap_score' was renamed to 'extend_right_insertion_score'. This was done to be consistent with the
+AlignmentCounts object returned by the .counts method of an Alignment object.
+  warnings.warn(
+POCKET 0 O00141 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 1 O14920 ok exact_sequence_reuse
+POCKET 2 O15111 ok exact_sequence_reuse
+POCKET 3 P00533 ok exact_sequence_reuse
+POCKET 4 P04626 ok exact_sequence_reuse
+POCKET 5 P06239 ok exact_sequence_reuse
+POCKET 6 P07333 ok exact_sequence_reuse
+POCKET 7 P15056 ok exact_sequence_reuse
+POCKET 8 P24941 ok exact_sequence_reuse
+POCKET 9 P28482 ok exact_sequence_reuse
+POCKET 10 P45983 ok exact_sequence_reuse
+POCKET 11 P45984 ok exact_sequence_reuse
+POCKET 12 P49841 ok exact_sequence_reuse
+POCKET 13 P53350 ok exact_sequence_reuse
+POCKET 14 P53779 ok exact_sequence_reuse
+POCKET 15 Q13464 ok exact_sequence_reuse
+POCKET 16 Q16539 ok exact_sequence_reuse
+POCKET 17 Q16584 ok exact_sequence_reuse
+POCKET 18 O00311 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 19 O14757 ok exact_sequence_reuse
+POCKET 20 O14965 ok exact_sequence_reuse
+POCKET 21 O15075 ok exact_sequence_reuse
+POCKET 22 O15264 ok exact_sequence_reuse
+POCKET 23 O15530 ok exact_sequence_reuse
+POCKET 24 O43293 ok exact_sequence_reuse
+POCKET 25 O60674 ok exact_sequence_reuse
+POCKET 26 O75116 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 27 O75582 ok exact_sequence_reuse
+POCKET 28 O94806 ok exact_sequence_reuse
+POCKET 29 O95819 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 30 O96013 ok exact_sequence_reuse
+POCKET 31 O96017 ok exact_sequence_reuse
+POCKET 32 P04629 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 33 P05129 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 34 P06213 ok exact_sequence_reuse
+POCKET 35 P06241 ok exact_sequence_reuse
+POCKET 36 P06493 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 37 P07332 ok exact_sequence_reuse
+POCKET 38 P07948 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 39 P07949 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 40 P08069 ok exact_sequence_reuse
+POCKET 41 P08922 ok exact_sequence_reuse
+POCKET 42 P10721 ok exact_sequence_reuse
+POCKET 43 P11309 ok exact_sequence_reuse
+POCKET 44 P11362 ok exact_sequence_reuse
+POCKET 45 P12931 ok exact_sequence_reuse
+POCKET 46 P15735 ok exact_sequence_reuse
+POCKET 47 P16591 ok exact_sequence_reuse
+POCKET 48 P17612 ok exact_sequence_reuse
+POCKET 49 P23443 ok exact_sequence_reuse
+POCKET 50 P24723 ok exact_sequence_reuse
+POCKET 51 P27448 ok exact_sequence_reuse
+POCKET 52 P29317 ok exact_sequence_reuse
+POCKET 53 P29597 ok exact_sequence_reuse
+POCKET 54 P31751 ok exact_sequence_reuse
+POCKET 55 P35916 ok exact_sequence_reuse
+POCKET 56 P35968 ok exact_sequence_reuse
+POCKET 57 P41743 ok exact_sequence_reuse
+POCKET 58 P42679 ok exact_sequence_reuse
+POCKET 59 P42685 ok exact_sequence_reuse
+POCKET 60 P43405 ok exact_sequence_reuse
+POCKET 61 P48729 ok exact_sequence_reuse
+POCKET 62 P48730 ok exact_sequence_reuse
+POCKET 63 P49137 ok exact_sequence_reuse
+POCKET 64 P49760 ok exact_sequence_reuse
+POCKET 65 P49840 ok exact_sequence_reuse
+POCKET 66 P51451 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 67 P51617 ok exact_sequence_reuse
+POCKET 68 P51812 ok exact_sequence_reuse
+POCKET 69 P51817 ok exact_sequence_reuse
+POCKET 70 P51955 ok exact_sequence_reuse
+POCKET 71 P51957 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 72 P52333 ok exact_sequence_reuse
+POCKET 73 P53778 ok exact_sequence_reuse
+POCKET 74 P68400 ok exact_sequence_reuse
+POCKET 75 P78368 ok exact_sequence_reuse
+POCKET 76 Q00535 ok exact_sequence_reuse
+POCKET 77 Q05397 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 78 Q05513 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 79 Q05655 ok exact_sequence_reuse
+POCKET 80 Q06418 ok exact_sequence_reuse
+POCKET 81 Q08881 ok exact_sequence_reuse
+POCKET 82 Q12851 ok exact_sequence_reuse
+POCKET 83 Q13131 ok exact_sequence_reuse
+POCKET 84 Q13153 ok exact_sequence_reuse
+POCKET 85 Q13188 ok exact_sequence_reuse
+POCKET 86 Q13237 ok exact_sequence_reuse
+POCKET 87 Q13554 ok exact_sequence_reuse
+POCKET 88 Q13555 ok exact_sequence_reuse
+POCKET 89 Q13557 ok exact_sequence_reuse
+POCKET 90 Q13627 ok exact_sequence_reuse
+POCKET 91 Q13976 ok exact_sequence_reuse
+POCKET 92 Q14012 ok exact_sequence_reuse
+POCKET 93 Q14680 ok exact_sequence_reuse
+POCKET 94 Q15303 ok exact_sequence_reuse
+POCKET 95 Q16288 ok exact_sequence_reuse
+POCKET 96 Q16513 ok exact_sequence_reuse
+POCKET 97 Q16620 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 98 Q16644 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 99 Q5VT25 ok exact_sequence_reuse
+POCKET 100 Q7KZI7 ok exact_sequence_reuse
+POCKET 101 Q7L7X3 ok exact_sequence_reuse
+POCKET 102 Q86V86 ok exact_sequence_reuse
+POCKET 103 Q8IW41 ok exact_sequence_reuse
+POCKET 104 Q8N4C8 ok exact_sequence_reuse
+POCKET 105 Q8NE63 ok exact_sequence_reuse
+POCKET 106 Q8TDC3 ok exact_sequence_reuse
+POCKET 107 Q96GD4 ok exact_sequence_reuse
+POCKET 108 Q96KB5 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 109 Q96PF2 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 110 Q96SB4 ok exact_sequence_reuse
+POCKET 111 Q9BXA7 ok exact_sequence_reuse
+POCKET 112 Q9BZL6 ok exact_sequence_reuse
+POCKET 113 Q9H2G2 ok exact_sequence_reuse
+POCKET 114 Q9H2X6 ok exact_sequence_reuse
+POCKET 115 Q9H3Y6 ok exact_sequence_reuse
+POCKET 116 Q9H4B4 ok exact_sequence_reuse
+POCKET 117 Q9HAZ1 ok exact_sequence_reuse
+POCKET 118 Q9HBY8 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 119 Q9HCP0 ok exact_sequence_reuse
+POCKET 120 Q9NR20 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 121 Q9NWZ3 ok exact_sequence_reuse
+POCKET 122 Q9NYL2 ok exact_sequence_reuse
+POCKET 123 Q9P1W9 ok exact_sequence_reuse
+POCKET 124 Q9UEE5 ok exact_sequence_reuse
+POCKET 125 Q9UM73 ok exact_sequence_reuse
+POCKET 126 Q9Y243 ok exact_sequence_reuse
+POCKET 127 Q9Y4K4 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 128 Q9Y6M4 ok exact_sequence_reuse
+POCKET 129 P31749 ok exact_sequence_reuse
+POCKET 130 P42336 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 131 Q99683 ok exact_sequence_reuse
+POCKET 132 P00519 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 133 P04049 ok exact_sequence_reuse
+POCKET 134 P05771 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 135 P07947 ok exact_sequence_reuse
+POCKET 136 P08631 ok exact_sequence_reuse
+POCKET 137 P16234 ok exact_sequence_reuse
+POCKET 138 P22455 ok exact_sequence_reuse
+POCKET 139 P27361 ok exact_sequence_reuse
+POCKET 140 P29323 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 141 P36888 ok exact_sequence_reuse
+POCKET 142 P41240 ok exact_sequence_reuse
+POCKET 143 P41279 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 144 P43403 ok exact_sequence_reuse
+POCKET 145 P51813 ok exact_sequence_reuse
+POCKET 146 P52564 ok exact_sequence_reuse
+POCKET 147 Q02750 ok exact_sequence_reuse
+POCKET 148 Q02763 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 149 Q04759 ok exact_sequence_reuse
+POCKET 150 Q04912 ok exact_sequence_reuse
+POCKET 151 Q06187 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 152 Q15418 ok exact_sequence_reuse
+POCKET 153 Q15759 ok exact_sequence_reuse
+POCKET 154 Q16566 ok exact_sequence_reuse
+POCKET 155 Q8IU85 ok exact_sequence_reuse
+POCKET 156 Q9UHD2 ok exact_sequence_reuse
+POCKET 157 P17252 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 158 Q9UBS0 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 159 O60285 ok exact_sequence_reuse
+POCKET 160 O75676 ok exact_sequence_reuse
+POCKET 161 P08581 ok exact_sequence_reuse
+POCKET 162 P09619 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 163 P09769 ok exact_sequence_reuse
+POCKET 164 P17948 ok exact_sequence_reuse
+POCKET 165 P21802 ok exact_sequence_reuse
+POCKET 166 P22607 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 167 P30530 ok exact_sequence_reuse
+POCKET 168 P34947 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 169 P42684 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 170 P50750 ok exact_sequence_reuse
+POCKET 171 P54760 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 172 P80192 ok exact_sequence_reuse
+POCKET 173 Q13177 ok exact_sequence_reuse
+POCKET 174 Q13882 ok exact_sequence_reuse
+POCKET 175 Q14289 ok exact_sequence_reuse
+POCKET 176 Q15078 unavailable none
+POCKET 177 Q15118 unavailable none
+POCKET 178 Q15139 ok exact_sequence_reuse
+POCKET 179 Q96RG2 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 180 Q9UBE8 ok exact_sequence_reuse
+POCKET 181 Q12866 ok exact_sequence_reuse
+POCKET 182 Q14164 ok exact_sequence_reuse
+POCKET 183 P19784 ok exact_sequence_reuse
+POCKET 184 P67870 unavailable none
+POCKET 185 O43741 unavailable none
+POCKET 186 P22612 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 187 P22694 ok exact_sequence_reuse
+POCKET 188 P54619 unavailable none
+POCKET 189 P54646 ok exact_sequence_reuse
+POCKET 190 Q9UGI9 unavailable none
+POCKET 191 Q9UGJ0 unavailable none
+POCKET 192 Q9Y478 unavailable none
+POCKET 193 O00418 unavailable none
+POCKET 194 O00444 ok exact_sequence_reuse
+POCKET 195 O43781 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 196 P53667 ok exact_sequence_reuse
+POCKET 197 Q07912 ok exact_sequence_reuse
+POCKET 198 Q9HBH9 ok exact_sequence_reuse
+POCKET 199 Q9BWU1 ok exact_sequence_reuse
+POCKET 200 P11802 ok exact_sequence_reuse
+POCKET 201 Q00534 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 202 Q02156 ok exact_sequence_reuse
+POCKET 203 O00329 ok exact_sequence_reuse
+POCKET 204 P42338 ok exact_sequence_reuse
+POCKET 205 P48736 ok exact_sequence_reuse
+POCKET 206 P78527 unavailable none
+POCKET 207 P29376 ok exact_sequence_reuse
+POCKET 208 P36507 ok exact_sequence_reuse
+POCKET 209 P49336 ok exact_sequence_reuse
+POCKET 210 Q04771 ok exact_sequence_reuse
+POCKET 211 Q5S007 ok exact_sequence_reuse
+POCKET 212 Q9UQM7 ok exact_sequence_reuse
+POCKET 213 Q9Y463 ok exact_sequence_reuse
+POCKET 214 P50613 ok exact_sequence_reuse
+POCKET 215 Q9P289 ok exact_sequence_reuse
+POCKET 216 Q02779 ok exact_sequence_reuse
+POCKET 217 Q96L34 ok exact_sequence_reuse
+POCKET 218 Q96RR4 ok exact_sequence_reuse
+POCKET 219 Q9H0K1 ok exact_sequence_reuse
+POCKET 220 Q9HC98 ok exact_sequence_reuse
+POCKET 221 P30291 ok_sequence_fallback davis_calibrated_sequence_fallback
+POCKET 222 P49674 ok exact_sequence_reuse
+POCKET 223 P23458 ok exact_sequence_reuse
+POCKET 224 P42345 ok exact_sequence_reuse
+POCKET 225 Q9BUB5 ok exact_sequence_reuse
+POCKET 226 P49759 ok exact_sequence_reuse
+POCKET 227 Q9UBF8 ok exact_sequence_reuse
+POCKET 228 Q16512 ok exact_sequence_reuse
+PREPARE_COMPLETE {"drug_similarity": "Morgan radius 2 2048-bit Tanimoto", "protein_similarity": "KLIFS85 masked identity divided by 85, identical to Davis", "status_counts": {"ok": 180, "ok_sequence_fallback": 39, "unavailable": 10}, "method_counts": {"exact_sequence_reuse": 180, "davis_calibrated_sequence_fallback": 39, "none": 10}, "unavailable_protein_ids": ["Q15078", "Q15118", "P67870", "O43741", "P54619", "Q9UGI9", "Q9UGJ0", "Q9Y478", "O00418", "P78527"], "unavailable_policy": "protein DSRC branch has zero support; preserve drug branch and all pairs", "similarity_sha256": "53ab8993277854ccbd093e24dc85831b6a7ee8ebffec63d0af6b96752841f5fe", "no_affinity_labels_used_for_similarities": true}

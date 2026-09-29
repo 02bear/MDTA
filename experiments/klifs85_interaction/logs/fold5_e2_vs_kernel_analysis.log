@@ -1,0 +1,60 @@
+[DavisDatasetP13D] input pairs: 30056
+[DavisDatasetP13D] kept pairs : 30056
+[DavisDatasetP13D] missing counts: {'drug_1d': 0, 'drug_2d': 0, 'drug_3d': 0, 'protein_1d': 0, 'protein_3d': 0}
+{
+  "guardrail": "validation indices only; test indices and metrics not accessed",
+  "checkpoint_epoch": 249,
+  "checkpoint_args": {
+    "pairs_csv": "data/raw/davis/pairs.csv",
+    "drug_1d_dir": "data/processed/davis/drug_1d_chemberta2",
+    "drug_2d_dir": "data/processed/davis/drug_2d",
+    "drug_3d_dir": "data/processed/davis/drug_3d",
+    "protein_1d_dir": "data/processed/davis/protein_1d_esm2",
+    "protein_3d_dir": "data/processed/davis/protein_3d_gvp",
+    "split_json": "/data1/ztx/MyModel-MDTA/data/splits/davis_drug_cold_5fold_seed42/fold_5/split.json",
+    "output_dir": "/data1/ztx/MyModel-MDTA/outputs/Refine_experiment/davis/cold_start/drug_cold_5fold_seed42/e2/fold_5",
+    "seed": 42,
+    "train_ratio": 0.8,
+    "batch_size": 16,
+    "num_workers": 0,
+    "epochs": 500,
+    "lr": 0.0003,
+    "weight_decay": 1e-05,
+    "early_stop_patience": 60,
+    "early_stop_min_delta": 0.0001,
+    "drug_1d_in_dim": 768,
+    "drug_3d_node_in_dim": 10,
+    "hidden_dim": 128,
+    "dropout": 0.1,
+    "pocket_top_k": 64,
+    "interaction_heads": 4
+  },
+  "n_validation_pairs": 3094,
+  "n_validation_drugs": 7,
+  "mse": {
+    "frozen_p13d_R0": 0.7334100041135208,
+    "drug_residual_R1": 0.669229639811139,
+    "E2_retrained_global_base": 7.7211017677765845,
+    "E2_total": 0.5387266527474619
+  },
+  "e2_local_increment_mse_gain": 7.182375115029123,
+  "correlations": {
+    "R1_correction_vs_true_R0_residual": 0.33122071506067297,
+    "E2_total_correction_vs_true_R0_residual": 0.5149087249081856,
+    "E2_local_delta_vs_true_E2_base_residual": 0.13818703450578074,
+    "top1_similarity_vs_R1_gain_by_drug": 0.6043032573683829
+  },
+  "mean_abs_correction": {
+    "R1": 0.1353129199321845,
+    "E2_total_vs_R0": 0.26966497893478303,
+    "E2_local_delta": 2.655341985076184
+  }
+}
+ drug_id  n_pairs  top1_train_similarity  top8_train_similarity_mean   r0_mse   r1_mse  e2_base_mse   e2_mse   r1_gain   e2_gain  e2_local_gain_vs_e2_base  r1_correction_abs_mean  e2_total_correction_abs_mean  e2_local_delta_abs_mean
+ 9926791      442               0.333333                    0.187630 1.378656 1.444183     5.548018 0.400306 -0.065526  0.978350                  5.147712                0.116217                      0.555348                 2.630614
+ 5328940      442               0.428571                    0.319066 2.081734 1.839167    12.881302 1.830875  0.242567  0.250859                 11.050427                0.143980                      0.148453                 2.671947
+ 3081361      442               0.444444                    0.318604 0.524122 0.359382     7.477247 0.373720  0.164740  0.150401                  7.103526                0.155168                      0.253607                 2.792897
+  153999      442               0.405405                    0.222748 0.391406 0.364058     6.588053 0.275304  0.027348  0.116101                  6.312749                0.248727                      0.208094                 2.629930
+11656518      442               0.267442                    0.192042 0.253645 0.229348     7.227547 0.193587  0.024297  0.060058                  7.033960                0.142918                      0.378505                 2.607534
+  176155      442               0.175676                    0.139947 0.203094 0.195254     6.920495 0.197990  0.007839  0.005104                  6.722504                0.045385                      0.099668                 2.563334
+10427712      442               0.257576                    0.148298 0.301214 0.253215     7.405052 0.499304  0.047998 -0.198090                  6.905748                0.094794                      0.243980                 2.691137

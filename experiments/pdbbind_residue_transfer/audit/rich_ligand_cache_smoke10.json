@@ -1,0 +1,21 @@
+{
+  "total_records": 3403,
+  "requested": 10,
+  "written": 9,
+  "already_present": 0,
+  "failures": [
+    {
+      "pdb_id": "1a94",
+      "error": "ValueError('label/SDF atom count mismatch 60 != 61')"
+    }
+  ],
+  "success": 9,
+  "failure_count": 1,
+  "feature_totals": {
+    "aromatic_atoms": 51,
+    "charged_atoms": 3,
+    "donor_atoms": 18,
+    "acceptor_atoms": 27,
+    "ring_atoms": 84
+  }
+}

@@ -1,0 +1,636 @@
+conditioned {'epoch': 1, 'loss': 1.1023722964338958, 'auprc_micro': 0.466605173512046, 'auprc_macro': 0.532250301515946, 'auroc_micro': 0.943908392372493, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 14.68234920501709}
+conditioned {'epoch': 2, 'loss': 0.7765316216275095, 'auprc_micro': 0.5231837504323417, 'auprc_macro': 0.5753580966521992, 'auroc_micro': 0.9591431391209333, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 16.462669372558594}
+conditioned {'epoch': 3, 'loss': 0.6105993957724423, 'auprc_micro': 0.46902238248370937, 'auprc_macro': 0.5787033752712663, 'auroc_micro': 0.9467493214902541, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 14.758410453796387}
+conditioned {'epoch': 4, 'loss': 0.5112213002983481, 'auprc_micro': 0.46084029415552163, 'auprc_macro': 0.5540608274219219, 'auroc_micro': 0.9601260970709528, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 14.500948905944824}
+conditioned {'epoch': 5, 'loss': 0.4424986864440143, 'auprc_micro': 0.4554404591911727, 'auprc_macro': 0.5547948031295021, 'auroc_micro': 0.9373726692749639, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 14.331036567687988}
+conditioned {'epoch': 6, 'loss': 0.38129693125374614, 'auprc_micro': 0.5015887357811145, 'auprc_macro': 0.5935221438488132, 'auroc_micro': 0.9520064502484932, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 15.783153533935547}
+conditioned {'epoch': 7, 'loss': 0.35577913345769047, 'auprc_micro': 0.5549633744715059, 'auprc_macro': 0.6197949937188223, 'auroc_micro': 0.9573895879595362, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 17.462656021118164}
+conditioned {'epoch': 8, 'loss': 0.3032672239234671, 'auprc_micro': 0.5330104495633842, 'auprc_macro': 0.6039975995003279, 'auroc_micro': 0.951454830636918, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 16.77187728881836}
+conditioned {'epoch': 9, 'loss': 0.265392370079644, 'auprc_micro': 0.5434981494852744, 'auprc_macro': 0.6440140954169735, 'auroc_micro': 0.9470533291036622, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 17.10188865661621}
+conditioned {'epoch': 10, 'loss': 0.2716125883627683, 'auprc_micro': 0.49538012959322764, 'auprc_macro': 0.6114716448815292, 'auroc_micro': 0.9421812766557401, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 15.587791442871094}
+conditioned {'epoch': 11, 'loss': 0.24745910346973687, 'auprc_micro': 0.5080088035566146, 'auprc_macro': 0.6031863853046574, 'auroc_micro': 0.9433990694723486, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 15.98516845703125}
+conditioned {'epoch': 12, 'loss': 0.2376022689975798, 'auprc_micro': 0.5921647544589529, 'auprc_macro': 0.6541816535119256, 'auroc_micro': 0.9497039230199851, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 18.63324737548828}
+conditioned {'epoch': 13, 'loss': 0.18646710396278648, 'auprc_micro': 0.5670766649179328, 'auprc_macro': 0.6243349980687123, 'auroc_micro': 0.9379348630643967, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 17.84381866455078}
+conditioned {'epoch': 14, 'loss': 0.21188003881834447, 'auprc_micro': 0.4997315468631705, 'auprc_macro': 0.6271975452922767, 'auroc_micro': 0.9382987910189983, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 15.724714279174805}
+conditioned {'epoch': 15, 'loss': 0.1917669120710343, 'auprc_micro': 0.5016035265482985, 'auprc_macro': 0.6158054638649186, 'auroc_micro': 0.9393068626414295, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 15.783618927001953}
+conditioned {'epoch': 16, 'loss': 0.17255694642663003, 'auprc_micro': 0.5582967877075521, 'auprc_macro': 0.6425285150633192, 'auroc_micro': 0.9394196538719115, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 17.567546844482422}
+conditioned {'epoch': 17, 'loss': 0.1675217260955833, 'auprc_micro': 0.5815437808239737, 'auprc_macro': 0.6402988136632783, 'auroc_micro': 0.9452442635085122, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 18.29904556274414}
+conditioned {'epoch': 18, 'loss': 0.16280906713800505, 'auprc_micro': 0.5724410823455153, 'auprc_macro': 0.663610908638568, 'auroc_micro': 0.9434378414578267, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 18.012617111206055}
+conditioned {'epoch': 19, 'loss': 0.14213441516039893, 'auprc_micro': 0.5390881004322696, 'auprc_macro': 0.6041662208004757, 'auroc_micro': 0.9328345846110465, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 16.96312141418457}
+conditioned {'epoch': 20, 'loss': 0.12904306013369932, 'auprc_micro': 0.5781811833390734, 'auprc_macro': 0.6394392446433117, 'auroc_micro': 0.9398558387085404, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 18.1932373046875}
+protein_only {'epoch': 1, 'loss': 3.0046736208721994, 'auprc_micro': 0.3923884702662523, 'auprc_macro': 0.504995226903201, 'auroc_micro': 0.8574389341228719, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 12.34702205657959}
+protein_only {'epoch': 2, 'loss': 2.437127041630447, 'auprc_micro': 0.4646560330494007, 'auprc_macro': 0.5947830911379813, 'auroc_micro': 0.8941234006555991, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 14.621016502380371}
+protein_only {'epoch': 3, 'loss': 1.8583294903859495, 'auprc_micro': 0.472253325903435, 'auprc_macro': 0.5636284220591878, 'auroc_micro': 0.9093488949984139, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 14.860075950622559}
+protein_only {'epoch': 4, 'loss': 1.3944164153188467, 'auprc_micro': 0.42316514813406, 'auprc_macro': 0.5101802687321195, 'auroc_micro': 0.9279523985760106, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 13.315450668334961}
+protein_only {'epoch': 5, 'loss': 1.0581949798390269, 'auprc_micro': 0.4716273487860105, 'auprc_macro': 0.5632911325464339, 'auroc_micro': 0.9346374819357794, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 14.840378761291504}
+protein_only {'epoch': 6, 'loss': 0.8694114085286856, 'auprc_micro': 0.35147534996745583, 'auprc_macro': 0.5033543103721128, 'auroc_micro': 0.9183232878643686, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 11.059637069702148}
+protein_only {'epoch': 7, 'loss': 0.7354448707774282, 'auprc_micro': 0.4314083327864993, 'auprc_macro': 0.5480057781304648, 'auroc_micro': 0.9428302668217545, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 13.574833869934082}
+protein_only {'epoch': 8, 'loss': 0.6610965793952346, 'auprc_micro': 0.47086997908039063, 'auprc_macro': 0.5315240898199011, 'auroc_micro': 0.9432660110676394, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 14.816547393798828}
+protein_only {'epoch': 9, 'loss': 0.6023068038746715, 'auprc_micro': 0.44883408049858137, 'auprc_macro': 0.541077153720616, 'auroc_micro': 0.9447226040675338, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 14.12315845489502}
+protein_only {'epoch': 10, 'loss': 0.563051700592041, 'auprc_micro': 0.5216052400210368, 'auprc_macro': 0.6000201780710662, 'auroc_micro': 0.9492042931162102, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 16.413000106811523}
+protein_only {'epoch': 11, 'loss': 0.5398315556347371, 'auprc_micro': 0.48415615609498275, 'auprc_macro': 0.570673567227167, 'auroc_micro': 0.9436872158189701, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 15.234614372253418}
+protein_only {'epoch': 12, 'loss': 0.4978221122175455, 'auprc_micro': 0.46105569942827734, 'auprc_macro': 0.5646053462470904, 'auroc_micro': 0.9479829755736491, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 14.50772762298584}
+protein_only {'epoch': 13, 'loss': 0.497149009630084, 'auprc_micro': 0.4707687156350232, 'auprc_macro': 0.5939379168098433, 'auroc_micro': 0.9449173451764126, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 14.813360214233398}
+protein_only {'epoch': 14, 'loss': 0.47015799917280676, 'auprc_micro': 0.5358064584387252, 'auprc_macro': 0.6065896115090847, 'auroc_micro': 0.9495598498466744, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 16.859859466552734}
+protein_only {'epoch': 15, 'loss': 0.45886921836063266, 'auprc_micro': 0.4658658693881685, 'auprc_macro': 0.5838754295651251, 'auroc_micro': 0.943357653942406, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 14.659086227416992}
+protein_only {'epoch': 16, 'loss': 0.43836797773838043, 'auprc_micro': 0.5554700870730337, 'auprc_macro': 0.6219566712801659, 'auroc_micro': 0.9498325755172536, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 17.478601455688477}
+protein_only {'epoch': 17, 'loss': 0.43245399920269845, 'auprc_micro': 0.5538715688933354, 'auprc_macro': 0.6146261838002482, 'auroc_micro': 0.9490906207042402, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 17.428300857543945}
+protein_only {'epoch': 18, 'loss': 0.4303160115145147, 'auprc_micro': 0.5820835157232885, 'auprc_macro': 0.6365820505678145, 'auroc_micro': 0.9478754714320962, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 18.316028594970703}
+protein_only {'epoch': 19, 'loss': 0.42266237093135717, 'auprc_micro': 0.5773592155996419, 'auprc_macro': 0.6489968631566165, 'auroc_micro': 0.950348066687815, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 18.16737174987793}
+protein_only {'epoch': 20, 'loss': 0.3982679433189332, 'auprc_micro': 0.5527153450618334, 'auprc_macro': 0.6420465225645102, 'auroc_micro': 0.9485892284374889, 'positive_rate': 0.03178000822663307, 'ap_enrichment': 17.39192008972168}
+FINAL {
+  "split_ids": {
+    "train": [
+      "1lgw",
+      "6ftw",
+      "6i64",
+      "4io5",
+      "3zns",
+      "6bs3",
+      "1e3g",
+      "3dp4",
+      "3ip5",
+      "3b24",
+      "4cfl",
+      "5wex",
+      "3m1k",
+      "3hkq",
+      "4rfd",
+      "4mo8",
+      "1k4h",
+      "1pro",
+      "4dkr",
+      "6pve",
+      "4fzj",
+      "2yix",
+      "5lvd",
+      "3rlp",
+      "5oh3",
+      "6g2c",
+      "6h1d",
+      "4f39",
+      "2wvz",
+      "4i74",
+      "2e7f",
+      "6ced",
+      "6h34",
+      "4m8x",
+      "1bxq",
+      "4mc6",
+      "4eu0",
+      "456c",
+      "4auj",
+      "5nkd",
+      "4azg",
+      "4h81",
+      "6arn",
+      "1qf0",
+      "5f60",
+      "3uxk",
+      "1bcd",
+      "1bnq",
+      "1hvr",
+      "1gfy",
+      "5vgy",
+      "1sdu",
+      "1qbq",
+      "4cpy",
+      "4cpt",
+      "5zo8",
+      "10gs",
+      "4zv1",
+      "3d6p",
+      "1ikt",
+      "2i4v",
+      "5g45",
+      "4ibc",
+      "1g7v",
+      "3n35",
+      "5g1a",
+      "5vh0",
+      "3b7i",
+      "6j7e",
+      "6i62",
+      "4rfc",
+      "6ma5",
+      "4dfg",
+      "5llc",
+      "6ooy",
+      "3o9d",
+      "5hz8",
+      "3tb6",
+      "5mks",
+      "4tpw",
+      "6jdi",
+      "2d1n",
+      "4w9d",
+      "2y7i",
+      "1pxn",
+      "3iue",
+      "3g31",
+      "2ya6",
+      "5n2z",
+      "6md0",
+      "6i8y",
+      "2wzm",
+      "1u1w",
+      "1siv",
+      "3aqt",
+      "4mq6",
+      "4uc5",
+      "3k99",
+      "4ih7",
+      "4kn0",
+      "4lj5",
+      "2j4g",
+      "2j7h",
+      "2qrk",
+      "4pow",
+      "1sqa",
+      "4gfo",
+      "6q3y",
+      "4qb3",
+      "5ime",
+      "1amw",
+      "1d4i",
+      "4pzv",
+      "4tkb",
+      "5os4",
+      "2gvv",
+      "6dil",
+      "4agp",
+      "4re2",
+      "3t85",
+      "1b57",
+      "3p8p",
+      "2reg",
+      "5yz2",
+      "3rwp",
+      "2q55",
+      "4xu1",
+      "5c28",
+      "2boj",
+      "2vnp",
+      "2drc",
+      "3ga5",
+      "5mjn",
+      "2wc3",
+      "4zl4",
+      "5g4o",
+      "1swr",
+      "2qnq",
+      "2bet",
+      "3a1d",
+      "3hs4",
+      "4zo5",
+      "4muf",
+      "4b1j",
+      "5sz3",
+      "6j1l",
+      "5g4n",
+      "5ouh",
+      "6fh3",
+      "4gih",
+      "3b1m",
+      "1v48",
+      "1cnw",
+      "3sue",
+      "5wgp",
+      "5vcv",
+      "3wgg",
+      "6ge7",
+      "5cap",
+      "5a6x"
+    ],
+    "val": [
+      "4ieh",
+      "3po6",
+      "3jdw",
+      "4bf6",
+      "2qi4",
+      "6q60",
+      "1k6t",
+      "1bai",
+      "4xar",
+      "5nk8",
+      "4yx4",
+      "3wmc",
+      "4azi",
+      "3su5",
+      "6h37",
+      "6g2o",
+      "2qi3",
+      "4zji",
+      "4bks",
+      "1qbr"
+    ],
+    "test": [
+      "4bcp",
+      "5dlx",
+      "6ml9",
+      "4bi7",
+      "4fm8",
+      "4r75",
+      "3pww",
+      "3bqc",
+      "5nze",
+      "3k8c",
+      "5c2h",
+      "4wrb",
+      "1ua4",
+      "4igt",
+      "2o4k",
+      "1ydk",
+      "3mhm",
+      "2iwx",
+      "3qgy",
+      "2vyt"
+    ]
+  },
+  "conditioned_test": {
+    "auprc_micro": 0.3718945368001425,
+    "auprc_macro": 0.4456546348827219,
+    "auroc_micro": 0.9210029896331803,
+    "positive_rate": 0.029041487723588943,
+    "ap_enrichment": 12.80562973022461
+  },
+  "conditioned_test_mismatched": {
+    "auprc_micro": 0.2246514947238131,
+    "auprc_macro": 0.3283646021952479,
+    "auroc_micro": 0.860505559382215,
+    "positive_rate": 0.029041487723588943,
+    "ap_enrichment": 7.735537052154541,
+    "mean_abs_map_change": 0.08108879467472434
+  },
+  "protein_only_test": {
+    "auprc_micro": 0.3364142240203039,
+    "auprc_macro": 0.4155256334523549,
+    "auroc_micro": 0.9181019059183705,
+    "positive_rate": 0.029041487723588943,
+    "ap_enrichment": 11.583918571472168
+  },
+  "conditioned_history": [
+    {
+      "epoch": 1,
+      "loss": 1.1023722964338958,
+      "auprc_micro": 0.466605173512046,
+      "auprc_macro": 0.532250301515946,
+      "auroc_micro": 0.943908392372493,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 14.68234920501709
+    },
+    {
+      "epoch": 2,
+      "loss": 0.7765316216275095,
+      "auprc_micro": 0.5231837504323417,
+      "auprc_macro": 0.5753580966521992,
+      "auroc_micro": 0.9591431391209333,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 16.462669372558594
+    },
+    {
+      "epoch": 3,
+      "loss": 0.6105993957724423,
+      "auprc_micro": 0.46902238248370937,
+      "auprc_macro": 0.5787033752712663,
+      "auroc_micro": 0.9467493214902541,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 14.758410453796387
+    },
+    {
+      "epoch": 4,
+      "loss": 0.5112213002983481,
+      "auprc_micro": 0.46084029415552163,
+      "auprc_macro": 0.5540608274219219,
+      "auroc_micro": 0.9601260970709528,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 14.500948905944824
+    },
+    {
+      "epoch": 5,
+      "loss": 0.4424986864440143,
+      "auprc_micro": 0.4554404591911727,
+      "auprc_macro": 0.5547948031295021,
+      "auroc_micro": 0.9373726692749639,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 14.331036567687988
+    },
+    {
+      "epoch": 6,
+      "loss": 0.38129693125374614,
+      "auprc_micro": 0.5015887357811145,
+      "auprc_macro": 0.5935221438488132,
+      "auroc_micro": 0.9520064502484932,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 15.783153533935547
+    },
+    {
+      "epoch": 7,
+      "loss": 0.35577913345769047,
+      "auprc_micro": 0.5549633744715059,
+      "auprc_macro": 0.6197949937188223,
+      "auroc_micro": 0.9573895879595362,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 17.462656021118164
+    },
+    {
+      "epoch": 8,
+      "loss": 0.3032672239234671,
+      "auprc_micro": 0.5330104495633842,
+      "auprc_macro": 0.6039975995003279,
+      "auroc_micro": 0.951454830636918,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 16.77187728881836
+    },
+    {
+      "epoch": 9,
+      "loss": 0.265392370079644,
+      "auprc_micro": 0.5434981494852744,
+      "auprc_macro": 0.6440140954169735,
+      "auroc_micro": 0.9470533291036622,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 17.10188865661621
+    },
+    {
+      "epoch": 10,
+      "loss": 0.2716125883627683,
+      "auprc_micro": 0.49538012959322764,
+      "auprc_macro": 0.6114716448815292,
+      "auroc_micro": 0.9421812766557401,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 15.587791442871094
+    },
+    {
+      "epoch": 11,
+      "loss": 0.24745910346973687,
+      "auprc_micro": 0.5080088035566146,
+      "auprc_macro": 0.6031863853046574,
+      "auroc_micro": 0.9433990694723486,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 15.98516845703125
+    },
+    {
+      "epoch": 12,
+      "loss": 0.2376022689975798,
+      "auprc_micro": 0.5921647544589529,
+      "auprc_macro": 0.6541816535119256,
+      "auroc_micro": 0.9497039230199851,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 18.63324737548828
+    },
+    {
+      "epoch": 13,
+      "loss": 0.18646710396278648,
+      "auprc_micro": 0.5670766649179328,
+      "auprc_macro": 0.6243349980687123,
+      "auroc_micro": 0.9379348630643967,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 17.84381866455078
+    },
+    {
+      "epoch": 14,
+      "loss": 0.21188003881834447,
+      "auprc_micro": 0.4997315468631705,
+      "auprc_macro": 0.6271975452922767,
+      "auroc_micro": 0.9382987910189983,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 15.724714279174805
+    },
+    {
+      "epoch": 15,
+      "loss": 0.1917669120710343,
+      "auprc_micro": 0.5016035265482985,
+      "auprc_macro": 0.6158054638649186,
+      "auroc_micro": 0.9393068626414295,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 15.783618927001953
+    },
+    {
+      "epoch": 16,
+      "loss": 0.17255694642663003,
+      "auprc_micro": 0.5582967877075521,
+      "auprc_macro": 0.6425285150633192,
+      "auroc_micro": 0.9394196538719115,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 17.567546844482422
+    },
+    {
+      "epoch": 17,
+      "loss": 0.1675217260955833,
+      "auprc_micro": 0.5815437808239737,
+      "auprc_macro": 0.6402988136632783,
+      "auroc_micro": 0.9452442635085122,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 18.29904556274414
+    },
+    {
+      "epoch": 18,
+      "loss": 0.16280906713800505,
+      "auprc_micro": 0.5724410823455153,
+      "auprc_macro": 0.663610908638568,
+      "auroc_micro": 0.9434378414578267,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 18.012617111206055
+    },
+    {
+      "epoch": 19,
+      "loss": 0.14213441516039893,
+      "auprc_micro": 0.5390881004322696,
+      "auprc_macro": 0.6041662208004757,
+      "auroc_micro": 0.9328345846110465,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 16.96312141418457
+    },
+    {
+      "epoch": 20,
+      "loss": 0.12904306013369932,
+      "auprc_micro": 0.5781811833390734,
+      "auprc_macro": 0.6394392446433117,
+      "auroc_micro": 0.9398558387085404,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 18.1932373046875
+    }
+  ],
+  "protein_only_history": [
+    {
+      "epoch": 1,
+      "loss": 3.0046736208721994,
+      "auprc_micro": 0.3923884702662523,
+      "auprc_macro": 0.504995226903201,
+      "auroc_micro": 0.8574389341228719,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 12.34702205657959
+    },
+    {
+      "epoch": 2,
+      "loss": 2.437127041630447,
+      "auprc_micro": 0.4646560330494007,
+      "auprc_macro": 0.5947830911379813,
+      "auroc_micro": 0.8941234006555991,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 14.621016502380371
+    },
+    {
+      "epoch": 3,
+      "loss": 1.8583294903859495,
+      "auprc_micro": 0.472253325903435,
+      "auprc_macro": 0.5636284220591878,
+      "auroc_micro": 0.9093488949984139,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 14.860075950622559
+    },
+    {
+      "epoch": 4,
+      "loss": 1.3944164153188467,
+      "auprc_micro": 0.42316514813406,
+      "auprc_macro": 0.5101802687321195,
+      "auroc_micro": 0.9279523985760106,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 13.315450668334961
+    },
+    {
+      "epoch": 5,
+      "loss": 1.0581949798390269,
+      "auprc_micro": 0.4716273487860105,
+      "auprc_macro": 0.5632911325464339,
+      "auroc_micro": 0.9346374819357794,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 14.840378761291504
+    },
+    {
+      "epoch": 6,
+      "loss": 0.8694114085286856,
+      "auprc_micro": 0.35147534996745583,
+      "auprc_macro": 0.5033543103721128,
+      "auroc_micro": 0.9183232878643686,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 11.059637069702148
+    },
+    {
+      "epoch": 7,
+      "loss": 0.7354448707774282,
+      "auprc_micro": 0.4314083327864993,
+      "auprc_macro": 0.5480057781304648,
+      "auroc_micro": 0.9428302668217545,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 13.574833869934082
+    },
+    {
+      "epoch": 8,
+      "loss": 0.6610965793952346,
+      "auprc_micro": 0.47086997908039063,
+      "auprc_macro": 0.5315240898199011,
+      "auroc_micro": 0.9432660110676394,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 14.816547393798828
+    },
+    {
+      "epoch": 9,
+      "loss": 0.6023068038746715,
+      "auprc_micro": 0.44883408049858137,
+      "auprc_macro": 0.541077153720616,
+      "auroc_micro": 0.9447226040675338,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 14.12315845489502
+    },
+    {
+      "epoch": 10,
+      "loss": 0.563051700592041,
+      "auprc_micro": 0.5216052400210368,
+      "auprc_macro": 0.6000201780710662,
+      "auroc_micro": 0.9492042931162102,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 16.413000106811523
+    },
+    {
+      "epoch": 11,
+      "loss": 0.5398315556347371,
+      "auprc_micro": 0.48415615609498275,
+      "auprc_macro": 0.570673567227167,
+      "auroc_micro": 0.9436872158189701,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 15.234614372253418
+    },
+    {
+      "epoch": 12,
+      "loss": 0.4978221122175455,
+      "auprc_micro": 0.46105569942827734,
+      "auprc_macro": 0.5646053462470904,
+      "auroc_micro": 0.9479829755736491,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 14.50772762298584
+    },
+    {
+      "epoch": 13,
+      "loss": 0.497149009630084,
+      "auprc_micro": 0.4707687156350232,
+      "auprc_macro": 0.5939379168098433,
+      "auroc_micro": 0.9449173451764126,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 14.813360214233398
+    },
+    {
+      "epoch": 14,
+      "loss": 0.47015799917280676,
+      "auprc_micro": 0.5358064584387252,
+      "auprc_macro": 0.6065896115090847,
+      "auroc_micro": 0.9495598498466744,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 16.859859466552734
+    },
+    {
+      "epoch": 15,
+      "loss": 0.45886921836063266,
+      "auprc_micro": 0.4658658693881685,
+      "auprc_macro": 0.5838754295651251,
+      "auroc_micro": 0.943357653942406,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 14.659086227416992
+    },
+    {
+      "epoch": 16,
+      "loss": 0.43836797773838043,
+      "auprc_micro": 0.5554700870730337,
+      "auprc_macro": 0.6219566712801659,
+      "auroc_micro": 0.9498325755172536,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 17.478601455688477
+    },
+    {
+      "epoch": 17,
+      "loss": 0.43245399920269845,
+      "auprc_micro": 0.5538715688933354,
+      "auprc_macro": 0.6146261838002482,
+      "auroc_micro": 0.9490906207042402,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 17.428300857543945
+    },
+    {
+      "epoch": 18,
+      "loss": 0.4303160115145147,
+      "auprc_micro": 0.5820835157232885,
+      "auprc_macro": 0.6365820505678145,
+      "auroc_micro": 0.9478754714320962,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 18.316028594970703
+    },
+    {
+      "epoch": 19,
+      "loss": 0.42266237093135717,
+      "auprc_micro": 0.5773592155996419,
+      "auprc_macro": 0.6489968631566165,
+      "auroc_micro": 0.950348066687815,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 18.16737174987793
+    },
+    {
+      "epoch": 20,
+      "loss": 0.3982679433189332,
+      "auprc_micro": 0.5527153450618334,
+      "auprc_macro": 0.6420465225645102,
+      "auroc_micro": 0.9485892284374889,
+      "positive_rate": 0.03178000822663307,
+      "ap_enrichment": 17.39192008972168
+    }
+  ]
+}

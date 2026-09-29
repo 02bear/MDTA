@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "train": 94603,
+  "validation": 11825,
+  "test_sealed": 11826,
+  "split_sha256": "5609f4f4919c1738caf7bfba53fedfc0f86781967b4ec659eadb4e29185c3f2b",
+  "checkpoint_sha256": "7fcdccd56f4a5b0307dadc37363db02f6990cd95adb5b7ba5396af31a511114a",
+  "adapter_parameters": 37728,
+  "adapter": {
+    "variant": "bidirectional",
+    "width": 32,
+    "top_k": 128,
+    "coverage_budget": 16,
+    "max_delta": 0.5,
+    "cross_max_scale": 0.25,
+    "residual_l2": 0.001,
+    "rnc_weight": 0.01,
+    "temperature": 2.0,
+    "projection_dim": 16,
+    "rnc_batch_size": 32,
+    "microbatch_size": 16,
+    "interval": 2,
+    "high_count": 8,
+    "mid_count": 8,
+    "high_threshold": 11.953871964,
+    "mid_threshold": 11.520216403,
+    "warmup_epochs": 1.0,
+    "seed": 42
+  },
+  "screening": {
+    "max_epochs": 60,
+    "patience": 10,
+    "min_delta": 1e-05,
+    "batch_size": 16,
+    "eval_batch_size": 64,
+    "lr": 0.0003,
+    "weight_decay": 1e-05,
+    "grad_clip": 1.0,
+    "screen_lambdas": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      2.0,
+      2.5
+    ]
+  },
+  "test_policy": "all hyperparameters fixed before new-seed test evaluation",
+  "finished": 1790443002.3642406
+}
