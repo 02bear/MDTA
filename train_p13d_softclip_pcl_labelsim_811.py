@@ -27,14 +27,25 @@ def ensure_dir(path):
 def build_fixed_subsets(dataset, split_json_path):
     with open(split_json_path, "r", encoding="utf-8") as f:
         split_info = json.load(f)
+
     train_indices = split_info["train_indices"]
     val_indices = split_info["val_indices"]
+    test_indices = split_info.get("test_indices", [])
+
     n = len(dataset)
     bad_train = [i for i in train_indices if i < 0 or i >= n]
     bad_val = [i for i in val_indices if i < 0 or i >= n]
-    if bad_train or bad_val:
-        raise ValueError(f"split_json indices out of range for dataset size={n}. bad_train[:5]={bad_train[:5]}, bad_val[:5]={bad_val[:5]}")
-    return Subset(dataset, train_indices), Subset(dataset, val_indices)
+    bad_test = [i for i in test_indices if i < 0 or i >= n]
+    if bad_train or bad_val or bad_test:
+        raise ValueError(
+            f"split_json indices out of range for dataset size={n}. "
+            f"bad_train[:5]={bad_train[:5]}, bad_val[:5]={bad_val[:5]}, bad_test[:5]={bad_test[:5]}"
+        )
+
+    if len(test_indices) == 0:
+        raise ValueError("split_json must contain non-empty test_indices for 8:1:1 workflow")
+
+    return Subset(dataset, train_indices), Subset(dataset, val_indices), Subset(dataset, test_indices)
 
 
 class FenwickTree:
@@ -175,12 +186,15 @@ def build_dataloaders(args):
         drug_3d_dir=args.drug_3d_dir,
         use_drug_3d=True,
     )
-    train_set, val_set = build_fixed_subsets(dataset, args.split_json)
+    train_set, val_set, test_set = build_fixed_subsets(dataset, args.split_json)
     train_lookup = build_subset_lookup(dataset, train_set)
     val_lookup = build_subset_lookup(dataset, val_set)
+    test_lookup = build_subset_lookup(dataset, test_set)
+
     train_loader = DataLoader(train_set, batch_size=args.batch_size, shuffle=True, num_workers=args.num_workers, collate_fn=mdta_collate_fn_p13d, pin_memory=True)
     val_loader = DataLoader(val_set, batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers, collate_fn=mdta_collate_fn_p13d, pin_memory=True)
-    return dataset, train_set, val_set, train_loader, val_loader, train_lookup, val_lookup
+    test_loader = DataLoader(test_set, batch_size=args.batch_size, shuffle=False, num_workers=args.num_workers, collate_fn=mdta_collate_fn_p13d, pin_memory=True)
+    return dataset, train_set, val_set, test_set, train_loader, val_loader, test_loader, train_lookup, val_lookup, test_lookup
 
 
 def build_model(args, device):
@@ -284,8 +298,12 @@ def evaluate(model, loader, lookup, criterion, device, args):
     return metrics
 
 
-def save_split_indices(train_set, val_set, output_dir):
-    split_info = {"train_indices": list(train_set.indices), "val_indices": list(val_set.indices)}
+def save_split_indices(train_set, val_set, test_set, output_dir):
+    split_info = {
+        "train_indices": list(train_set.indices),
+        "val_indices": list(val_set.indices),
+        "test_indices": list(test_set.indices),
+    }
     with open(Path(output_dir) / "split_indices.json", "w", encoding="utf-8") as f:
         json.dump(split_info, f, indent=2)
 
@@ -303,28 +321,16 @@ def main():
     parser.add_argument("--drug_3d_dir", type=str, default="data/processed/davis/drug_3d")
     parser.add_argument("--protein_1d_dir", type=str, default="data/processed/davis/protein_1d_esm2")
     parser.add_argument("--protein_3d_dir", type=str, default="data/processed/davis/protein_3d_gvp")
-    parser.add_argument("--split_json", type=str, default="data/splits/davis_fixed_split_size2.json")
-    parser.add_argument("--output_dir", type=str, default="outputs/davis_p13d_softclip_pcl_labelsim")
+    parser.add_argument("--split_json", type=str, default="data/splits/davis_fixed_split_811_full.json")
+    parser.add_argument("--output_dir", type=str, default="outputs/davis_p13d_softclip_pcl_labelsim_811")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--batch_size", type=int, default=32)
     parser.add_argument("--num_workers", type=int, default=0)
     parser.add_argument("--epochs", type=int, default=500)
     parser.add_argument("--lr", type=float, default=3e-4)
     parser.add_argument("--weight_decay", type=float, default=1e-5)
-
-    # early stopping
-    parser.add_argument(
-        "--early_stop_patience",
-        type=int,
-        default=60,
-        help="Stop training if val RMSE does not improve for this many epochs. Set <= 0 to disable.",
-    )
-    parser.add_argument(
-        "--early_stop_min_delta",
-        type=float,
-        default=1e-4,
-        help="Minimum val RMSE decrease required to reset early stopping patience.",
-    )
+    parser.add_argument("--early_stop_patience", type=int, default=60)
+    parser.add_argument("--early_stop_min_delta", type=float, default=1e-4)
     parser.add_argument("--drug_1d_in_dim", type=int, default=768)
     parser.add_argument("--drug_3d_node_in_dim", type=int, default=10)
     parser.add_argument("--hidden_dim", type=int, default=128)
@@ -340,70 +346,43 @@ def main():
     parser.add_argument("--lambda_pcl", type=float, default=0.1)
     parser.add_argument("--resume", type=str, default="")
     args = parser.parse_args()
+
     ensure_dir(args.output_dir)
     set_seed(args.seed)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print("Using device:", device)
-    dataset, train_set, val_set, train_loader, val_loader, train_lookup, val_lookup = build_dataloaders(args)
+
+    dataset, train_set, val_set, test_set, train_loader, val_loader, test_loader, train_lookup, val_lookup, test_lookup = build_dataloaders(args)
     print("TOTAL SIZE:", len(dataset))
     print("TRAIN SIZE:", len(train_set))
     print("VAL SIZE:", len(val_set))
+    print("TEST SIZE:", len(test_set))
     print("SPLIT JSON:", args.split_json)
-    print("MODEL: drug_1d + drug_3d + protein_1d + protein_3d + softclip(label-sim) + pcl(protein1d-protein3d)")
-    save_split_indices(train_set, val_set, args.output_dir)
+    save_split_indices(train_set, val_set, test_set, args.output_dir)
+
     model = build_model(args, device)
     criterion = torch.nn.MSELoss()
     optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
+
     best_val_rmse = float("inf")
     best_epoch = -1
     best_val_metrics = best_train_metrics = None
     history = []
     epochs_no_improve = 0
-    start_epoch = 1
-    if args.resume:
-        resume_path = Path(args.resume)
-        if not resume_path.exists():
-            raise FileNotFoundError(f"Resume checkpoint not found: {resume_path}")
-        ckpt = torch.load(resume_path, map_location=device)
-        model.load_state_dict(ckpt["model_state_dict"])
-        optimizer.load_state_dict(ckpt["optimizer_state_dict"])
-        start_epoch = int(ckpt["epoch"]) + 1
-        if ckpt.get("val_metrics") is not None:
-            best_val_metrics = dict(ckpt["val_metrics"])
-            best_val_rmse = float(best_val_metrics.get("rmse", best_val_rmse))
-        if ckpt.get("train_metrics") is not None:
-            best_train_metrics = dict(ckpt["train_metrics"])
-        best_epoch = int(ckpt["epoch"])
 
-        # 恢复早停计数：从已保存 history 中回放最佳值变化轨迹
-        history_path = Path(args.output_dir) / "history.json"
-        if history_path.exists():
-            with open(history_path, "r", encoding="utf-8") as f:
-                history = json.load(f)
-            replay_best = float("inf")
-            replay_no_improve = 0
-            for item in history:
-                rmse = float(item["val"]["rmse"])
-                if rmse < replay_best - args.early_stop_min_delta:
-                    replay_best = rmse
-                    replay_no_improve = 0
-                else:
-                    replay_no_improve += 1
-            epochs_no_improve = replay_no_improve
-        else:
-            epochs_no_improve = 0
-        print(f"RESUMED FROM: {resume_path} | start_epoch={start_epoch} | best_val_rmse={best_val_rmse:.6f} | no_improve={epochs_no_improve}")
-    for epoch in range(start_epoch, args.epochs + 1):
+    for epoch in range(1, args.epochs + 1):
         print(f"\nEPOCH {epoch}/{args.epochs}")
         train_metrics = train_one_epoch(model, train_loader, train_lookup, criterion, optimizer, device, args, log_interval=100)
         val_metrics = evaluate(model, val_loader, val_lookup, criterion, device, args)
-        print(f"[EPOCH {epoch:03d}/{args.epochs:03d}] TRAIN: TOTAL={train_metrics['loss']:.6f} | REG={train_metrics['reg_loss']:.6f} | SOFTCLIP={train_metrics['clip_loss']:.6f} | PCL={train_metrics['pcl_loss']:.6f} | RMSE={train_metrics['rmse']:.6f} | MAE={train_metrics['mae']:.6f} | CI={train_metrics['ci']:.6f} | RM2={train_metrics['rm2']:.6f} | DRUG_PCL={train_metrics.get('drug_pcl_loss', 0.0):.6f} | PROT_PCL={train_metrics.get('protein_pcl_loss', 0.0):.6f}")
-        print(f"[EPOCH {epoch:03d}/{args.epochs:03d}] VAL  : TOTAL={val_metrics['loss']:.6f} | REG={val_metrics['reg_loss']:.6f} | SOFTCLIP={val_metrics['clip_loss']:.6f} | PCL={val_metrics['pcl_loss']:.6f} | RMSE={val_metrics['rmse']:.6f} | MAE={val_metrics['mae']:.6f} | CI={val_metrics['ci']:.6f} | RM2={val_metrics['rm2']:.6f} | DRUG_PCL={val_metrics.get('drug_pcl_loss', 0.0):.6f} | PROT_PCL={val_metrics.get('protein_pcl_loss', 0.0):.6f}")
+
+        print(f"[EPOCH {epoch:03d}/{args.epochs:03d}] TRAIN: TOTAL={train_metrics['loss']:.6f} | REG={train_metrics['reg_loss']:.6f} | SOFTCLIP={train_metrics['clip_loss']:.6f} | PCL={train_metrics['pcl_loss']:.6f} | RMSE={train_metrics['rmse']:.6f} | MAE={train_metrics['mae']:.6f} | CI={train_metrics['ci']:.6f} | RM2={train_metrics['rm2']:.6f}")
+        print(f"[EPOCH {epoch:03d}/{args.epochs:03d}] VAL  : TOTAL={val_metrics['loss']:.6f} | REG={val_metrics['reg_loss']:.6f} | SOFTCLIP={val_metrics['clip_loss']:.6f} | PCL={val_metrics['pcl_loss']:.6f} | RMSE={val_metrics['rmse']:.6f} | MAE={val_metrics['mae']:.6f} | CI={val_metrics['ci']:.6f} | RM2={val_metrics['rm2']:.6f}")
+
         history.append({"epoch": epoch, "train": train_metrics, "val": val_metrics})
         save_checkpoint(Path(args.output_dir) / "latest_model.pt", model, optimizer, epoch, train_metrics, val_metrics, args)
+
         current_val_rmse = val_metrics["rmse"]
         improved = current_val_rmse < best_val_rmse - args.early_stop_min_delta
-
         if improved:
             best_val_rmse = current_val_rmse
             best_epoch = epoch
@@ -411,35 +390,41 @@ def main():
             best_train_metrics = dict(train_metrics)
             epochs_no_improve = 0
             save_checkpoint(Path(args.output_dir) / "best_model.pt", model, optimizer, epoch, train_metrics, val_metrics, args)
-            print(f"  SAVED NEW BEST MODEL | EPOCH={best_epoch:03d} | BEST_VAL_RMSE={best_val_metrics['rmse']:.6f} | BEST_VAL_MAE={best_val_metrics['mae']:.6f} | BEST_VAL_CI={best_val_metrics['ci']:.6f} | BEST_VAL_RM2={best_val_metrics['rm2']:.6f}")
+            print(f"  SAVED NEW BEST MODEL | EPOCH={best_epoch:03d} | BEST_VAL_RMSE={best_val_metrics['rmse']:.6f}")
         else:
             epochs_no_improve += 1
-            print(
-                f"  EARLY_STOP COUNTER | "
-                f"NO_IMPROVE={epochs_no_improve}/{args.early_stop_patience} | "
-                f"BEST_EPOCH={best_epoch:03d} | "
-                f"BEST_VAL_RMSE={best_val_rmse:.6f} | "
-                f"CURRENT_VAL_RMSE={current_val_rmse:.6f}"
-            )
+            print(f"  EARLY_STOP COUNTER | NO_IMPROVE={epochs_no_improve}/{args.early_stop_patience} | BEST_EPOCH={best_epoch:03d} | BEST_VAL_RMSE={best_val_rmse:.6f} | CURRENT_VAL_RMSE={current_val_rmse:.6f}")
 
         with open(Path(args.output_dir) / "history.json", "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
 
         if args.early_stop_patience > 0 and epochs_no_improve >= args.early_stop_patience:
-            print(
-                f"\nEARLY STOPPING TRIGGERED | "
-                f"BEST_EPOCH={best_epoch:03d} | "
-                f"BEST_VAL_RMSE={best_val_rmse:.6f} | "
-                f"PATIENCE={args.early_stop_patience} | "
-                f"MIN_DELTA={args.early_stop_min_delta}"
-            )
+            print(f"\nEARLY STOPPING TRIGGERED | BEST_EPOCH={best_epoch:03d} | BEST_VAL_RMSE={best_val_rmse:.6f}")
             break
+
     print("\nTRAINING FINISHED.")
+
+    # Standard 8:1:1 flow: evaluate test on best checkpoint
+    if (Path(args.output_dir) / "best_model.pt").exists():
+        ckpt = torch.load(Path(args.output_dir) / "best_model.pt", map_location=device)
+        model.load_state_dict(ckpt["model_state_dict"])
+
+    test_metrics = evaluate(model, test_loader, test_lookup, criterion, device, args)
+    print(f"TEST METRICS: TOTAL={test_metrics['loss']:.6f} | REG={test_metrics['reg_loss']:.6f} | SOFTCLIP={test_metrics['clip_loss']:.6f} | PCL={test_metrics['pcl_loss']:.6f} | RMSE={test_metrics['rmse']:.6f} | MAE={test_metrics['mae']:.6f} | CI={test_metrics['ci']:.6f} | RM2={test_metrics['rm2']:.6f}")
+
     if best_val_metrics is not None:
-        best_summary = {"best_epoch": best_epoch, "best_train_metrics": best_train_metrics, "best_val_metrics": best_val_metrics}
+        best_summary = {
+            "best_epoch": best_epoch,
+            "best_train_metrics": best_train_metrics,
+            "best_val_metrics": best_val_metrics,
+            "test_metrics": test_metrics,
+        }
         with open(Path(args.output_dir) / "best_summary.json", "w", encoding="utf-8") as f:
             json.dump(best_summary, f, indent=2)
-        print(f"BEST MODEL SUMMARY | EPOCH={best_epoch:03d} | VAL_RMSE={best_val_metrics['rmse']:.6f} | VAL_MAE={best_val_metrics['mae']:.6f} | VAL_CI={best_val_metrics['ci']:.6f} | VAL_RM2={best_val_metrics['rm2']:.6f}")
+
+    with open(Path(args.output_dir) / "test_metrics.json", "w", encoding="utf-8") as f:
+        json.dump(test_metrics, f, indent=2)
+
     print(f"SAVED OUTPUTS TO: {args.output_dir}")
 
 

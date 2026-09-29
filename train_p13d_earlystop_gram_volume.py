@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader, Subset
 
 from datasets.davis_dataset_p13d import DavisDatasetP13D
 from datasets.collate_p13d import mdta_collate_fn_p13d, move_batch_to_device
-from models.model_p13d import MyModelMDTAP13D
+from models.model_p13d_gram_volume import MyModelMDTAP13D
 
 
 def set_seed(seed: int = 42):
@@ -225,48 +225,99 @@ def build_model(args, device):
         hidden_dim=args.hidden_dim,
         dropout=args.dropout,
         task="regression",
+        contrastive_dim=args.contrastive_dim,
+        vol_temperature=args.vol_temperature,
+        vol_label_tau=args.vol_label_tau,
+        vol_det_eps=args.vol_det_eps,
     ).to(device)
     return model
 
 
-def train_one_epoch(model, loader, criterion, optimizer, device, log_interval=200):
+def get_volume_weight(epoch: int, args) -> float:
+    """
+    Keep the baseline regression objective dominant.
+
+    vol_weight is 0 before vol_start_epoch, then linearly warms up to
+    args.vol_weight over args.vol_warmup_epochs.
+    """
+    if args.vol_weight <= 0:
+        return 0.0
+
+    if epoch <= args.vol_start_epoch:
+        return 0.0
+
+    if args.vol_warmup_epochs <= 0:
+        return float(args.vol_weight)
+
+    progress = (epoch - args.vol_start_epoch) / float(args.vol_warmup_epochs)
+    progress = max(0.0, min(1.0, progress))
+    return float(args.vol_weight) * progress
+
+
+def train_one_epoch(model, loader, criterion, optimizer, device, epoch, args, log_interval=200):
     model.train()
 
-    running_loss = 0.0
+    running_total_loss = 0.0
+    running_reg_loss = 0.0
+    running_vol_loss = 0.0
     all_preds = []
     all_targets = []
+
+    vol_weight_eff = get_volume_weight(epoch, args)
 
     for step, batch in enumerate(loader):
         batch = move_batch_to_device(batch, device)
 
         optimizer.zero_grad()
 
-        pred = model(batch)
         target = batch["label"]
 
-        loss = criterion(pred, target)
+        if vol_weight_eff > 0:
+            output = model(batch, return_aux=True)
+            pred = output["pred"]
+            reg_loss = criterion(pred, target)
+            vol_loss = output["volume_loss"]
+            loss = reg_loss + vol_weight_eff * vol_loss
+        else:
+            pred = model(batch)
+            reg_loss = criterion(pred, target)
+            vol_loss = pred.new_zeros(())
+            loss = reg_loss
+
         loss.backward()
         optimizer.step()
 
-        running_loss += float(loss.item()) * target.size(0)
+        batch_size = target.size(0)
+        running_total_loss += float(loss.item()) * batch_size
+        running_reg_loss += float(reg_loss.item()) * batch_size
+        running_vol_loss += float(vol_loss.item()) * batch_size
 
         all_preds.append(pred.detach().cpu())
         all_targets.append(target.detach().cpu())
 
         if (step + 1) % log_interval == 0:
-            batch_rmse = torch.sqrt(loss.detach())
+            batch_rmse = torch.sqrt(reg_loss.detach())
             print(
                 f"  STEP {step + 1}/{len(loader)} | "
-                f"BATCH_LOSS={loss.item():.6f} | "
+                f"TOTAL={loss.item():.6f} | "
+                f"REG={reg_loss.item():.6f} | "
+                f"VOL={vol_loss.item():.6f} | "
+                f"VOL_W={vol_weight_eff:.6f} | "
                 f"BATCH_RMSE={batch_rmse.item():.6f}"
             )
 
     all_preds = torch.cat(all_preds, dim=0)
     all_targets = torch.cat(all_targets, dim=0)
 
-    avg_loss = running_loss / len(loader.dataset)
+    avg_total_loss = running_total_loss / len(loader.dataset)
+    avg_reg_loss = running_reg_loss / len(loader.dataset)
+    avg_vol_loss = running_vol_loss / len(loader.dataset)
+
     metrics = compute_regression_metrics(all_preds, all_targets)
-    metrics["loss"] = avg_loss
+    metrics["loss"] = avg_total_loss
+    metrics["reg_loss"] = avg_reg_loss
+    metrics["volume_loss"] = avg_vol_loss
+    metrics["volume_weight"] = vol_weight_eff
     return metrics
 
 
@@ -296,6 +347,9 @@ def evaluate(model, loader, criterion, device):
     avg_loss = running_loss / len(loader.dataset)
     metrics = compute_regression_metrics(all_preds, all_targets)
     metrics["loss"] = avg_loss
+    metrics["reg_loss"] = avg_loss
+    metrics["volume_loss"] = 0.0
+    metrics["volume_weight"] = 0.0
     return metrics
 
 
@@ -333,20 +387,43 @@ def main():
     parser.add_argument("--split_json", type=str, default="data/splits/davis_fixed_split_size2.json")
 
     # train
-    parser.add_argument("--output_dir", type=str, default="outputs/davis_p13d_fixedsplit")
+    parser.add_argument("--output_dir", type=str, default="outputs/davis_p13d_fixedsplit_gram_volume")
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--train_ratio", type=float, default=0.8)  # 保留兼容，不再实际使用
+    parser.add_argument("--train_ratio", type=float, default=0.8)  # kept for compatibility, not used with fixed split
     parser.add_argument("--batch_size", type=int, default=2)
     parser.add_argument("--num_workers", type=int, default=0)
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--lr", type=float, default=3e-4)
     parser.add_argument("--weight_decay", type=float, default=1e-5)
 
+    # early stopping
+    parser.add_argument(
+        "--early_stop_patience",
+        type=int,
+        default=60,
+        help="Stop training if val RMSE does not improve for this many epochs. Set <= 0 to disable.",
+    )
+    parser.add_argument(
+        "--early_stop_min_delta",
+        type=float,
+        default=1e-4,
+        help="Minimum val RMSE decrease required to reset early stopping patience.",
+    )
+
     # model
     parser.add_argument("--drug_1d_in_dim", type=int, default=768)
     parser.add_argument("--drug_3d_node_in_dim", type=int, default=10)
     parser.add_argument("--hidden_dim", type=int, default=128)
     parser.add_argument("--dropout", type=float, default=0.1)
+
+    # affinity-aware Gramian volume contrastive loss
+    parser.add_argument("--contrastive_dim", type=int, default=128)
+    parser.add_argument("--vol_weight", type=float, default=0.01)
+    parser.add_argument("--vol_start_epoch", type=int, default=20)
+    parser.add_argument("--vol_warmup_epochs", type=int, default=20)
+    parser.add_argument("--vol_temperature", type=float, default=0.1)
+    parser.add_argument("--vol_label_tau", type=float, default=1.0)
+    parser.add_argument("--vol_det_eps", type=float, default=1e-6)
 
     args = parser.parse_args()
 
@@ -362,6 +439,12 @@ def main():
     print("VAL SIZE:", len(val_set))
     print("SPLIT JSON:", args.split_json)
     print("MODEL: drug_1d + drug_3d + protein_1d + protein_3d")
+    print("AUX LOSS: Affinity-aware 4-modal Gramian volume contrastive loss")
+    print(
+        f"VOL CONFIG: weight={args.vol_weight}, start_epoch={args.vol_start_epoch}, "
+        f"warmup_epochs={args.vol_warmup_epochs}, temperature={args.vol_temperature}, "
+        f"label_tau={args.vol_label_tau}, contrastive_dim={args.contrastive_dim}"
+    )
 
     save_split_indices(train_set, val_set, args.output_dir)
 
@@ -378,9 +461,10 @@ def main():
     best_val_metrics = None
     best_train_metrics = None
     history = []
+    epochs_no_improve = 0
 
     for epoch in range(1, args.epochs + 1):
-        print(f"\\nEPOCH {epoch}/{args.epochs}")
+        print(f"\nEPOCH {epoch}/{args.epochs}")
 
         train_metrics = train_one_epoch(
             model=model,
@@ -388,6 +472,8 @@ def main():
             criterion=criterion,
             optimizer=optimizer,
             device=device,
+            epoch=epoch,
+            args=args,
             log_interval=200,
         )
 
@@ -401,6 +487,9 @@ def main():
         print(
             f"[EPOCH {epoch:03d}/{args.epochs:03d}] "
             f"TRAIN: LOSS={train_metrics['loss']:.6f} | "
+            f"REG={train_metrics['reg_loss']:.6f} | "
+            f"VOL={train_metrics['volume_loss']:.6f} | "
+            f"VOL_W={train_metrics['volume_weight']:.6f} | "
             f"MSE={train_metrics['mse']:.6f} | "
             f"RMSE={train_metrics['rmse']:.6f} | "
             f"MAE={train_metrics['mae']:.6f} | "
@@ -433,11 +522,15 @@ def main():
             args=args,
         )
 
-        if val_metrics["rmse"] < best_val_rmse:
-            best_val_rmse = val_metrics["rmse"]
+        current_val_rmse = val_metrics["rmse"]
+        improved = current_val_rmse < best_val_rmse - args.early_stop_min_delta
+
+        if improved:
+            best_val_rmse = current_val_rmse
             best_epoch = epoch
             best_val_metrics = dict(val_metrics)
             best_train_metrics = dict(train_metrics)
+            epochs_no_improve = 0
 
             save_checkpoint(
                 path=Path(args.output_dir) / "best_model.pt",
@@ -457,11 +550,30 @@ def main():
                 f"BEST_VAL_CI={best_val_metrics['ci']:.6f} | "
                 f"BEST_VAL_RM2={best_val_metrics['rm2']:.6f}"
             )
+        else:
+            epochs_no_improve += 1
+            print(
+                f"  EARLY_STOP COUNTER | "
+                f"NO_IMPROVE={epochs_no_improve}/{args.early_stop_patience} | "
+                f"BEST_EPOCH={best_epoch:03d} | "
+                f"BEST_VAL_RMSE={best_val_rmse:.6f} | "
+                f"CURRENT_VAL_RMSE={current_val_rmse:.6f}"
+            )
 
         with open(Path(args.output_dir) / "history.json", "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
 
-    print("\\nTRAINING FINISHED.")
+        if args.early_stop_patience > 0 and epochs_no_improve >= args.early_stop_patience:
+            print(
+                f"\nEARLY STOPPING TRIGGERED | "
+                f"BEST_EPOCH={best_epoch:03d} | "
+                f"BEST_VAL_RMSE={best_val_rmse:.6f} | "
+                f"PATIENCE={args.early_stop_patience} | "
+                f"MIN_DELTA={args.early_stop_min_delta}"
+            )
+            break
+
+    print("\nTRAINING FINISHED.")
 
     if best_val_metrics is not None:
         print(
@@ -479,6 +591,9 @@ def main():
             f"BEST MODEL TRAIN METRICS | "
             f"EPOCH={best_epoch:03d} | "
             f"TRAIN_LOSS={best_train_metrics['loss']:.6f} | "
+            f"TRAIN_REG={best_train_metrics['reg_loss']:.6f} | "
+            f"TRAIN_VOL={best_train_metrics['volume_loss']:.6f} | "
+            f"TRAIN_VOL_W={best_train_metrics['volume_weight']:.6f} | "
             f"TRAIN_MSE={best_train_metrics['mse']:.6f} | "
             f"TRAIN_RMSE={best_train_metrics['rmse']:.6f} | "
             f"TRAIN_MAE={best_train_metrics['mae']:.6f} | "

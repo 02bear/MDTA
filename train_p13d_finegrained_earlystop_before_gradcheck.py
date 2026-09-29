@@ -10,7 +10,7 @@ from torch.utils.data import DataLoader, Subset
 
 from datasets.davis_dataset_p13d import DavisDatasetP13D
 from datasets.collate_p13d import mdta_collate_fn_p13d, move_batch_to_device
-from models.model_p13d import MyModelMDTAP13D
+from models.model_p13d_finegrained import MyModelMDTAP13DFineGrained
 
 
 def set_seed(seed: int = 42):
@@ -216,7 +216,7 @@ def build_dataloaders(args):
 
 
 def build_model(args, device):
-    model = MyModelMDTAP13D(
+    model = MyModelMDTAP13DFineGrained(
         drug_1d_in_dim=args.drug_1d_in_dim,
         drug_3d_node_in_dim=args.drug_3d_node_in_dim,
         protein_1d_in_dim=1280,
@@ -225,6 +225,8 @@ def build_model(args, device):
         hidden_dim=args.hidden_dim,
         dropout=args.dropout,
         task="regression",
+        pocket_top_k=args.pocket_top_k,
+        interaction_heads=args.interaction_heads,
     ).to(device)
     return model
 
@@ -335,18 +337,44 @@ def main():
     # train
     parser.add_argument("--output_dir", type=str, default="outputs/davis_p13d_fixedsplit")
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--train_ratio", type=float, default=0.8)  # 保留兼容，不再实际使用
+    parser.add_argument("--train_ratio", type=float, default=0.8)  # 保留兼容，不再实际使�?
     parser.add_argument("--batch_size", type=int, default=2)
     parser.add_argument("--num_workers", type=int, default=0)
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--lr", type=float, default=3e-4)
     parser.add_argument("--weight_decay", type=float, default=1e-5)
 
+    # early stopping
+    parser.add_argument(
+        "--early_stop_patience",
+        type=int,
+        default=60,
+        help="Stop training if val RMSE does not improve for this many epochs. Set <= 0 to disable.",
+    )
+    parser.add_argument(
+        "--early_stop_min_delta",
+        type=float,
+        default=1e-4,
+        help="Minimum val RMSE decrease required to reset early stopping patience.",
+    )
+
     # model
     parser.add_argument("--drug_1d_in_dim", type=int, default=768)
     parser.add_argument("--drug_3d_node_in_dim", type=int, default=10)
     parser.add_argument("--hidden_dim", type=int, default=128)
     parser.add_argument("--dropout", type=float, default=0.1)
+    parser.add_argument(
+        "--pocket_top_k",
+        type=int,
+        default=64,
+        help="Number of drug-conditioned candidate protein residues selected for local atom-residue interaction.",
+    )
+    parser.add_argument(
+        "--interaction_heads",
+        type=int,
+        default=4,
+        help="Number of attention heads used in the atom-residue interaction module.",
+    )
 
     args = parser.parse_args()
 
@@ -361,7 +389,9 @@ def main():
     print("TRAIN SIZE:", len(train_set))
     print("VAL SIZE:", len(val_set))
     print("SPLIT JSON:", args.split_json)
-    print("MODEL: drug_1d + drug_3d + protein_1d + protein_3d")
+    print("MODEL: drug_1d + drug_3d + protein_1d + protein_3d + fine-grained atom-residue local interaction")
+    print(f"POCKET_TOP_K: {args.pocket_top_k}")
+    print(f"INTERACTION_HEADS: {args.interaction_heads}")
 
     save_split_indices(train_set, val_set, args.output_dir)
 
@@ -378,6 +408,7 @@ def main():
     best_val_metrics = None
     best_train_metrics = None
     history = []
+    epochs_no_improve = 0
 
     for epoch in range(1, args.epochs + 1):
         print(f"\\nEPOCH {epoch}/{args.epochs}")
@@ -433,11 +464,15 @@ def main():
             args=args,
         )
 
-        if val_metrics["rmse"] < best_val_rmse:
-            best_val_rmse = val_metrics["rmse"]
+        current_val_rmse = val_metrics["rmse"]
+        improved = current_val_rmse < best_val_rmse - args.early_stop_min_delta
+
+        if improved:
+            best_val_rmse = current_val_rmse
             best_epoch = epoch
             best_val_metrics = dict(val_metrics)
             best_train_metrics = dict(train_metrics)
+            epochs_no_improve = 0
 
             save_checkpoint(
                 path=Path(args.output_dir) / "best_model.pt",
@@ -457,9 +492,28 @@ def main():
                 f"BEST_VAL_CI={best_val_metrics['ci']:.6f} | "
                 f"BEST_VAL_RM2={best_val_metrics['rm2']:.6f}"
             )
+        else:
+            epochs_no_improve += 1
+            print(
+                f"  EARLY_STOP COUNTER | "
+                f"NO_IMPROVE={epochs_no_improve}/{args.early_stop_patience} | "
+                f"BEST_EPOCH={best_epoch:03d} | "
+                f"BEST_VAL_RMSE={best_val_rmse:.6f} | "
+                f"CURRENT_VAL_RMSE={current_val_rmse:.6f}"
+            )
 
         with open(Path(args.output_dir) / "history.json", "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
+
+        if args.early_stop_patience > 0 and epochs_no_improve >= args.early_stop_patience:
+            print(
+                f"\nEARLY STOPPING TRIGGERED | "
+                f"BEST_EPOCH={best_epoch:03d} | "
+                f"BEST_VAL_RMSE={best_val_rmse:.6f} | "
+                f"PATIENCE={args.early_stop_patience} | "
+                f"MIN_DELTA={args.early_stop_min_delta}"
+            )
+            break
 
     print("\\nTRAINING FINISHED.")
 

@@ -6,11 +6,12 @@ from pathlib import Path
 
 import numpy as np
 import torch
+import torch.nn.functional as F
 from torch.utils.data import DataLoader, Subset
 
 from datasets.davis_dataset_p13d import DavisDatasetP13D
 from datasets.collate_p13d import mdta_collate_fn_p13d, move_batch_to_device
-from models.model_p13d import MyModelMDTAP13D
+from models.model_p13d_finegrained_residual import MyModelMDTAP13DFineGrained
 
 
 def set_seed(seed: int = 42):
@@ -216,7 +217,7 @@ def build_dataloaders(args):
 
 
 def build_model(args, device):
-    model = MyModelMDTAP13D(
+    model = MyModelMDTAP13DFineGrained(
         drug_1d_in_dim=args.drug_1d_in_dim,
         drug_3d_node_in_dim=args.drug_3d_node_in_dim,
         protein_1d_in_dim=1280,
@@ -225,14 +226,96 @@ def build_model(args, device):
         hidden_dim=args.hidden_dim,
         dropout=args.dropout,
         task="regression",
+        pocket_top_k=args.pocket_top_k,
+        interaction_heads=args.interaction_heads,
     ).to(device)
     return model
 
 
-def train_one_epoch(model, loader, criterion, optimizer, device, log_interval=200):
+def pairwise_rank_loss(
+    pred: torch.Tensor,
+    target: torch.Tensor,
+    margin: float = 0.3,
+    temperature: float = 1.0,
+):
+    """
+    Batch-wise RankNet loss。
+
+    只保留真实标签差值绝对值不小于margin的样本对，
+    避免对近似相等的亲和力值强行排序。
+    """
+    pred = pred.view(-1)
+    target = target.view(-1)
+
+    batch_size = pred.numel()
+
+    if batch_size < 2:
+        return pred.sum() * 0.0, 0
+
+    if temperature <= 0:
+        raise ValueError(
+            f"rank temperature must be positive, "
+            f"got {temperature}"
+        )
+
+    pair_i, pair_j = torch.triu_indices(
+        batch_size,
+        batch_size,
+        offset=1,
+        device=pred.device,
+    )
+
+    target_diff = (
+        target[pair_i] - target[pair_j]
+    )
+
+    valid = target_diff.abs() >= margin
+    num_valid = int(valid.sum().item())
+
+    if num_valid == 0:
+        return pred.sum() * 0.0, 0
+
+    pair_i = pair_i[valid]
+    pair_j = pair_j[valid]
+    target_diff = target_diff[valid]
+
+    direction = torch.sign(target_diff)
+
+    pred_diff = (
+        pred[pair_i] - pred[pair_j]
+    )
+
+    signed_logit = (
+        direction
+        * pred_diff
+        / temperature
+    )
+
+    rank_loss = F.softplus(
+        -signed_logit
+    ).mean()
+
+    return rank_loss, num_valid
+
+
+def train_one_epoch(
+    model,
+    loader,
+    criterion,
+    optimizer,
+    device,
+    rank_weight: float,
+    rank_margin: float,
+    rank_temperature: float,
+    log_interval=200,
+):
     model.train()
 
-    running_loss = 0.0
+    running_total_loss = 0.0
+    running_mse_loss = 0.0
+    running_rank_loss = 0.0
+    running_rank_pairs = 0
+
     all_preds = []
     all_targets = []
 
@@ -244,29 +327,146 @@ def train_one_epoch(model, loader, criterion, optimizer, device, log_interval=20
         pred = model(batch)
         target = batch["label"]
 
-        loss = criterion(pred, target)
-        loss.backward()
+        mse_loss = criterion(
+            pred,
+            target,
+        )
+
+        rank_loss, num_rank_pairs = (
+            pairwise_rank_loss(
+                pred=pred,
+                target=target,
+                margin=rank_margin,
+                temperature=rank_temperature,
+            )
+        )
+
+        total_loss = (
+            mse_loss
+            + rank_weight * rank_loss
+        )
+
+        total_loss.backward()
+        
+        # ============================================================
+        # DEBUG: 仅检查第一个 batch 的梯度，判断细粒度模块是否真正可训练
+        # ============================================================
+        if step == 0:
+            print("\n========== GRADIENT CHECK ==========")
+        
+            def print_module_grad(module_name, module):
+                total_sq_norm = 0.0
+                has_grad = False
+        
+                print(f"\n[{module_name}]")
+        
+                for name, param in module.named_parameters():
+                    if not param.requires_grad:
+                        print(f"  {name}: requires_grad=False")
+                        continue
+        
+                    if param.grad is None:
+                        print(f"  {name}: grad=None")
+                    else:
+                        grad_norm = param.grad.detach().norm().item()
+                        print(f"  {name}: grad_norm={grad_norm:.10f}")
+                        total_sq_norm += grad_norm ** 2
+                        has_grad = True
+        
+                total_norm = total_sq_norm ** 0.5
+        
+                print(
+                    f"  SUMMARY | has_grad={has_grad} | "
+                    f"total_grad_norm={total_norm:.10f}"
+                )
+        
+            # 1. 最关键：负责选择候选残基的模块
+            print_module_grad(
+                "pocket_selector",
+                model.pocket_selector,
+            )
+        
+            # 2. 原子—残基交互模块，作为对照
+            print_module_grad(
+                "atom_residue_interaction",
+                model.atom_residue_interaction,
+            )
+        
+            # 3. 最终预测头，作为对照
+            print_module_grad(
+                "decoder",
+                model.decoder,
+            )
+        
+            print("======== END GRADIENT CHECK ========\n")
+        
         optimizer.step()
 
-        running_loss += float(loss.item()) * target.size(0)
+        batch_n = target.size(0)
+
+        running_total_loss += (
+            float(total_loss.item()) * batch_n
+        )
+
+        running_mse_loss += (
+            float(mse_loss.item()) * batch_n
+        )
+
+        if num_rank_pairs > 0:
+            running_rank_loss += (
+                float(rank_loss.item())
+                * num_rank_pairs
+            )
+            running_rank_pairs += num_rank_pairs
 
         all_preds.append(pred.detach().cpu())
         all_targets.append(target.detach().cpu())
 
         if (step + 1) % log_interval == 0:
-            batch_rmse = torch.sqrt(loss.detach())
+            batch_rmse = torch.sqrt(
+                mse_loss.detach()
+            )
+
             print(
                 f"  STEP {step + 1}/{len(loader)} | "
-                f"BATCH_LOSS={loss.item():.6f} | "
-                f"BATCH_RMSE={batch_rmse.item():.6f}"
+                f"TOTAL={total_loss.item():.6f} | "
+                f"MSE={mse_loss.item():.6f} | "
+                f"RANK={rank_loss.item():.6f} | "
+                f"RANK_PAIRS={num_rank_pairs} | "
+                f"RMSE={batch_rmse.item():.6f}"
             )
 
     all_preds = torch.cat(all_preds, dim=0)
     all_targets = torch.cat(all_targets, dim=0)
 
-    avg_loss = running_loss / len(loader.dataset)
-    metrics = compute_regression_metrics(all_preds, all_targets)
-    metrics["loss"] = avg_loss
+    num_samples = len(loader.dataset)
+
+    avg_total_loss = (
+        running_total_loss / num_samples
+    )
+
+    avg_mse_loss = (
+        running_mse_loss / num_samples
+    )
+
+    if running_rank_pairs > 0:
+        avg_rank_loss = (
+            running_rank_loss
+            / running_rank_pairs
+        )
+    else:
+        avg_rank_loss = 0.0
+
+    metrics = compute_regression_metrics(
+        all_preds,
+        all_targets,
+    )
+
+    metrics["loss"] = avg_total_loss
+    metrics["mse_loss"] = avg_mse_loss
+    metrics["rank_loss"] = avg_rank_loss
+    metrics["rank_pairs"] = running_rank_pairs
+
     return metrics
 
 
@@ -335,18 +535,66 @@ def main():
     # train
     parser.add_argument("--output_dir", type=str, default="outputs/davis_p13d_fixedsplit")
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--train_ratio", type=float, default=0.8)  # 保留兼容，不再实际使用
+    parser.add_argument("--train_ratio", type=float, default=0.8)  # 保留兼容，不再实际使�?
     parser.add_argument("--batch_size", type=int, default=2)
     parser.add_argument("--num_workers", type=int, default=0)
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--lr", type=float, default=3e-4)
     parser.add_argument("--weight_decay", type=float, default=1e-5)
 
+    # early stopping
+    parser.add_argument(
+        "--early_stop_patience",
+        type=int,
+        default=60,
+        help="Stop training if val RMSE does not improve for this many epochs. Set <= 0 to disable.",
+    )
+    parser.add_argument(
+        "--early_stop_min_delta",
+        type=float,
+        default=1e-4,
+        help="Minimum val RMSE decrease required to reset early stopping patience.",
+    )
+
     # model
     parser.add_argument("--drug_1d_in_dim", type=int, default=768)
     parser.add_argument("--drug_3d_node_in_dim", type=int, default=10)
     parser.add_argument("--hidden_dim", type=int, default=128)
     parser.add_argument("--dropout", type=float, default=0.1)
+    parser.add_argument(
+        "--pocket_top_k",
+        type=int,
+        default=64,
+        help="Number of drug-conditioned candidate protein residues selected for local atom-residue interaction.",
+    )
+    parser.add_argument(
+        "--interaction_heads",
+        type=int,
+        default=4,
+        help="Number of attention heads used in the atom-residue interaction module.",
+    )
+
+    parser.add_argument(
+        "--rank_weight",
+        type=float,
+        default=0.05,
+        help="Weight of batch-wise pairwise ranking loss.",
+    )
+    parser.add_argument(
+        "--rank_margin",
+        type=float,
+        default=0.3,
+        help=(
+            "Only target pairs with absolute affinity "
+            "difference >= this margin are ranked."
+        ),
+    )
+    parser.add_argument(
+        "--rank_temperature",
+        type=float,
+        default=1.0,
+        help="Temperature of RankNet logistic loss.",
+    )
 
     args = parser.parse_args()
 
@@ -361,7 +609,15 @@ def main():
     print("TRAIN SIZE:", len(train_set))
     print("VAL SIZE:", len(val_set))
     print("SPLIT JSON:", args.split_json)
-    print("MODEL: drug_1d + drug_3d + protein_1d + protein_3d")
+    print(
+        "MODEL: E6 = E2 residual model + "
+        "batch-wise pairwise ranking loss"
+    )
+    print(f"POCKET_TOP_K: {args.pocket_top_k}")
+    print(f"INTERACTION_HEADS: {args.interaction_heads}")
+    print("RANK_WEIGHT:", args.rank_weight)
+    print("RANK_MARGIN:", args.rank_margin)
+    print("RANK_TEMPERATURE:", args.rank_temperature)
 
     save_split_indices(train_set, val_set, args.output_dir)
 
@@ -378,6 +634,7 @@ def main():
     best_val_metrics = None
     best_train_metrics = None
     history = []
+    epochs_no_improve = 0
 
     for epoch in range(1, args.epochs + 1):
         print(f"\\nEPOCH {epoch}/{args.epochs}")
@@ -388,6 +645,9 @@ def main():
             criterion=criterion,
             optimizer=optimizer,
             device=device,
+            rank_weight=args.rank_weight,
+            rank_margin=args.rank_margin,
+            rank_temperature=args.rank_temperature,
             log_interval=200,
         )
 
@@ -402,6 +662,7 @@ def main():
             f"[EPOCH {epoch:03d}/{args.epochs:03d}] "
             f"TRAIN: LOSS={train_metrics['loss']:.6f} | "
             f"MSE={train_metrics['mse']:.6f} | "
+            f"RANK={train_metrics['rank_loss']:.6f} | "
             f"RMSE={train_metrics['rmse']:.6f} | "
             f"MAE={train_metrics['mae']:.6f} | "
             f"CI={train_metrics['ci']:.6f} | "
@@ -433,11 +694,15 @@ def main():
             args=args,
         )
 
-        if val_metrics["rmse"] < best_val_rmse:
-            best_val_rmse = val_metrics["rmse"]
+        current_val_rmse = val_metrics["rmse"]
+        improved = current_val_rmse < best_val_rmse - args.early_stop_min_delta
+
+        if improved:
+            best_val_rmse = current_val_rmse
             best_epoch = epoch
             best_val_metrics = dict(val_metrics)
             best_train_metrics = dict(train_metrics)
+            epochs_no_improve = 0
 
             save_checkpoint(
                 path=Path(args.output_dir) / "best_model.pt",
@@ -457,9 +722,28 @@ def main():
                 f"BEST_VAL_CI={best_val_metrics['ci']:.6f} | "
                 f"BEST_VAL_RM2={best_val_metrics['rm2']:.6f}"
             )
+        else:
+            epochs_no_improve += 1
+            print(
+                f"  EARLY_STOP COUNTER | "
+                f"NO_IMPROVE={epochs_no_improve}/{args.early_stop_patience} | "
+                f"BEST_EPOCH={best_epoch:03d} | "
+                f"BEST_VAL_RMSE={best_val_rmse:.6f} | "
+                f"CURRENT_VAL_RMSE={current_val_rmse:.6f}"
+            )
 
         with open(Path(args.output_dir) / "history.json", "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
+
+        if args.early_stop_patience > 0 and epochs_no_improve >= args.early_stop_patience:
+            print(
+                f"\nEARLY STOPPING TRIGGERED | "
+                f"BEST_EPOCH={best_epoch:03d} | "
+                f"BEST_VAL_RMSE={best_val_rmse:.6f} | "
+                f"PATIENCE={args.early_stop_patience} | "
+                f"MIN_DELTA={args.early_stop_min_delta}"
+            )
+            break
 
     print("\\nTRAINING FINISHED.")
 

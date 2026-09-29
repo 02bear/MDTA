@@ -9,8 +9,13 @@ import torch
 from torch.utils.data import DataLoader, Subset
 
 from datasets.davis_dataset_p13d import DavisDatasetP13D
-from datasets.collate_p13d import mdta_collate_fn_p13d, move_batch_to_device
-from models.model_p13d import MyModelMDTAP13D
+from datasets.collate_p13d_dual_atom import (
+    mdta_collate_fn_p13d,
+    move_batch_to_device,
+)
+from models.model_p13d_finegrained_residual_richpair import (
+    MyModelMDTAP13DFineGrained,
+)
 
 
 def set_seed(seed: int = 42):
@@ -216,7 +221,7 @@ def build_dataloaders(args):
 
 
 def build_model(args, device):
-    model = MyModelMDTAP13D(
+    model = MyModelMDTAP13DFineGrained(
         drug_1d_in_dim=args.drug_1d_in_dim,
         drug_3d_node_in_dim=args.drug_3d_node_in_dim,
         protein_1d_in_dim=1280,
@@ -225,6 +230,9 @@ def build_model(args, device):
         hidden_dim=args.hidden_dim,
         dropout=args.dropout,
         task="regression",
+        pocket_top_k=args.pocket_top_k,
+        interaction_heads=args.interaction_heads,
+        rich_atom_in_dim=args.rich_atom_in_dim,
     ).to(device)
     return model
 
@@ -246,6 +254,114 @@ def train_one_epoch(model, loader, criterion, optimizer, device, log_interval=20
 
         loss = criterion(pred, target)
         loss.backward()
+        
+        # ============================================================
+        # DEBUG: 仅检查第一个 batch 的梯度，判断细粒度模块是否真正可训练
+        # ============================================================
+        if step == 0:
+            print("\n========== GRADIENT CHECK ==========")
+        
+            def print_module_grad(module_name, module):
+                total_sq_norm = 0.0
+                has_grad = False
+        
+                print(f"\n[{module_name}]")
+        
+                for name, param in module.named_parameters():
+                    if not param.requires_grad:
+                        print(f"  {name}: requires_grad=False")
+                        continue
+        
+                    if param.grad is None:
+                        print(f"  {name}: grad=None")
+                    else:
+                        grad_norm = param.grad.detach().norm().item()
+                        print(f"  {name}: grad_norm={grad_norm:.10f}")
+                        total_sq_norm += grad_norm ** 2
+                        has_grad = True
+        
+                total_norm = total_sq_norm ** 0.5
+        
+                print(
+                    f"  SUMMARY | has_grad={has_grad} | "
+                    f"total_grad_norm={total_norm:.10f}"
+                )
+        
+            # 1. 最关键：负责选择候选残基的模块
+            print_module_grad(
+                "pocket_selector",
+                model.pocket_selector,
+            )
+        
+            # 2. 原子—残基交互模块，作为对照
+            print_module_grad(
+                "atom_residue_interaction",
+                model.atom_residue_interaction,
+            )
+        
+            # E5新增43维权重列的梯度
+            score_first = (
+                model.atom_residue_interaction
+                .pair_score_mlp[0]
+            )
+            feat_first = (
+                model.atom_residue_interaction
+                .pair_feat_mlp[0]
+            )
+
+            score_grad = score_first.weight.grad
+            feat_grad = feat_first.weight.grad
+
+            if score_grad is None:
+                score_rich_grad = None
+            else:
+                score_rich_grad = (
+                    score_grad[
+                        :,
+                        -model.atom_residue_interaction.rich_atom_dim:
+                    ]
+                    .detach()
+                    .norm()
+                    .item()
+                )
+
+            if feat_grad is None:
+                feat_rich_grad = None
+            else:
+                feat_rich_grad = (
+                    feat_grad[
+                        :,
+                        -model.atom_residue_interaction.rich_atom_dim:
+                    ]
+                    .detach()
+                    .norm()
+                    .item()
+                )
+
+            print("\n[E5 rich pair columns]")
+            print(
+                "  pair_score rich-column grad_norm:",
+                score_rich_grad,
+            )
+            print(
+                "  pair_feat rich-column grad_norm:",
+                feat_rich_grad,
+            )
+
+            # 局部残差头
+            print_module_grad(
+                "local_delta_head",
+                model.local_delta_head,
+            )
+
+            # Baseline主预测头
+            print_module_grad(
+                "decoder",
+                model.decoder,
+            )
+        
+            print("======== END GRADIENT CHECK ========\n")
+        
         optimizer.step()
 
         running_loss += float(loss.item()) * target.size(0)
@@ -335,18 +451,54 @@ def main():
     # train
     parser.add_argument("--output_dir", type=str, default="outputs/davis_p13d_fixedsplit")
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--train_ratio", type=float, default=0.8)  # 保留兼容，不再实际使用
+    parser.add_argument("--train_ratio", type=float, default=0.8)  # 保留兼容，不再实际使�?
     parser.add_argument("--batch_size", type=int, default=2)
     parser.add_argument("--num_workers", type=int, default=0)
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--lr", type=float, default=3e-4)
     parser.add_argument("--weight_decay", type=float, default=1e-5)
 
+    # early stopping
+    parser.add_argument(
+        "--early_stop_patience",
+        type=int,
+        default=60,
+        help="Stop training if val RMSE does not improve for this many epochs. Set <= 0 to disable.",
+    )
+    parser.add_argument(
+        "--early_stop_min_delta",
+        type=float,
+        default=1e-4,
+        help="Minimum val RMSE decrease required to reset early stopping patience.",
+    )
+
     # model
     parser.add_argument("--drug_1d_in_dim", type=int, default=768)
     parser.add_argument("--drug_3d_node_in_dim", type=int, default=10)
     parser.add_argument("--hidden_dim", type=int, default=128)
     parser.add_argument("--dropout", type=float, default=0.1)
+    parser.add_argument(
+        "--pocket_top_k",
+        type=int,
+        default=64,
+        help="Number of drug-conditioned candidate protein residues selected for local atom-residue interaction.",
+    )
+    parser.add_argument(
+        "--interaction_heads",
+        type=int,
+        default=4,
+        help="Number of attention heads used in the atom-residue interaction module.",
+    )
+
+    parser.add_argument(
+        "--rich_atom_in_dim",
+        type=int,
+        default=43,
+        help=(
+            "Rich atom feature dimension directly "
+            "included in atom-residue pair input."
+        ),
+    )
 
     args = parser.parse_args()
 
@@ -361,7 +513,20 @@ def main():
     print("TRAIN SIZE:", len(train_set))
     print("VAL SIZE:", len(val_set))
     print("SPLIT JSON:", args.split_json)
-    print("MODEL: drug_1d + drug_3d + protein_1d + protein_3d")
+    print(
+        "MODEL: E5 = E2 residual model + "
+        "43D rich-attribute-aware pair interaction"
+    )
+    print(
+        "E5 PAIR INPUT DIM:",
+        args.hidden_dim * 4 + args.rich_atom_in_dim,
+    )
+    print(
+        "RICH_ATOM_DIM:",
+        args.rich_atom_in_dim,
+    )
+    print(f"POCKET_TOP_K: {args.pocket_top_k}")
+    print(f"INTERACTION_HEADS: {args.interaction_heads}")
 
     save_split_indices(train_set, val_set, args.output_dir)
 
@@ -378,6 +543,7 @@ def main():
     best_val_metrics = None
     best_train_metrics = None
     history = []
+    epochs_no_improve = 0
 
     for epoch in range(1, args.epochs + 1):
         print(f"\\nEPOCH {epoch}/{args.epochs}")
@@ -433,11 +599,15 @@ def main():
             args=args,
         )
 
-        if val_metrics["rmse"] < best_val_rmse:
-            best_val_rmse = val_metrics["rmse"]
+        current_val_rmse = val_metrics["rmse"]
+        improved = current_val_rmse < best_val_rmse - args.early_stop_min_delta
+
+        if improved:
+            best_val_rmse = current_val_rmse
             best_epoch = epoch
             best_val_metrics = dict(val_metrics)
             best_train_metrics = dict(train_metrics)
+            epochs_no_improve = 0
 
             save_checkpoint(
                 path=Path(args.output_dir) / "best_model.pt",
@@ -457,9 +627,28 @@ def main():
                 f"BEST_VAL_CI={best_val_metrics['ci']:.6f} | "
                 f"BEST_VAL_RM2={best_val_metrics['rm2']:.6f}"
             )
+        else:
+            epochs_no_improve += 1
+            print(
+                f"  EARLY_STOP COUNTER | "
+                f"NO_IMPROVE={epochs_no_improve}/{args.early_stop_patience} | "
+                f"BEST_EPOCH={best_epoch:03d} | "
+                f"BEST_VAL_RMSE={best_val_rmse:.6f} | "
+                f"CURRENT_VAL_RMSE={current_val_rmse:.6f}"
+            )
 
         with open(Path(args.output_dir) / "history.json", "w", encoding="utf-8") as f:
             json.dump(history, f, indent=2)
+
+        if args.early_stop_patience > 0 and epochs_no_improve >= args.early_stop_patience:
+            print(
+                f"\nEARLY STOPPING TRIGGERED | "
+                f"BEST_EPOCH={best_epoch:03d} | "
+                f"BEST_VAL_RMSE={best_val_rmse:.6f} | "
+                f"PATIENCE={args.early_stop_patience} | "
+                f"MIN_DELTA={args.early_stop_min_delta}"
+            )
+            break
 
     print("\\nTRAINING FINISHED.")
 
