@@ -71,7 +71,14 @@ class Drug3DEGNNEncoder(nn.Module):
         "batch": LongTensor [N],
     }
     输出:
-        graph_emb: [B, out_dim]
+        默认 return_node=False:
+            graph_emb: [B, out_dim]
+        当 return_node=True:
+            {
+                "node_feat": Tensor [N, out_dim],   # 原子级局部特征
+                "graph_feat": Tensor [B, out_dim],  # 与原 baseline 一致的全局特征
+                "batch": LongTensor [N],            # 每个原子所属图编号
+            }
     """
 
     def __init__(
@@ -103,7 +110,7 @@ class Drug3DEGNNEncoder(nn.Module):
             nn.Dropout(dropout),
         )
 
-    def forward(self, data: dict) -> torch.Tensor:
+    def forward(self, data: dict, return_node: bool = False):
         required = ["x", "pos", "edge_index", "batch"]
         missing = [k for k in required if k not in data or data[k] is None]
         if missing:
@@ -117,5 +124,17 @@ class Drug3DEGNNEncoder(nn.Module):
         for layer in self.layers:
             h, x = layer(h, x, edge_index)
 
-        graph_emb = global_mean_pool(h, batch)
-        return self.out_proj(graph_emb)
+        # 保持 baseline 的全局输出路径不变：先 pool，再 out_proj。
+        graph_emb = self.out_proj(global_mean_pool(h, batch))
+
+        if not return_node:
+            return graph_emb
+
+        # 局部交互需要 pooling 之前的原子级表示。
+        # 这里复用 out_proj 统一到 out_dim；不改变 graph_emb 的计算方式。
+        node_feat = self.out_proj(h)
+        return {
+            "node_feat": node_feat,
+            "graph_feat": graph_emb,
+            "batch": batch,
+        }

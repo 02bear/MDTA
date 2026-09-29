@@ -10,7 +10,7 @@ class EGNNLayerEfficient(nn.Module):
 
     使用特征：
     - 节点隐状态 h
-    - 坐标差与距离 dist2
+    - 真实 3D 坐标 x 计算得到的坐标差与距离 dist2
     - 边标量特征 edge_s
     - 边向量特征 edge_v（展开后拼接）
     """
@@ -81,12 +81,22 @@ class Protein3DEGNNEncoder(nn.Module):
     期望输入 data(dict) 包含：
     {
         "node_s": Tensor [N, node_s_dim],
-        "node_v": Tensor [N, node_v_dim, 3],
+        "node_v": Tensor [N, node_v_dim, 3],  # 方向向量特征，不作为 EGNN 坐标
+        "coords": Tensor [N, 3],              # 真实 C-alpha 坐标，作为 EGNN 坐标
         "edge_index": LongTensor [2, E],
         "edge_s": Tensor [E, edge_s_dim],
         "edge_v": Tensor [E, edge_v_dim, 3],
         "batch": LongTensor [N],
     }
+    输出：
+        默认 return_node=False:
+            graph_emb: [B, out_dim]
+        当 return_node=True:
+            {
+                "node_feat": Tensor [N, out_dim],   # 残基级局部特征
+                "graph_feat": Tensor [B, out_dim],  # 与原 baseline 一致的全局特征
+                "batch": LongTensor [N],            # 每个残基所属蛋白编号
+            }
     """
 
     def __init__(
@@ -143,14 +153,15 @@ class Protein3DEGNNEncoder(nn.Module):
         mean_pos = sum_pos / cnt
         return pos - mean_pos[batch]
 
-    def forward(self, data: dict) -> torch.Tensor:
-        required = ["node_s", "node_v", "edge_index", "edge_s", "edge_v", "batch"]
+    def forward(self, data: dict, return_node: bool = False):
+        required = ["node_s", "node_v", "coords", "edge_index", "edge_s", "edge_v", "batch"]
         missing = [k for k in required if k not in data or data[k] is None]
         if missing:
             raise ValueError(f"Protein3DEGNNEncoder 缺少必需输入: {missing}")
 
         node_s = data["node_s"]
         node_v = data["node_v"]
+        coords = data["coords"]
         edge_index = data["edge_index"]
         edge_s = data["edge_s"]
         edge_v = data["edge_v"]
@@ -158,13 +169,41 @@ class Protein3DEGNNEncoder(nn.Module):
 
         if node_v.dim() != 3 or node_v.size(-1) != 3 or node_v.size(1) < 1:
             raise ValueError(f"node_v 形状应为 [N,nv,3] 且 nv>=1，实际 {tuple(node_v.shape)}")
+        if coords.dim() != 2 or coords.size(-1) != 3:
+            raise ValueError(f"coords 形状应为 [N,3]，实际 {tuple(coords.shape)}")
+        if coords.size(0) != node_s.size(0):
+            raise ValueError(
+                f"coords 和 node_s 的节点数不一致: coords={coords.size(0)}, node_s={node_s.size(0)}"
+            )
+        if batch.size(0) != node_s.size(0):
+            raise ValueError(
+                f"batch 和 node_s 的节点数不一致: batch={batch.size(0)}, node_s={node_s.size(0)}"
+            )
 
         h = self.input_proj(node_s)  # [N, H]
-        x = node_v[:, 0, :]  # [N, 3]
+
+        # 关键修正：使用构图脚本保存的真实 C-alpha 坐标 coords 作为 EGNN 坐标。
+        # node_v[:, 0, :] 是 forward unit vector，不是真实坐标，不能作为 x。
+        x = coords.to(device=h.device, dtype=h.dtype)  # [N, 3]
         x = self._center_pos_by_graph(x, batch)
+        # Scale real C-alpha coordinates from Angstrom-level values
+        # to a numerically stable range for EGNN distance features.
+        x = x / 10.0
 
         for layer in self.layers:
             h, x = layer(h, x, edge_index, edge_s, edge_v)
 
-        graph_emb = global_mean_pool(h, batch)
-        return self.out_proj(graph_emb)
+        # 保持 baseline 的全局输出路径不变：先 pool，再 out_proj。
+        graph_emb = self.out_proj(global_mean_pool(h, batch))
+
+        if not return_node:
+            return graph_emb
+
+        # 局部交互需要 pooling 之前的残基级表示。
+        # 这里复用 out_proj 统一到 out_dim；不改变 graph_emb 的计算方式。
+        node_feat = self.out_proj(h)
+        return {
+            "node_feat": node_feat,
+            "graph_feat": graph_emb,
+            "batch": batch,
+        }
